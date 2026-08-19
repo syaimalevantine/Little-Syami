@@ -409,10 +409,11 @@ header {
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
-    overflow: hidden;
+    overflow: visible;
     background: transparent;
+    box-shadow: 0 6px 16px rgba(60, 55, 35, 0.18);
 }
-
+  
 .book-cover {
   position: relative;
   width: 100%;
@@ -447,7 +448,7 @@ header {
   padding: 0;
   border: none;
   border-radius: 0;
-  box-shadow: 0 6px 16px rgba(60, 55, 35, 0.18);
+  box-shadow: none;
 }
 
 .book-cover::before,
