@@ -401,16 +401,15 @@ header {
 .book-card.hidden {
   display: none;
 }
-
 /* =====================================================
    BOOK COVER — CLEAN CATALOG STYLE
-   ===================================================== */
+===================================================== */
 
 .book-cover-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1.22;
-  overflow: hidden;
+  aspect-ratio: 1 / 1.08;
+  overflow: visible;
   background: transparent;
 }
 
@@ -419,15 +418,25 @@ header {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
   overflow: hidden;
   background: transparent;
   border: none;
-  box-shadow: none;
   border-radius: 0;
+  box-shadow:
+    0 6px 12px rgba(83, 82, 52, 0.08),
+    0 14px 24px rgba(83, 82, 52, 0.14);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-/* Real book cover image */
+.book-card:hover .book-cover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 14px rgba(83, 82, 52, 0.08),
+    0 18px 30px rgba(83, 82, 52, 0.17);
+}
+
 .book-cover-image {
   display: block;
   width: 100%;
@@ -441,12 +450,10 @@ header {
   box-shadow: none;
 }
 
-/* No artificial book spine, frame, or shadow */
 .book-cover::before,
 .book-cover::after {
   display: none;
 }
-  
 /* =====================================================
    BOOK INFO
 ===================================================== */
