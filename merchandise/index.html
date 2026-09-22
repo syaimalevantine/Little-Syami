@@ -1685,9 +1685,8 @@ function detectLanguage() {
   return "en";
 }
 
-
 /* =====================================================
-   INITIAL CURRENCY
+   DETECT INITIAL CURRENCY
 ===================================================== */
 
 function detectCurrency() {
@@ -1708,42 +1707,62 @@ function detectCurrency() {
   const locale =
     (
       navigator.language ||
-      ""
+      "en-US"
     ).toLowerCase();
 
 
-  if (locale.includes("tr")) {
-    return "TRY";
+  /* United States */
+  if (locale === "en-us") {
+    return "USD";
   }
 
-  if (locale.includes("id")) {
+
+  /* Indonesia */
+  if (locale.startsWith("id-id")) {
     return "IDR";
   }
 
-  if (locale.includes("ae")) {
+
+  /* Turkey */
+  if (locale.startsWith("tr-tr")) {
+    return "TRY";
+  }
+
+
+  /* United Arab Emirates */
+  if (locale.startsWith("ar-ae")) {
     return "AED";
   }
 
-  if (locale.includes("sa")) {
+
+  /* Saudi Arabia */
+  if (locale.startsWith("ar-sa")) {
     return "SAR";
   }
 
-  if (locale.includes("gb")) {
-    return "GBP";
-  }
 
+  /* European currencies */
   if (
-    locale.includes("de") ||
-    locale.includes("fr") ||
-    locale.includes("es") ||
-    locale.includes("it")
+    locale.startsWith("de-") ||
+    locale.startsWith("fr-") ||
+    locale.startsWith("es-") ||
+    locale.startsWith("it-") ||
+    locale.startsWith("nl-") ||
+    locale.startsWith("pt-") ||
+    locale.startsWith("el-") ||
+    locale.startsWith("fi-") ||
+    locale.startsWith("ie-") ||
+    locale.startsWith("at-") ||
+    locale.startsWith("be-") ||
+    locale.startsWith("lu-")
   ) {
     return "EUR";
   }
 
+
+  /* Default */
   return "USD";
 }
-
 
 let currentLanguage =
   detectLanguage();
