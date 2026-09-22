@@ -1507,7 +1507,10 @@ footer {
      SEARCH
 ===================================================== -->
 
-<div class="search-wrap">
+<div
+  class="search-wrap"
+  id="searchWrap"
+>
 
   <input
     type="search"
@@ -3524,6 +3527,9 @@ const filtersToggleText =
     "filtersToggleText"
   );
 
+const searchWrap =
+  document.getElementById("searchWrap");
+  
 const bookLanguageGroup =
   document
     .querySelector(
@@ -3558,6 +3564,9 @@ filtersToggle.addEventListener(
         "open"
       );
 
+if (searchWrap) {
+  searchWrap.hidden = isOpen;
+}
 
     filtersToggle.classList.toggle(
       "open",
