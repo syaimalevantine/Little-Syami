@@ -3650,9 +3650,13 @@ function updateBooks() {
 
 
     const languageMatch =
-      selectedBookLanguage === "all" ||
-      bookLanguage ===
-        selectedBookLanguage;
+  selectedSearchTerm !== ""
+    ? true
+    : (
+        selectedBookLanguage === "all" ||
+        bookLanguage ===
+          selectedBookLanguage
+      );
 
 const searchableText =
   book.innerText.toLowerCase();
