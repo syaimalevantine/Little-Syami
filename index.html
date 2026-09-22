@@ -434,6 +434,70 @@ header {
     rotate(180deg);
 }
 
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-wrap {
+  width: 100%;
+  margin-top: 22px;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+
+  padding:
+    12px 0 13px;
+
+  border: none;
+  border-bottom:
+    1px solid var(--line);
+
+  outline: none;
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+
+  font-family:
+    inherit;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+}
+
+.search-input::placeholder {
+  color:
+    var(--muted);
+
+  opacity: 1;
+}
+
+.search-input:focus {
+  border-bottom-color:
+    var(--olive);
+}
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<div class="search-wrap">
+
+  <input
+    type="search"
+    class="search-input"
+    id="bookSearch"
+    placeholder="Search"
+    autocomplete="off"
+    aria-label="Search books"
+  >
+
+</div>
 
 /* =====================================================
    HIDDEN FILTER PANEL
@@ -3410,6 +3474,9 @@ let selectedBookLanguage =
 
 let selectedSort =
   "category";
+  
+let selectedSearchTerm =
+  "";
 
 
 /* =====================================================
@@ -3432,7 +3499,10 @@ const books =
   document.querySelectorAll(
     ".book-card"
   );
-
+const bookSearch =
+  document.getElementById(
+    "bookSearch"
+  );
 
 /* =====================================================
    FILTER PANEL
@@ -3585,11 +3655,23 @@ function updateBooks() {
       bookLanguage ===
         selectedBookLanguage;
 
+const searchableText =
+  book.innerText.toLowerCase();
 
-    if (
-      ageMatch &&
-      languageMatch
-    ) {
+
+const searchMatch =
+  selectedSearchTerm === "" ||
+  searchableText.includes(
+    selectedSearchTerm
+  );
+  
+  if (
+  ageMatch &&
+  languageMatch &&
+  searchMatch
+) {
+
+
 
       book.classList.remove(
         "hidden"
@@ -3606,6 +3688,26 @@ function updateBooks() {
   });
 
 }
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+bookSearch.addEventListener(
+  "input",
+  () => {
+
+    selectedSearchTerm =
+      bookSearch.value
+        .trim()
+        .toLowerCase();
+
+
+    updateBooks();
+
+  }
+);
+
 /* =====================================================
    CATEGORY BUTTONS
 ===================================================== */
