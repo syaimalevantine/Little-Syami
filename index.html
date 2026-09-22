@@ -3530,26 +3530,6 @@ const filtersToggleText =
 const searchWrap =
   document.getElementById("searchWrap");
   
-const bookLanguageGroup =
-  document
-    .querySelector(
-      "#languageFilters"
-    )
-    ?.closest(
-      ".filter-group"
-    );
-
-
-if (
-  bookLanguageGroup &&
-  filterPanel
-) {
-
-  bookLanguageGroup.after(
-    filterPanel
-  );
-
-}
 
 /* =====================================================
    SHOW / HIDE FILTER PANEL
