@@ -3392,7 +3392,6 @@ function updateBooks() {
 
 }
 
-
 /* =====================================================
    CATEGORY BUTTONS
 ===================================================== */
@@ -3403,6 +3402,11 @@ categoryButtons.forEach(
     button.addEventListener(
       "click",
       () => {
+
+
+        /* -----------------------------
+           REMOVE ACTIVE STATE
+        ----------------------------- */
 
         categoryButtons.forEach(
           btn => {
@@ -3415,10 +3419,18 @@ categoryButtons.forEach(
         );
 
 
+        /* -----------------------------
+           ACTIVE CATEGORY
+        ----------------------------- */
+
         button.classList.add(
           "active"
         );
 
+
+        /* -----------------------------
+           SET SELECTED AGE
+        ----------------------------- */
 
         if (
           button.dataset.category ===
@@ -3430,6 +3442,7 @@ categoryButtons.forEach(
 
         }
 
+
         else if (
           button.dataset.ageCategory
         ) {
@@ -3439,15 +3452,17 @@ categoryButtons.forEach(
 
         }
 
+
         else if (
           button.dataset.category ===
           "early-childhood"
         ) {
 
           selectedAgeCategory =
-            "3-6";
+            "0-6";
 
         }
+
 
         else if (
           button.dataset.category ===
@@ -3455,9 +3470,10 @@ categoryButtons.forEach(
         ) {
 
           selectedAgeCategory =
-            "6-9";
+            "6-12";
 
         }
+
 
         else if (
           button.dataset.category ===
@@ -3470,7 +3486,33 @@ categoryButtons.forEach(
         }
 
 
+        /* -----------------------------
+           UPDATE BOOKS
+        ----------------------------- */
+
         updateBooks();
+
+
+        /* -----------------------------
+           CLOSE FILTER PANEL
+        ----------------------------- */
+
+        filterPanel.classList.remove(
+          "open"
+        );
+
+        filtersToggle.classList.remove(
+          "open"
+        );
+
+        filtersToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        filtersToggleText.textContent =
+          TRANSLATIONS[currentLanguage]
+            .showFilters;
 
       }
 
@@ -3478,7 +3520,6 @@ categoryButtons.forEach(
 
   }
 );
-
 
 /* =====================================================
    LANGUAGE BUTTONS
