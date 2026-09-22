@@ -305,7 +305,6 @@ header {
   font-weight: 400;
 }
 
-
 /* =====================================================
    FILTERS
 ===================================================== */
@@ -381,6 +380,220 @@ header {
     #fffdf7;
 }
 
+
+/* =====================================================
+   SHOW / HIDE FILTERS
+===================================================== */
+
+.filters-toggle {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding:
+    16px 0;
+
+  margin-bottom: 22px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid var(--line);
+
+  background: transparent;
+
+  color: var(--olive);
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.filters-toggle-icon {
+  font-size: 14px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.filters-toggle.open
+.filters-toggle-icon {
+  transform:
+    rotate(180deg);
+}
+
+
+/* =====================================================
+   HIDDEN FILTER PANEL
+===================================================== */
+
+.filter-panel {
+  display: none;
+
+  padding-bottom: 8px;
+}
+
+.filter-panel.open {
+  display: block;
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+.sort-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.sort-label {
+  color: var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.sort-select {
+  min-width: 190px;
+
+  padding:
+    11px 38px 11px 16px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 999px;
+
+  background:
+    var(--paper-soft);
+
+  color:
+    var(--olive);
+
+  font: inherit;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   CATEGORY CARDS
+===================================================== */
+
+.category-filter {
+  display: grid;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.category-btn {
+  width: 100%;
+
+  padding:
+    16px 18px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 12px;
+
+  background:
+    var(--paper-soft);
+
+  color:
+    var(--olive);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    0.2s ease;
+}
+
+.category-btn:hover {
+  border-color:
+    var(--olive-soft);
+}
+
+.category-btn.active {
+  border-color:
+    var(--olive);
+
+  background:
+    var(--olive);
+
+  color:
+    #fffdf7;
+}
+
+
+/* Category group headings */
+
+.category-group {
+  margin-top: 8px;
+}
+
+.category-group-title {
+  margin-bottom: 10px;
+
+  color:
+    var(--olive);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+.category-subcategories {
+  display: grid;
+
+  gap: 10px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .sort-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+}
 
 /* =====================================================
    BOOK GRID
@@ -1166,134 +1379,287 @@ footer {
   class="catalog"
   id="books"
 >
+<!-- =====================================================
+     FILTER TOGGLE
+===================================================== -->
 
-  <h2
-    class="section-title"
-    data-i18n="ourBooks"
+<button
+  type="button"
+  class="filters-toggle"
+  id="filtersToggle"
+  aria-expanded="false"
+  aria-controls="filterPanel"
+>
+  <span
+    id="filtersToggleText"
+    data-i18n="showFilters"
   >
-    Our Books
-  </h2>
+    Show Filters
+  </span>
+
+  <span
+    class="filters-toggle-icon"
+    aria-hidden="true"
+  >
+    ↓
+  </span>
+</button>
 
 
-  <!-- AGE -->
+<!-- =====================================================
+     HIDDEN FILTER PANEL
+===================================================== -->
+
+<div
+  class="filter-panel"
+  id="filterPanel"
+>
+
+
+  <!-- SORT BY -->
+
+  <div class="sort-row">
+
+    <span
+      class="sort-label"
+      data-i18n="sortBy"
+    >
+      Sort by
+    </span>
+
+
+    <select
+      class="sort-select"
+      id="sortSelect"
+      aria-label="Sort books"
+    >
+
+      <option
+        value="category"
+        data-i18n="sortCategory"
+      >
+        Category
+      </option>
+
+      <option
+        value="latest"
+        data-i18n="sortLatest"
+      >
+        Latest
+      </option>
+
+      <option
+        value="price-asc"
+        data-i18n="sortPriceAsc"
+      >
+        Price Ascending
+      </option>
+
+      <option
+        value="price-desc"
+        data-i18n="sortPriceDesc"
+      >
+        Price Descending
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- CATEGORY -->
 
   <div class="filter-group">
 
     <span
       class="filter-label"
-      data-i18n="ageLabel"
+      data-i18n="categoryLabel"
     >
-      Age
+      Category
     </span>
 
 
     <div
-      class="filters"
-      id="ageFilters"
+      class="category-filter"
+      id="categoryFilters"
     >
 
+
+      <!-- ALL CATEGORIES -->
+
       <button
-        class="filter-btn active"
-        data-age="all"
-        data-i18n="allAges"
+        type="button"
+        class="category-btn active"
+        data-category="all"
+        data-i18n="allCategories"
       >
-        All Ages
+        All Categories
       </button>
 
 
+      <!-- EARLY CHILDHOOD -->
+
+      <div class="category-group">
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="early-childhood"
+          data-i18n="earlyChildhood"
+        >
+          Early Childhood
+        </button>
+
+
+        <div class="category-subcategories">
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="0-3"
+            data-i18n="ages03"
+          >
+            0–3 Years
+          </button>
+
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="3-6"
+            data-i18n="ages36"
+          >
+            3–6 Years
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- CHILDREN -->
+
+      <div class="category-group">
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="children"
+          data-i18n="childrenCategory"
+        >
+          Children
+        </button>
+
+
+        <div class="category-subcategories">
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="6-9"
+            data-i18n="ages69"
+          >
+            6–9 Years
+          </button>
+
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="9-12"
+            data-i18n="ages912"
+          >
+            9–12 Years
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- YOUNG ADULTS -->
+
       <button
-        class="filter-btn"
-        data-age="4-6"
-        data-i18n="ages46"
+        type="button"
+        class="category-btn"
+        data-category="young-adults"
+        data-i18n="youngAdults"
       >
-        Ages 4–6
+        Young Adults
       </button>
 
-
-      <button
-        class="filter-btn"
-        data-age="7-9"
-        data-i18n="ages79"
-      >
-        Ages 7–9
-      </button>
-
-
-      <button
-        class="filter-btn"
-        data-age="4-9"
-        data-i18n="ages49"
-      >
-        Ages 4–9
-      </button>
 
     </div>
 
   </div>
 
 
-
-  <!-- LANGUAGE -->
-
-  <div class="filter-group">
-
-    <span
-      class="filter-label"
-      data-i18n="bookLanguageLabel"
-    >
-      Book Language
-    </span>
-
-
-<div
-  class="filters"
-  id="languageFilters"
->
-
-  <button
-    class="filter-btn active"
-    data-language="en"
-  >
-    English
-  </button>
-
-
-  <button
-    class="filter-btn"
-    data-language="ar"
-  >
-    العربية
-  </button>
-
-
-  <button
-    class="filter-btn"
-    data-language="id"
-  >
-    Bahasa
-  </button>
-
-
-  <button
-    class="filter-btn"
-    data-language="tr"
-  >
-    Türkçe
-  </button>
-
-
-  <button
-    class="filter-btn"
-    data-language="all"
-    data-i18n="allLanguages"
-  >
-    All Languages
-  </button>
-
 </div>
 
 
+<!-- =====================================================
+     BOOK LANGUAGE — ALWAYS VISIBLE
+===================================================== -->
 
+<div class="filter-group">
+
+  <span
+    class="filter-label"
+    data-i18n="bookLanguageLabel"
+  >
+    Book Language
+  </span>
+
+
+  <div
+    class="filters"
+    id="languageFilters"
+  >
+
+    <button
+      class="filter-btn active"
+      data-language="en"
+    >
+      English
+    </button>
+
+
+    <button
+      class="filter-btn"
+      data-language="ar"
+    >
+      العربية
+    </button>
+
+
+    <button
+      class="filter-btn"
+      data-language="id"
+    >
+      Bahasa
+    </button>
+
+
+    <button
+      class="filter-btn"
+      data-language="tr"
+    >
+      Türkçe
+    </button>
+
+
+    <button
+      class="filter-btn"
+      data-language="all"
+      data-i18n="allLanguages"
+    >
+      All Languages
+    </button>
+
+  </div>
+
+</div>
+ 
   <!-- =================================================
        BOOK GRID
   ================================================= -->
@@ -2156,11 +2522,56 @@ merchandiseLink:
     heroDescription:
       "Thoughtful children's books inspired by faith, family, imagination, and the beauty of the world around us.",
 
-    ourBooks:
-      "Our Books",
+    showFilters:
+  "Show Filters",
 
-    ageLabel:
-      "Age",
+hideFilters:
+  "Hide Filters",
+
+sortBy:
+  "Sort by",
+
+sortLatest:
+  "Latest",
+
+sortCategory:
+  "Category",
+
+sortPriceAsc:
+  "Price Ascending",
+
+sortPriceDesc:
+  "Price Descending",
+
+categoryLabel:
+  "Category",
+
+allCategories:
+  "All Categories",
+
+earlyChildhood:
+  "Early Childhood",
+
+ages03:
+  "0–3 Years",
+
+ages36:
+  "3–6 Years",
+
+childrenCategory:
+  "Children",
+
+ages69:
+  "6–9 Years",
+
+ages912:
+  "9–12 Years",
+
+youngAdults:
+  "Young Adults",
+
+ageLabel:
+  "Age",
 
     bookLanguageLabel:
       "Book Language",
@@ -2218,8 +2629,56 @@ merchandiseLink:
     heroDescription:
       "Buku anak yang penuh makna, terinspirasi oleh iman, keluarga, imajinasi, dan keindahan dunia di sekitar kita.",
 
-    ourBooks:
-      "Buku Kami",
+    showFilters:
+  "Tampilkan Filter",
+
+hideFilters:
+  "Sembunyikan Filter",
+
+sortBy:
+  "Urutkan",
+
+sortLatest:
+  "Terbaru",
+
+sortCategory:
+  "Kategori",
+
+sortPriceAsc:
+  "Harga Terendah",
+
+sortPriceDesc:
+  "Harga Tertinggi",
+
+categoryLabel:
+  "Kategori",
+
+allCategories:
+  "Semua Kategori",
+
+earlyChildhood:
+  "Anak Usia Dini",
+
+ages03:
+  "0–3 Tahun",
+
+ages36:
+  "3–6 Tahun",
+
+childrenCategory:
+  "Anak-anak",
+
+ages69:
+  "6–9 Tahun",
+
+ages912:
+  "9–12 Tahun",
+
+youngAdults:
+  "Remaja",
+
+ageLabel:
+  "Usia",
 
     ageLabel:
       "Usia",
@@ -2280,8 +2739,56 @@ merchandiseLink:
     heroDescription:
       "İnançtan, aileden, hayal gücünden ve çevremizdeki dünyanın güzelliklerinden ilham alan çocuk kitapları.",
 
-    ourBooks:
-      "Kitaplarımız",
+    showFilters:
+  "Filtreleri Göster",
+
+hideFilters:
+  "Filtreleri Gizle",
+
+sortBy:
+  "Sırala",
+
+sortLatest:
+  "En Yeni",
+
+sortCategory:
+  "Kategori",
+
+sortPriceAsc:
+  "Artan Fiyat",
+
+sortPriceDesc:
+  "Azalan Fiyat",
+
+categoryLabel:
+  "Kategori",
+
+allCategories:
+  "Tüm Kategoriler",
+
+earlyChildhood:
+  "Erken Çocukluk",
+
+ages03:
+  "0–3 Yaş",
+
+ages36:
+  "3–6 Yaş",
+
+childrenCategory:
+  "Çocuklar",
+
+ages69:
+  "6–9 Yaş",
+
+ages912:
+  "9–12 Yaş",
+
+youngAdults:
+  "Genç Yetişkinler",
+
+ageLabel:
+  "Yaş",
 
     ageLabel:
       "Yaş",
@@ -2342,8 +2849,53 @@ merchandiseLink:
     heroDescription:
       "كتب أطفال هادفة مستوحاة من الإيمان والعائلة والخيال وجمال العالم من حولنا.",
 
-    ourBooks:
-      "كتبنا",
+    showFilters:
+  "إظهار الفلاتر",
+
+hideFilters:
+  "إخفاء الفلاتر",
+
+sortBy:
+  "ترتيب حسب",
+
+sortLatest:
+  "الأحدث",
+
+sortCategory:
+  "التصنيف",
+
+sortPriceAsc:
+  "السعر: من الأقل إلى الأعلى",
+
+sortPriceDesc:
+  "السعر: من الأعلى إلى الأقل",
+
+categoryLabel:
+  "التصنيف",
+
+allCategories:
+  "جميع التصنيفات",
+
+earlyChildhood:
+  "الطفولة المبكرة",
+
+ages03:
+  "٠–٣ سنوات",
+
+ages36:
+  "٣–٦ سنوات",
+
+childrenCategory:
+  "الأطفال",
+
+ages69:
+  "٦–٩ سنوات",
+
+ages912:
+  "٩–١٢ سنة",
+
+youngAdults:
+  "اليافعون",    "كتبنا",
 
     ageLabel:
       "العمر",
@@ -2657,40 +3209,147 @@ function updatePrices() {
 
 }
 
-
 /* =====================================================
-   AGE FILTER
+   FILTERS
 ===================================================== */
 
-let selectedAge =
-  "all";
+let selectedAgeCategory = "all";
 
+let selectedBookLanguage = "en";
 
-const ageButtons =
-  document.querySelectorAll(
-    "#ageFilters .filter-btn"
-  );
+let selectedSort = "category";
 
 
 /* =====================================================
-   LANGUAGE FILTER
+   FILTER ELEMENTS
 ===================================================== */
-
-let selectedBookLanguage =
-  "en";
-
 
 const languageButtons =
   document.querySelectorAll(
     "#languageFilters .filter-btn"
   );
 
+const categoryButtons =
+  document.querySelectorAll(
+    "#categoryFilters .category-btn"
+  );
 
 const books =
   document.querySelectorAll(
     ".book-card"
   );
 
+
+/* =====================================================
+   FILTER PANEL
+===================================================== */
+
+const filtersToggle =
+  document.getElementById(
+    "filtersToggle"
+  );
+
+const filterPanel =
+  document.getElementById(
+    "filterPanel"
+  );
+
+const filtersToggleText =
+  document.getElementById(
+    "filtersToggleText"
+  );
+
+
+filtersToggle.addEventListener(
+  "click",
+  () => {
+
+    const isOpen =
+      filterPanel.classList.toggle(
+        "open"
+      );
+
+
+    filtersToggle.classList.toggle(
+      "open",
+      isOpen
+    );
+
+
+    filtersToggle.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
+
+
+    filtersToggleText.textContent =
+      isOpen
+        ? TRANSLATIONS[currentLanguage].hideFilters
+        : TRANSLATIONS[currentLanguage].showFilters;
+
+  }
+);
+
+
+/* =====================================================
+   AGE RANGE HELPER
+===================================================== */
+
+function getAgeRange(
+  ageValue
+) {
+
+  const parts =
+    ageValue.split("-");
+
+  return {
+    min:
+      parseInt(parts[0], 10),
+
+    max:
+      parseInt(parts[1], 10)
+  };
+
+}
+
+
+/* =====================================================
+   AGE RANGE MATCH
+===================================================== */
+
+function ageRangeMatches(
+  bookAge,
+  selectedRange
+) {
+
+  if (
+    selectedRange === "all"
+  ) {
+    return true;
+  }
+
+
+  const bookRange =
+    getAgeRange(bookAge);
+
+  const filterRange =
+    getAgeRange(selectedRange);
+
+
+  return (
+    bookRange.min <=
+      filterRange.max &&
+
+    bookRange.max >=
+      filterRange.min
+  );
+
+}
+
+
+/* =====================================================
+   UPDATE BOOKS
+===================================================== */
 
 function updateBooks() {
 
@@ -2704,8 +3363,10 @@ function updateBooks() {
 
 
     const ageMatch =
-      selectedAge === "all" ||
-      bookAge === selectedAge;
+      ageRangeMatches(
+        bookAge,
+        selectedAgeCategory
+      );
 
 
     const languageMatch =
@@ -2735,73 +3396,214 @@ function updateBooks() {
 }
 
 
-/* AGE BUTTONS */
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
 
-ageButtons.forEach(button => {
+categoryButtons.forEach(
+  button => {
 
-  button.addEventListener(
-    "click",
-    () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      ageButtons.forEach(btn => {
+        categoryButtons.forEach(
+          btn => {
 
-        btn.classList.remove(
+            btn.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        button.classList.add(
           "active"
         );
 
-      });
+
+        if (
+          button.dataset.category ===
+          "all"
+        ) {
+
+          selectedAgeCategory =
+            "all";
+
+        }
+
+        else if (
+          button.dataset.ageCategory
+        ) {
+
+          selectedAgeCategory =
+            button.dataset.ageCategory;
+
+        }
+
+        else if (
+          button.dataset.category ===
+          "early-childhood"
+        ) {
+
+          selectedAgeCategory =
+            "3-6";
+
+        }
+
+        else if (
+          button.dataset.category ===
+          "children"
+        ) {
+
+          selectedAgeCategory =
+            "6-9";
+
+        }
+
+        else if (
+          button.dataset.category ===
+          "young-adults"
+        ) {
+
+          selectedAgeCategory =
+            "13-18";
+
+        }
 
 
-      button.classList.add(
-        "active"
-      );
+        updateBooks();
+
+      }
+
+    );
+
+  }
+);
 
 
-      selectedAge =
-        button.dataset.age;
+/* =====================================================
+   LANGUAGE BUTTONS
+===================================================== */
+
+languageButtons.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        languageButtons.forEach(
+          btn => {
+
+            btn.classList.remove(
+              "active"
+            );
+
+          }
+        );
 
 
-      updateBooks();
-
-    }
-  );
-
-});
-
-
-/* LANGUAGE BUTTONS */
-
-languageButtons.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      languageButtons.forEach(btn => {
-
-        btn.classList.remove(
+        button.classList.add(
           "active"
         );
 
-      });
+
+        selectedBookLanguage =
+          button.dataset.language;
 
 
-      button.classList.add(
-        "active"
-      );
+        updateBooks();
+
+      }
+
+    );
+
+  }
+);
 
 
-      selectedBookLanguage =
-        button.dataset.language;
+/* =====================================================
+   SORT
+===================================================== */
 
-
-      updateBooks();
-
-    }
+const sortSelect =
+  document.getElementById(
+    "sortSelect"
   );
 
-});
+const bookGrid =
+  document.getElementById(
+    "bookGrid"
+  );
 
+
+sortSelect.addEventListener(
+  "change",
+  () => {
+
+    selectedSort =
+      sortSelect.value;
+
+
+    const bookArray =
+      Array.from(books);
+
+
+    if (
+      selectedSort ===
+      "price-asc"
+    ) {
+
+      bookArray.sort(
+        (a, b) =>
+          Number(
+            a.dataset.priceUsd
+          ) -
+          Number(
+            b.dataset.priceUsd
+          )
+      );
+
+    }
+
+
+    else if (
+      selectedSort ===
+      "price-desc"
+    ) {
+
+      bookArray.sort(
+        (a, b) =>
+          Number(
+            b.dataset.priceUsd
+          ) -
+          Number(
+            a.dataset.priceUsd
+          )
+      );
+
+    }
+
+
+    else if (
+      selectedSort ===
+      "latest"
+    ) {
+
+      bookArray.reverse();
+
+    }
+
+
+    bookArray.forEach(
+      book =>
+        bookGrid.appendChild(book)
+    );
+
+  }
+);
 
 /* =====================================================
    MENU
