@@ -9,41 +9,42 @@
   content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
-<title>Printables — Little Syami</title>
+<title>Little Syami Publishing</title>
 
 <meta
   name="description"
-  content="Little Syami printables — thoughtful activities inspired by stories, learning, play, and imagination."
+  content="Little Syami Publishing — thoughtful children's digital books inspired by faith, family, imagination, and the beauty of the world around us."
 >
 
 <style>
 
-:root{
-  --paper:#f8f3e8;
-  --paper-soft:#fcf9f1;
-  --olive:#555633;
-  --olive-soft:#777653;
-  --gold:#b58b45;
-  --gold-soft:#d8c6a4;
-  --text:#454531;
-  --muted:#858273;
-  --line:#e4dccb;
-  --white:#fffdf8;
+:root {
+  --paper: #f8f3e8;
+  --paper-soft: #fcf9f1;
+  --olive: #555633;
+  --olive-soft: #777653;
+  --gold: #b58b45;
+  --gold-soft: #d8c6a4;
+  --text: #454531;
+  --muted: #858273;
+  --line: #e4dccb;
+  --white: #fffdf8;
+  --shadow: rgba(83, 82, 52, 0.13);
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  background:var(--paper);
-  color:var(--text);
+body {
+  background: var(--paper);
+  color: var(--text);
 
   font-family:
     -apple-system,
@@ -53,19 +54,21 @@ body{
     Arial,
     sans-serif;
 
-  line-height:1.5;
+  line-height: 1.5;
 }
 
-body.menu-open{
-  overflow:hidden;
+body.menu-open {
+  overflow: hidden;
 }
 
-button{
-  font:inherit;
+button {
+  font: inherit;
 }
 
-:lang(ar){
-  letter-spacing:0 !important;
+/* Arabic typography fix */
+
+:lang(ar) {
+  letter-spacing: 0 !important;
 }
 
 
@@ -73,78 +76,111 @@ button{
    HEADER
 ===================================================== */
 
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
   background:
-    rgba(248,243,232,.96);
+    rgba(248, 243, 232, 0.96);
 
-  backdrop-filter:blur(14px);
+  backdrop-filter: blur(14px);
 
   border-bottom:
     1px solid var(--line);
 }
 
-.header-inner{
-  max-width:1180px;
+.header-inner {
+  max-width: 1180px;
 
-  height:92px;
+  height: 92px;
 
-  margin:0 auto;
+  margin: 0 auto;
+  padding: 0 28px;
 
-  padding:
-    0 28px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.brand{
-  display:flex;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 
-  align-items:center;
-
-  color:var(--text);
-
-  text-decoration:none;
+  color: var(--text);
+  text-decoration: none;
 }
 
-.brand-name{
+.brand-logo {
+  display: block;
+  width: 190px;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 52px;
+
+  border:
+    1.5px solid var(--olive-soft);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--olive);
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size:22px;
-
-  letter-spacing:-.4px;
-
-  line-height:1;
+  font-size: 25px;
 }
 
-.brand-subtitle{
-  margin-top:5px;
-
-  color:var(--muted);
-
-  font-size:9px;
-
-  letter-spacing:3px;
+.brand-text {
+  line-height: 1;
 }
 
-.menu-button{
-  width:52px;
-  height:52px;
+.brand-name {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  letter-spacing: -0.4px;
+}
+
+.brand-subtitle {
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-button {
+  width: 52px;
+  height: 52px;
 
   border:
     1px solid var(--line);
 
-  border-radius:50%;
+  border-radius: 50%;
 
   background:
     var(--paper-soft);
@@ -152,15 +188,13 @@ header{
   color:
     var(--olive);
 
-  display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  align-items:center;
+  cursor: pointer;
 
-  justify-content:center;
-
-  cursor:pointer;
-
-  font-size:22px;
+  font-size: 22px;
 }
 
 
@@ -168,29 +202,29 @@ header{
    HERO
 ===================================================== */
 
-.hero{
-  max-width:900px;
+.hero {
+  max-width: 900px;
 
-  margin:0 auto;
+  margin: 0 auto;
 
   padding:
-    72px 28px 58px;
+    86px 28px 70px;
 
-  text-align:center;
+  text-align: center;
 }
 
-.eyebrow{
-  margin-bottom:20px;
+.eyebrow {
+  margin-bottom: 24px;
 
-  color:var(--gold);
+  color: var(--gold);
 
-  font-size:12px;
+  font-size: 12px;
 
-  letter-spacing:5px;
+  letter-spacing: 5px;
 }
 
-.hero h1{
-  color:var(--olive);
+.hero h1 {
+  color: var(--olive);
 
   font-family:
     Georgia,
@@ -198,342 +232,122 @@ header{
     serif;
 
   font-size:
-    clamp(46px,8vw,72px);
+    clamp(48px, 8vw, 76px);
 
-  font-weight:400;
+  font-weight: 400;
 
-  line-height:.98;
+  line-height: 0.98;
 
-  letter-spacing:-2px;
+  letter-spacing: -2px;
 }
 
-.hero p{
-  max-width:650px;
+.hero p {
+  max-width: 650px;
 
   margin:
-    26px auto 0;
+    30px auto 0;
 
-  color:#77756c;
+  color: #77756c;
 
-  font-size:18px;
+  font-size: 18px;
 
-  line-height:1.7;
+  line-height: 1.7;
 }
 
-.ornament{
+.ornament {
   margin:
-    34px auto 0;
+    38px auto 0;
 
-  display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  align-items:center;
-
-  justify-content:center;
-
-  gap:18px;
+  gap: 18px;
 }
 
-.ornament-line{
-  width:115px;
-
-  height:1px;
+.ornament-line {
+  width: 115px;
+  height: 1px;
 
   background:
     var(--gold-soft);
 }
 
-.ornament-heart{
-  color:var(--gold);
+.ornament-heart {
+  color: var(--gold);
 
-  font-size:18px;
+  font-size: 18px;
 }
 
 
 /* =====================================================
-   PRINTABLES
+   CATALOG
 ===================================================== */
 
-.printables{
-  max-width:1180px;
+.catalog {
+  max-width: 1180px;
 
-  margin:0 auto;
+  margin: 0 auto;
 
   padding:
     0 28px 100px;
 }
 
-.section-title{
-  margin-bottom:10px;
+.section-title {
+  margin-bottom: 28px;
 
-  color:var(--olive);
+  color: var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size:38px;
+  font-size: 38px;
 
-  font-weight:400;
-}
-
-.section-intro{
-  max-width:650px;
-
-  margin-bottom:34px;
-
-  color:var(--muted);
-
-  font-size:16px;
-
-  line-height:1.7;
+  font-weight: 400;
 }
 
 
 /* =====================================================
-   FILTER TOGGLE
+   FILTERS
 ===================================================== */
 
-.filters-toggle{
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  width:100%;
-
-  padding:
-    16px 0;
-
-  margin-bottom:22px;
-
-  border:0;
-
-  border-bottom:
-    1px solid var(--line);
-
-  background:transparent;
-
-  color:var(--olive);
-
-  font-size:13px;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-
-  cursor:pointer;
+.filter-group {
+  margin-bottom: 20px;
 }
 
-.filters-toggle-icon{
-  font-size:18px;
+.filter-label {
+  display: block;
 
-  transition:
-    transform .2s ease;
+  margin-bottom: 10px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
 }
 
-.filters-toggle.open
-.filters-toggle-icon{
-  transform:
-    rotate(180deg);
+.filters {
+  display: flex;
+
+  gap: 10px;
+
+  overflow-x: auto;
+
+  padding-bottom: 4px;
+
+  scrollbar-width: none;
 }
 
-
-/* =====================================================
-   SEARCH — ALWAYS VISIBLE
-===================================================== */
-
-.search-wrap{
-  margin-bottom:28px;
+.filters::-webkit-scrollbar {
+  display: none;
 }
 
-.search-input{
-  width:100%;
-
-  padding:
-    15px 0;
-
-  border:0;
-
-  border-bottom:
-    1px solid var(--line);
-
-  outline:none;
-
-  background:transparent;
-
-  color:var(--olive);
-
-  font-size:20px;
-}
-
-.search-input::placeholder{
-  color:var(--muted);
-
-  opacity:1;
-}
-
-
-/* =====================================================
-   HIDDEN FILTER PANEL
-===================================================== */
-
-.filter-panel{
-  display:none;
-
-  padding-bottom:10px;
-}
-
-.filter-panel.open{
-  display:block;
-}
-
-.filter-group{
-  margin-bottom:30px;
-}
-
-.filter-label{
-  display:block;
-
-  margin-bottom:12px;
-
-  color:var(--muted);
-
-  font-size:11px;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-}
-
-
-/* =====================================================
-   SORT
-===================================================== */
-
-.sort-select{
-  width:100%;
-
-  padding:
-    15px 38px 15px 16px;
-
-  border:
-    1px solid var(--line);
-
-  border-radius:999px;
-
-  background:
-    var(--paper-soft);
-
-  color:
-    var(--olive);
-
-  font:inherit;
-
-  font-size:16px;
-
-  cursor:pointer;
-}
-
-
-/* =====================================================
-   AGE — COMPACT LIST
-===================================================== */
-
-.age-list{
-  display:flex;
-
-  flex-direction:column;
-
-  border-top:
-    1px solid var(--line);
-}
-
-.age-button{
-  width:100%;
-
-  padding:
-    14px 0;
-
-  border:0;
-
-  border-bottom:
-    1px solid var(--line);
-
-  background:transparent;
-
-  color:
-    var(--olive);
-
-  text-align:left;
-
-  cursor:pointer;
-
-  font-size:16px;
-}
-
-.age-button.active{
-  font-weight:600;
-
-  color:
-    var(--gold);
-}
-
-.age-group-title{
-  padding:
-    14px 0 8px;
-
-  color:
-    var(--olive-soft);
-
-  font-size:15px;
-
-  font-weight:600;
-}
-
-.age-subbutton{
-  padding-left:18px;
-
-  color:
-    var(--text);
-}
-
-.age-subbutton.active{
-  color:
-    var(--gold);
-
-  font-weight:600;
-}
-
-
-/* =====================================================
-   LANGUAGE — ALWAYS VISIBLE
-===================================================== */
-
-.language-group{
-  margin-top:0;
-
-  margin-bottom:42px;
-}
-
-.filters{
-  display:flex;
-
-  gap:10px;
-
-  overflow-x:auto;
-
-  padding-bottom:4px;
-
-  scrollbar-width:none;
-}
-
-.filters::-webkit-scrollbar{
-  display:none;
-}
-
-.filter-btn{
+.filter-btn {
   flex:
     0 0 auto;
 
@@ -543,7 +357,7 @@ header{
   border:
     1px solid var(--line);
 
-  border-radius:999px;
+  border-radius: 999px;
 
   background:
     var(--paper-soft);
@@ -551,15 +365,15 @@ header{
   color:
     var(--olive-soft);
 
-  white-space:nowrap;
+  white-space: nowrap;
 
-  cursor:pointer;
+  cursor: pointer;
 
   transition:
-    .2s ease;
+    0.2s ease;
 }
 
-.filter-btn.active{
+.filter-btn.active {
   border-color:
     var(--olive);
 
@@ -567,148 +381,516 @@ header{
     var(--olive);
 
   color:
-    var(--white);
+    #fffdf7;
 }
 
 
 /* =====================================================
-   PRINTABLE GRID
+   SHOW / HIDE FILTERS
 ===================================================== */
 
-.printable-grid{
-  display:grid;
+.filters-toggle {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding:
+    16px 0;
+
+  margin-bottom: 22px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid var(--line);
+
+  background: transparent;
+
+  color: var(--olive);
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.filters-toggle-icon {
+  font-size: 14px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.filters-toggle.open
+.filters-toggle-icon {
+  transform:
+    rotate(180deg);
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-wrap {
+  width: 100%;
+  margin-top: 22px;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+
+  padding:
+    12px 0 13px;
+
+  border: none;
+  border-bottom:
+    1px solid var(--line);
+
+  outline: none;
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+
+  font-family:
+    inherit;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+}
+
+.search-input::placeholder {
+  color:
+    var(--muted);
+
+  opacity: 1;
+}
+
+.search-input:focus {
+  border-bottom-color:
+    var(--olive);
+}
+
+
+/* =====================================================
+   HIDDEN FILTER PANEL
+===================================================== */
+
+.filter-panel {
+  display: none !important;
+
+  padding-bottom: 8px;
+}
+
+.filter-panel.open {
+  display: block !important;
+}
+
+/* =====================================================
+   SORT
+===================================================== */
+
+.sort-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.sort-label {
+  color: var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.sort-select {
+  min-width: 190px;
+
+  padding:
+    11px 38px 11px 16px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 999px;
+
+  background:
+    var(--paper-soft);
+
+  color:
+    var(--olive);
+
+  font: inherit;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   CATEGORY FILTER — COMPACT LIST
+===================================================== */
+
+.category-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+
+/* Main category buttons */
+
+.category-btn {
+  width: 100%;
+
+  display: block;
+
+  padding:
+    12px 0;
+
+  margin: 0;
+
+  border: none;
+
+  border-bottom:
+    1px solid var(--line);
+
+  border-radius: 0;
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+
+  text-align: left;
+
+  font-family:
+    inherit;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* Hover */
+
+.category-btn:hover {
+  border-color:
+    var(--line);
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+}
+
+
+/* Active category */
+
+.category-btn.active {
+  border-color:
+    var(--line);
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   CATEGORY GROUPS
+===================================================== */
+
+.category-group {
+  margin-top: 0;
+}
+
+
+/* Broad categories:
+   Early Childhood
+   Children
+   Young Adults
+*/
+
+.category-group > .category-btn,
+.category-filter > .category-btn {
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   AGE SUBCATEGORIES
+===================================================== */
+
+.category-subcategories {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+
+  margin: 0;
+}
+
+
+/* 0–3, 3–6, 6–9, 9–12 */
+
+.category-subcategories .category-btn {
+  padding:
+    10px 0 10px 22px;
+
+  border-bottom:
+    1px solid var(--line);
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  color:
+    var(--olive-soft);
+}
+
+
+/* Active age range */
+
+.category-subcategories .category-btn.active {
+  color:
+    var(--olive);
+
+  font-weight: 600;
+
+  background:
+    transparent;
+}
+
+
+/* =====================================================
+   CLEAN LAST ITEM
+===================================================== */
+
+/* Remove extra visual heaviness from the final category */
+
+.category-filter
+  > .category-btn:last-child {
+  border-bottom:
+    1px solid var(--line);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .sort-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+}
+
+
+/* =====================================================
+   BOOK GRID
+===================================================== */
+
+.book-grid {
+  margin-top: 48px;
+
+  display: grid;
 
   grid-template-columns:
-    repeat(2,minmax(0,1fr));
+    repeat(2, minmax(0, 1fr));
 
   gap:
     58px 28px;
 }
 
-.printable-card{
-  min-width:0;
+.book-card {
+  min-width: 0;
 }
 
-.printable-card.hidden{
-  display:none;
-}
-
-
-/* =====================================================
-   PRODUCT IMAGE
-===================================================== */
-
-.product-image-wrap{
-  position:relative;
-
-  width:100%;
-
-  aspect-ratio:1/1;
-
-  overflow:hidden;
-
-  background:
-    var(--paper-soft);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:2px;
-}
-
-.product-placeholder{
-  width:100%;
-
-  height:100%;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  color:
-    var(--muted);
-
-  font-size:11px;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
+.book-card.hidden {
+  display: none;
 }
 
 
 /* =====================================================
-   PRODUCT INFO
+   COMING SOON BOOKS
 ===================================================== */
 
-.product-info{
+.book-card.coming-soon {
+  display: none !important;
+}
+
+
+/* =====================================================
+   BOOK COVER — CLEAN CATALOG STYLE
+===================================================== */
+
+.book-cover-wrap {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: visible;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+.book-cover {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.book-cover-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.book-cover::before,
+.book-cover::after {
+  display: none;
+}
+ /* =====================================================
+   BOOK INFO
+===================================================== */
+
+.book-info {
   padding:
     22px 4px 0;
 }
 
-.product-type{
-  margin-bottom:8px;
+.book-type {
+  margin-bottom: 8px;
 
-  color:
-    var(--gold);
+  color: var(--gold);
 
-  font-size:10px;
+  font-size: 10px;
 
-  letter-spacing:2px;
+  letter-spacing: 2px;
 }
 
-.product-title{
-  color:
-    var(--olive);
+.book-title {
+  color: var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size:23px;
+  font-size: 23px;
 
-  line-height:1.2;
+  line-height: 1.2;
 }
 
-.product-description{
-  margin-top:9px;
+.book-meta {
+  margin-top: 9px;
 
-  color:
-    var(--muted);
+  color: var(--muted);
 
-  font-size:14px;
-
-  line-height:1.6;
+  font-size: 14px;
 }
 
-.product-format{
-  margin-top:9px;
+.book-language {
+  margin-top: 5px;
 
-  color:
-    var(--muted);
+  color: var(--olive-soft);
 
-  font-size:12px;
+  font-size: 13px;
 }
 
-.product-price{
-  margin-top:10px;
+.book-price {
+  margin-top: 8px;
 
-  color:
-    var(--olive);
+  color: var(--olive);
 
-  font-size:15px;
+  font-size: 15px;
 
-  font-weight:500;
+  font-weight: 500;
 }
 
-.buy-button{
-  display:inline-block;
+.buy-button {
+  display: inline-block;
 
-  margin-top:16px;
+  margin-top: 16px;
 
   padding:
     9px 18px;
@@ -716,7 +898,7 @@ header{
   border:
     1px solid var(--olive);
 
-  border-radius:999px;
+  border-radius: 999px;
 
   background:
     var(--olive);
@@ -724,57 +906,56 @@ header{
   color:
     #fffdf7;
 
-  text-decoration:none;
+  text-decoration: none;
 
-  font-size:10px;
+  font-size: 10px;
 
-  letter-spacing:1.5px;
+  letter-spacing: 1.5px;
 
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 
 /* =====================================================
-   MENU
+   MENU OVERLAY
 ===================================================== */
 
-.menu-overlay{
-  position:fixed;
+.menu-overlay {
+  position: fixed;
 
-  inset:0;
+  inset: 0;
 
-  z-index:200;
+  z-index: 200;
 
   background:
-    rgba(69,69,49,.25);
+    rgba(69, 69, 49, 0.25);
 
-  opacity:0;
+  opacity: 0;
 
-  pointer-events:none;
+  pointer-events: none;
 
   transition:
-    opacity .25s ease;
+    opacity 0.25s ease;
 }
 
-.menu-overlay.open{
-  opacity:1;
+.menu-overlay.open {
+  opacity: 1;
 
-  pointer-events:auto;
+  pointer-events: auto;
 }
 
-.menu-panel{
-  position:absolute;
+.menu-panel {
+  position: absolute;
 
-  top:0;
-
-  right:0;
+  top: 0;
+  right: 0;
 
   width:
-    min(430px,92vw);
+    min(430px, 92vw);
 
-  height:100%;
+  height: 100%;
 
-  overflow-y:auto;
+  overflow-y: auto;
 
   padding:
     32px 28px 40px;
@@ -784,32 +965,30 @@ header{
 
   box-shadow:
     -10px 0 35px
-    rgba(60,60,40,.12);
+    rgba(60, 60, 40, 0.12);
 
   transform:
     translateX(100%);
 
   transition:
-    transform .28s ease;
+    transform 0.28s ease;
 }
 
-.menu-overlay.open
-.menu-panel{
+.menu-overlay.open .menu-panel {
   transform:
     translateX(0);
 }
 
-.menu-close{
-  width:48px;
+.menu-close {
+  width: 48px;
+  height: 48px;
 
-  height:48px;
-
-  margin-left:auto;
+  margin-left: auto;
 
   border:
     1px solid var(--line);
 
-  border-radius:50%;
+  border-radius: 50%;
 
   background:
     var(--paper-soft);
@@ -817,98 +996,86 @@ header{
   color:
     var(--olive);
 
-  cursor:pointer;
+  cursor: pointer;
 
-  display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:22px;
+  font-size: 22px;
 }
 
-.menu-title{
-  margin-top:35px;
+.menu-title {
+  margin-top: 35px;
 
-  color:
-    var(--olive);
+  color: var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size:32px;
+  font-size: 32px;
 }
 
-.menu-section{
-  margin-top:35px;
+.menu-section {
+  margin-top: 35px;
 }
 
-.menu-section-label{
-  margin-bottom:14px;
+.menu-section-label {
+  margin-bottom: 14px;
 
-  color:
-    var(--gold);
+  color: var(--gold);
 
-  font-size:11px;
+  font-size: 11px;
 
-  letter-spacing:2px;
+  letter-spacing: 2px;
 
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
-.menu-option{
-  width:100%;
+.menu-option {
+  width: 100%;
 
   padding:
     16px 0;
 
-  border:0;
+  border: 0;
 
   border-bottom:
     1px solid var(--line);
 
-  background:transparent;
+  background: transparent;
 
-  color:
-    var(--olive);
+  color: var(--olive);
 
-  text-align:left;
+  text-align: left;
 
-  cursor:pointer;
+  cursor: pointer;
 
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  text-decoration:none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.menu-option small{
-  color:
-    var(--muted);
+.menu-option small {
+  color: var(--muted);
 }
 
-.menu-option.selected{
-  color:
-    var(--gold);
+.menu-option.selected {
+  color: var(--gold);
 
-  font-weight:600;
+  font-weight: 600;
 }
 
-.menu-option.selected::after{
-  content:"✓";
+.menu-option.selected::after {
+  content: "✓";
 
-  color:
-    var(--gold);
+  color: var(--gold);
 }
 
-.menu-divider{
-  height:1px;
+.menu-divider {
+  height: 1px;
 
   margin:
     32px 0;
@@ -919,29 +1086,24 @@ header{
 
 
 /* =====================================================
-   RTL
+   ARABIC UI
 ===================================================== */
 
-html[dir="rtl"]
-.menu-panel{
-  right:auto;
-
-  left:0;
+html[dir="rtl"] .menu-panel {
+  right: auto;
+  left: 0;
 
   transform:
     translateX(-100%);
 }
 
-html[dir="rtl"]
-.menu-overlay.open
-.menu-panel{
+html[dir="rtl"] .menu-overlay.open .menu-panel {
   transform:
     translateX(0);
 }
 
-html[dir="rtl"]
-.menu-option{
-  text-align:right;
+html[dir="rtl"] .menu-option {
+  text-align: right;
 }
 
 
@@ -949,46 +1111,43 @@ html[dir="rtl"]
    FOOTER
 ===================================================== */
 
-footer{
+footer {
   padding:
     55px 28px;
 
   border-top:
     1px solid var(--line);
 
-  text-align:center;
+  text-align: center;
 }
 
-.footer-name{
-  color:
-    var(--olive);
+.footer-name {
+  color: var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size:24px;
+  font-size: 24px;
 }
 
-.footer-sub{
-  margin-top:8px;
+.footer-sub {
+  margin-top: 8px;
 
-  color:
-    var(--muted);
+  color: var(--muted);
 
-  font-size:10px;
+  font-size: 10px;
 
-  letter-spacing:3px;
+  letter-spacing: 3px;
 }
 
-.footer-copy{
-  margin-top:28px;
+.footer-copy {
+  margin-top: 28px;
 
-  color:
-    var(--muted);
+  color: var(--muted);
 
-  font-size:12px;
+  font-size: 12px;
 }
 
 
@@ -996,21 +1155,20 @@ footer{
    DESKTOP
 ===================================================== */
 
-@media(min-width:800px){
+@media (min-width: 800px) {
 
-  .header-inner{
-    height:104px;
+  .header-inner {
+    height: 104px;
   }
 
-  .hero{
-    padding-top:90px;
-
-    padding-bottom:75px;
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 90px;
   }
 
-  .printable-grid{
+  .book-grid {
     grid-template-columns:
-      repeat(3,minmax(0,1fr));
+      repeat(3, minmax(0, 1fr));
 
     gap:
       65px 35px;
@@ -1018,52 +1176,62 @@ footer{
 
 }
 
-@media(max-width:600px){
 
-  .header-inner{
-    height:88px;
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .header-inner {
+    height: 88px;
 
     padding:
       0 18px;
   }
 
-  .hero{
+  .brand-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .hero {
     padding:
-      62px 28px 55px;
+      72px 28px 65px;
   }
 
-  .hero h1{
-    font-size:49px;
+  .hero h1 {
+    font-size: 49px;
   }
 
-  .hero p{
-    font-size:16px;
+  .hero p {
+    font-size: 16px;
   }
 
-  .printables{
+  .catalog {
     padding:
       0 30px 80px;
   }
 
-  .section-title{
-    font-size:34px;
+  .section-title {
+    font-size: 34px;
   }
 
-  .section-intro{
-    font-size:15px;
-  }
-
-  .printable-grid{
+  .book-grid {
     gap:
       48px 24px;
   }
 
-  .product-title{
-    font-size:20px;
+  .book-title {
+    font-size: 20px;
   }
 
-  .menu-panel{
-    width:90vw;
+  .menu-panel {
+    width: 90vw;
   }
 
 }
@@ -1071,7 +1239,6 @@ footer{
 </style>
 
 </head>
-
 
 <body>
 
@@ -1084,12 +1251,9 @@ footer{
 
   <div class="header-inner">
 
-    <a
-      href="../"
-      class="brand"
-    >
+    <a href="#" class="brand">
 
-      <div>
+      <div class="brand-text">
 
         <div class="brand-name">
           Little Syami
@@ -1104,13 +1268,17 @@ footer{
     </a>
 
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
+    <div class="header-actions">
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+    </div>
 
   </div>
 
@@ -1277,15 +1445,15 @@ footer{
       </button>
 
     </div>
-
+    <!-- =====================================================
+     MENU LINKS
+===================================================== -->
 
     <div class="menu-divider"></div>
 
 
-    <!-- NAVIGATION -->
-
     <a
-      href="../#books"
+      href="#books"
       class="menu-option"
       id="menuBooks"
       data-i18n="booksLink"
@@ -1295,7 +1463,7 @@ footer{
 
 
     <a
-      href="../merchandise/"
+      href="/merchandise/"
       class="menu-option"
       id="menuMerchandise"
       data-i18n="merchandiseLink"
@@ -1305,7 +1473,7 @@ footer{
 
 
     <a
-      href="./"
+      href="/printables/"
       class="menu-option"
       id="menuPrintables"
       data-i18n="printablesLink"
@@ -1331,23 +1499,36 @@ footer{
 
 <section class="hero">
 
+  <img
+    src="assets/logo/Little syami logo tanpa text.webp"
+    alt="Little Syami"
+    style="
+      display:block;
+      width:210px;
+      height:auto;
+      margin:-45px auto -15px;
+    "
+  >
+
+
   <div
     class="eyebrow"
     data-i18n="eyebrow"
   >
-    LITTLE SYAMI PRINTABLES
+    LITTLE SYAMI PUBLISHING
   </div>
 
 
   <h1 data-i18n="heroTitle">
-    Little Things<br>
-    to Make &amp; Explore
+    Stories to<br>
+    Grow With
   </h1>
 
 
   <p data-i18n="heroDescription">
-    Printable activities inspired by Little Syami's stories,
-    learning, imagination, and play.
+    Thoughtful children's books inspired by faith,
+    family, imagination, and the beauty of the
+    world around us.
   </p>
 
 
@@ -1366,618 +1547,1105 @@ footer{
 </section>
 
 
+
 <!-- =====================================================
-     PRINTABLE CATALOG
+     CATALOG
 ===================================================== -->
 
 <section
-  class="printables"
-  id="printables"
+  class="catalog"
+  id="books"
 >
 
-  <h2
-    class="section-title"
-    data-i18n="ourPrintables"
+
+<!-- =====================================================
+     FILTER TOGGLE
+===================================================== -->
+
+<button
+  type="button"
+  class="filters-toggle"
+  id="filtersToggle"
+  aria-expanded="false"
+  aria-controls="filterPanel"
+>
+
+  <span
+    id="filtersToggleText"
+    data-i18n="showFilters"
   >
-    Printables
-  </h2>
+    Show Filters
+  </span>
 
 
-  <p
-    class="section-intro"
-    data-i18n="catalogIntro"
+  <span
+    class="filters-toggle-icon"
+    aria-hidden="true"
   >
-    Printable resources for stories, learning, play,
-    and little moments of creativity.
-  </p>
+    ↓
+  </span>
 
+</button>
 
-  <!-- FILTER TOGGLE -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
-  <button
-    type="button"
-    class="filters-toggle"
-    id="filtersToggle"
-    aria-expanded="false"
-    aria-controls="filterPanel"
-  >
+<div
+  class="search-wrap"
+  id="searchWrap"
+>
 
-    <span
-      id="filtersToggleText"
-      data-i18n="showFilters"
-    >
-      Show Filters
-    </span>
-
-    <span
-      class="filters-toggle-icon"
-      aria-hidden="true"
-    >
-      ↓
-    </span>
-
-  </button>
-
-
-  <!-- SEARCH — ALWAYS VISIBLE -->
-
-  <div class="search-wrap">
-
-    <input
-      type="search"
-      class="search-input"
-      id="printableSearch"
-      placeholder="Search"
-      autocomplete="off"
-      aria-label="Search printables"
-    >
-
-  </div>
-
-
-  <!-- HIDDEN FILTER PANEL -->
-
-  <div
-    class="filter-panel"
-    id="filterPanel"
+  <input
+    type="search"
+    class="search-input"
+    id="bookSearch"
+    placeholder="Search"
+    autocomplete="off"
+    aria-label="Search books"
   >
 
-      <!-- =================================================
-         SORT BY
-    ================================================== -->
+</div>
 
-    <div class="filter-group">
+<!-- =====================================================
+     HIDDEN FILTER PANEL
+===================================================== -->
 
-      <span
-        class="filter-label"
-        data-i18n="sortBy"
-      >
-        Sort by
-      </span>
-
-
-      <select
-        class="sort-select"
-        id="sortSelect"
-        aria-label="Sort printables"
-      >
-
-        <option
-          value="default"
-          data-i18n="sortDefault"
-        >
-          Default
-        </option>
-
-
-        <option
-          value="latest"
-          data-i18n="sortLatest"
-        >
-          Latest
-        </option>
-
-
-        <option
-          value="price-asc"
-          data-i18n="sortPriceAsc"
-        >
-          Price Ascending
-        </option>
-
-
-        <option
-          value="price-desc"
-          data-i18n="sortPriceDesc"
-        >
-          Price Descending
-        </option>
-
-      </select>
-
-    </div>
-
-
-    <!-- =================================================
-         AGE
-    ================================================== -->
-
-    <div class="filter-group">
-
-      <span
-        class="filter-label"
-        data-i18n="ageLabel"
-      >
-        Age
-      </span>
-
-
-      <div
-        class="age-list"
-        id="ageFilters"
-      >
-
-        <button
-          type="button"
-          class="age-button active"
-          data-age-filter="all"
-          data-i18n="allAges"
-        >
-          All Ages
-        </button>
-
-
-        <div
-          class="age-group-title"
-          data-i18n="earlyChildhood"
-        >
-          Early Childhood
-        </div>
-
-
-        <button
-          type="button"
-          class="age-button age-subbutton"
-          data-age-filter="0-3"
-          data-i18n="ages03"
-        >
-          0–3 Years
-        </button>
-
-
-        <button
-          type="button"
-          class="age-button age-subbutton"
-          data-age-filter="3-6"
-          data-i18n="ages36"
-        >
-          3–6 Years
-        </button>
-
-
-        <div
-          class="age-group-title"
-          data-i18n="childrenCategory"
-        >
-          Children
-        </div>
-
-
-        <button
-          type="button"
-          class="age-button age-subbutton"
-          data-age-filter="6-9"
-          data-i18n="ages69"
-        >
-          6–9 Years
-        </button>
-
-
-        <button
-          type="button"
-          class="age-button age-subbutton"
-          data-age-filter="9-12"
-          data-i18n="ages912"
-        >
-          9–12 Years
-        </button>
-
-
-        <div
-          class="age-group-title"
-          data-i18n="youngAdults"
-        >
-          Young Adults
-        </div>
-
-
-        <button
-          type="button"
-          class="age-button age-subbutton"
-          data-age-filter="13-18"
-        >
-          13–18 Years
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
+<div
+  class="filter-panel"
+  id="filterPanel"
+>
 
 
   <!-- =================================================
-       PRINTABLE LANGUAGE — ALWAYS VISIBLE
-  ================================================== -->
+       SORT BY
+  ================================================= -->
 
-  <div
-    class="filter-group language-group"
-  >
+  <div class="sort-row">
+
+    <span
+      class="sort-label"
+      data-i18n="sortBy"
+    >
+      Sort by
+    </span>
+
+
+    <select
+      class="sort-select"
+      id="sortSelect"
+      aria-label="Sort books"
+    >
+
+      <option
+        value="category"
+        data-i18n="sortCategory"
+      >
+        Category
+      </option>
+
+
+      <option
+        value="latest"
+        data-i18n="sortLatest"
+      >
+        Latest
+      </option>
+
+
+      <option
+        value="price-asc"
+        data-i18n="sortPriceAsc"
+      >
+        Price Ascending
+      </option>
+
+
+      <option
+        value="price-desc"
+        data-i18n="sortPriceDesc"
+      >
+        Price Descending
+      </option>
+
+    </select>
+
+  </div>
+
+
+
+  <!-- =================================================
+       CATEGORY
+  ================================================= -->
+
+  <div class="filter-group">
 
     <span
       class="filter-label"
-      data-i18n="printableLanguageLabel"
+      data-i18n="categoryLabel"
     >
-      Printable Language
+      Category
     </span>
 
 
     <div
-      class="filters"
-      id="languageFilters"
+      class="category-filter"
+      id="categoryFilters"
     >
 
+
+      <!-- ALL CATEGORIES -->
+
       <button
-        class="filter-btn active"
-        data-language="all"
+        type="button"
+        class="category-btn active"
+        data-category="all"
+        data-i18n="allCategories"
       >
-        English
+        All Categories
       </button>
 
 
+
+      <!-- EARLY CHILDHOOD -->
+
+      <div class="category-group">
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="early-childhood"
+          data-i18n="earlyChildhood"
+        >
+          Early Childhood
+        </button>
+
+
+        <div class="category-subcategories">
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="0-3"
+            data-i18n="ages03"
+          >
+            0–3 Years
+          </button>
+
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="3-6"
+            data-i18n="ages36"
+          >
+            3–6 Years
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CHILDREN -->
+
+      <div class="category-group">
+
+        <button
+          type="button"
+          class="category-btn"
+          data-category="children"
+          data-i18n="childrenCategory"
+        >
+          Children
+        </button>
+
+
+        <div class="category-subcategories">
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="6-9"
+            data-i18n="ages69"
+          >
+            6–9 Years
+          </button>
+
+
+          <button
+            type="button"
+            class="category-btn"
+            data-age-category="9-12"
+            data-i18n="ages912"
+          >
+            9–12 Years
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- YOUNG ADULTS -->
+
       <button
-        class="filter-btn"
-        data-language="ar"
+        type="button"
+        class="category-btn"
+        data-category="young-adults"
+        data-i18n="youngAdults"
       >
-        العربية
+        Young Adults
       </button>
 
 
-      <button
-        class="filter-btn"
-        data-language="id"
-      >
-        Bahasa
-      </button>
+    </div>
+
+  </div>
+
+</div>
 
 
-      <button
-        class="filter-btn"
-        data-language="tr"
+
+<!-- =====================================================
+     BOOK LANGUAGE — ALWAYS VISIBLE
+===================================================== -->
+
+<div class="filter-group">
+
+  <span
+    class="filter-label"
+    data-i18n="bookLanguageLabel"
+  >
+    Book Language
+  </span>
+
+
+  <div
+    class="filters"
+    id="languageFilters"
+  >
+
+    <button
+      type="button"
+      class="filter-btn active"
+      data-language="en"
+    >
+      English
+    </button>
+
+
+    <button
+      type="button"
+      class="filter-btn"
+      data-language="ar"
+    >
+      العربية
+    </button>
+
+
+    <button
+      type="button"
+      class="filter-btn"
+      data-language="id"
+    >
+      Bahasa
+    </button>
+
+
+    <button
+      type="button"
+      class="filter-btn"
+      data-language="tr"
+    >
+      Türkçe
+    </button>
+
+
+    <button
+      type="button"
+      class="filter-btn"
+      data-language="all"
+      data-i18n="allLanguages"
+    >
+      All Languages
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOK GRID
+===================================================== -->
+
+<div
+  class="book-grid"
+  id="bookGrid"
+>
+
+
+<!-- =====================================================
+     BOOK 1 — SHAHZADE INDONESIAN
+===================================================== -->
+
+<article
+  class="book-card"
+  data-age="4-8"
+  data-language="id"
+  data-price-usd="2.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <img
+        class="book-cover-image"
+        src="assets/books/shahzadeID.webp"
+        alt="Di Kebun Pir — Hari Panen Pir di Desa"
       >
-        Türkçe
-      </button>
 
     </div>
 
   </div>
 
 
-  <!-- =================================================
-       PRINTABLE GRID
-  ================================================== -->
+  <div class="book-info">
 
-  <div
-    class="printable-grid"
-    id="printableGrid"
-  >
-
-      <!-- =================================================
-         PRODUCT 1
-    ================================================== -->
-
-    <article
-      class="printable-card"
-      data-age="4-8"
-      data-language="all"
-      data-price-usd="0"
-      data-date="2026-09-23"
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
     >
-
-      <div class="product-image-wrap">
-
-        <div class="product-placeholder">
-          Preview Coming Soon
-        </div>
-
-      </div>
+      DIGITAL BOOK
+    </div>
 
 
-      <div class="product-info">
-
-        <div
-          class="product-type"
-          data-i18n="productOneType"
-        >
-          STORIES
-        </div>
+    <h3 class="book-title">
+      Di Kebun Pir
+    </h3>
 
 
-        <h3
-          class="product-title"
-          data-i18n="productOneTitle"
-        >
-          Shahzade Story Activity Pack
-        </h3>
+    <div class="book-meta">
+      Ages 4–8
+    </div>
 
 
-        <div
-          class="product-description"
-          data-i18n="productOneDescription"
-        >
-          Printable activities inspired by Shahzade's story.
-        </div>
+    <div class="book-language">
+      Bahasa Indonesia
+    </div>
 
 
-        <div
-          class="product-format"
-          data-i18n="productOneFormat"
-        >
-          PDF · Instant Download
-        </div>
-
-
-        <div
-          class="product-price"
-          data-price
-          data-price-usd="0"
-        >
-          —
-        </div>
-
-
-        <a
-          href="#"
-          class="buy-button"
-          data-i18n="view"
-        >
-          View
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================================
-         PRODUCT 2
-    ================================================== -->
-
-    <article
-      class="printable-card"
-      data-age="4-8"
-      data-language="all"
-      data-price-usd="0"
-      data-date="2026-09-23"
+    <div
+      class="book-price"
+      data-price
     >
-
-      <div class="product-image-wrap">
-
-        <div class="product-placeholder">
-          Preview Coming Soon
-        </div>
-
-      </div>
+      USD 2.99
+    </div>
 
 
-      <div class="product-info">
-
-        <div
-          class="product-type"
-          data-i18n="productTwoType"
-        >
-          LEARNING
-        </div>
-
-
-        <h3
-          class="product-title"
-          data-i18n="productTwoTitle"
-        >
-          Little Syami Learning Printable
-        </h3>
-
-
-        <div
-          class="product-description"
-          data-i18n="productTwoDescription"
-        >
-          Gentle learning activities for curious little minds.
-        </div>
-
-
-        <div
-          class="product-format"
-          data-i18n="productTwoFormat"
-        >
-          PDF · Instant Download
-        </div>
-
-
-        <div
-          class="product-price"
-          data-price
-          data-price-usd="0"
-        >
-          —
-        </div>
-
-
-        <a
-          href="#"
-          class="buy-button"
-          data-i18n="view"
-        >
-          View
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================================
-         PRODUCT 3
-    ================================================== -->
-
-    <article
-      class="printable-card"
-      data-age="4-8"
-      data-language="all"
-      data-price-usd="0"
-      data-date="2026-09-23"
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
     >
+      Buy
+    </a>
 
-      <div class="product-image-wrap">
+  </div>
 
-        <div class="product-placeholder">
-          Preview Coming Soon
-        </div>
-
-      </div>
+</article>
 
 
-      <div class="product-info">
 
-        <div
-          class="product-type"
-          data-i18n="productThreeType"
-        >
-          PLAY
-        </div>
+<!-- =====================================================
+     BOOK 2 — SHAHZADE ENGLISH
+===================================================== -->
 
+<article
+  class="book-card"
+  data-age="4-8"
+  data-language="en"
+  data-price-usd="3.99"
+>
 
-        <h3
-          class="product-title"
-          data-i18n="productThreeTitle"
-        >
-          Little Syami Play Pack
-        </h3>
+  <div class="book-cover-wrap">
 
+    <div class="book-cover">
 
-        <div
-          class="product-description"
-          data-i18n="productThreeDescription"
-        >
-          Simple printable games and creative activities.
-        </div>
+      <img
+        class="book-cover-image"
+        src="assets/books/shahzadeEN.webp"
+        alt="In the Pear Orchard — A Pear Harvest Day in the Village"
+      >
 
+    </div>
 
-        <div
-          class="product-format"
-          data-i18n="productThreeFormat"
-        >
-          PDF · Instant Download
-        </div>
+  </div>
 
 
-        <div
-          class="product-price"
-          data-price
-          data-price-usd="0"
-        >
-          —
-        </div>
+  <div class="book-info">
 
-
-        <a
-          href="#"
-          class="buy-button"
-          data-i18n="view"
-        >
-          View
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================================
-         PRODUCT 4
-    ================================================== -->
-
-    <article
-      class="printable-card"
-      data-age="4-8"
-      data-language="all"
-      data-price-usd="0"
-      data-date="2026-09-23"
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
     >
+      DIGITAL BOOK
+    </div>
 
-      <div class="product-image-wrap">
 
-        <div class="product-placeholder">
-          Preview Coming Soon
-        </div>
+    <h3 class="book-title">
+      In the Pear Orchard
+    </h3>
 
+
+    <div class="book-meta">
+      Ages 4–8
+    </div>
+
+
+    <div class="book-language">
+      English
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 3.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =====================================================
+     BOOK 3 — SHAHZADE TURKISH
+===================================================== -->
+
+<article
+  class="book-card"
+  data-age="4-8"
+  data-language="tr"
+  data-price-usd="2.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <img
+        class="book-cover-image"
+        src="assets/books/shahzadeTR.webp"
+        alt="Armut Bahçesinde — Köyde Armut Hasadı Günü"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Armut Bahçesinde
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 4–8
+    </div>
+
+
+    <div class="book-language">
+      Türkçe
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 2.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+<!-- =================================================
+     BOOK 4 — SHAHZADE ARABIC
+================================================= -->
+
+<article
+  class="book-card"
+  data-age="4-8"
+  data-language="ar"
+  data-price-usd="3.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <img
+        class="book-cover-image"
+        src="assets/books/shahzadeAR.webp"
+        alt="في بستان الكمثرى — يوم حصاد الكمثرى في القرية"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3
+      class="book-title"
+      dir="rtl"
+    >
+      في بستان الكمثرى
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 4–8
+    </div>
+
+
+    <div class="book-language">
+      العربية
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 3.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =================================================
+     BOOK 5 — COMING SOON
+================================================= -->
+
+<article
+  class="book-card coming-soon"
+  data-age="4-6"
+  data-language="id"
+  data-price-usd="9.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <div class="crescent"></div>
+
+      <div class="cover-placeholder-title">
+        Little Syami<br>
+        Book Five
       </div>
 
-
-      <div class="product-info">
-
-        <div
-          class="product-type"
-          data-i18n="productFourType"
-        >
-          BUNDLE
-        </div>
-
-
-        <h3
-          class="product-title"
-          data-i18n="productFourTitle"
-        >
-          Little Syami Printable Bundle
-        </h3>
-
-
-        <div
-          class="product-description"
-          data-i18n="productFourDescription"
-        >
-          A collection of Little Syami printables in one bundle.
-        </div>
-
-
-        <div
-          class="product-format"
-          data-i18n="productFourFormat"
-        >
-          PDF · Instant Download
-        </div>
-
-
-        <div
-          class="product-price"
-          data-price
-          data-price-usd="0"
-        >
-          —
-        </div>
-
-
-        <a
-          href="#"
-          class="buy-button"
-          data-i18n="view"
-        >
-          View
-        </a>
-
+      <div class="cover-placeholder-status">
+        DIGITAL BOOK
       </div>
 
-    </article>
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Little Syami Book Five
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 4–6
+    </div>
+
+
+    <div class="book-language">
+      Bahasa Indonesia
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 9.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =================================================
+     BOOK 6 — COMING SOON
+================================================= -->
+
+<article
+  class="book-card coming-soon"
+  data-age="7-9"
+  data-language="tr"
+  data-price-usd="9.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <div class="crescent"></div>
+
+      <div class="cover-placeholder-title">
+        Little Syami<br>
+        Book Six
+      </div>
+
+      <div class="cover-placeholder-status">
+        DIGITAL BOOK
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Little Syami Book Six
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 7–9
+    </div>
+
+
+    <div class="book-language">
+      Türkçe
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 9.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =================================================
+     BOOK 7 — COMING SOON
+================================================= -->
+
+<article
+  class="book-card coming-soon"
+  data-age="4-6"
+  data-language="en"
+  data-price-usd="9.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <div class="crescent"></div>
+
+      <div class="cover-placeholder-title">
+        Little Syami<br>
+        Book Seven
+      </div>
+
+      <div class="cover-placeholder-status">
+        DIGITAL BOOK
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Little Syami Book Seven
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 4–6
+    </div>
+
+
+    <div class="book-language">
+      English
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 9.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =================================================
+     BOOK 8 — COMING SOON
+================================================= -->
+
+<article
+  class="book-card coming-soon"
+  data-age="4-9"
+  data-language="ar"
+  data-price-usd="9.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <div class="crescent"></div>
+
+      <div class="cover-placeholder-title">
+        شايما وهلال<br>
+        الكتاب الثامن
+      </div>
+
+      <div class="cover-placeholder-status">
+        DIGITAL BOOK
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Little Syami Book Eight
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 4–9
+    </div>
+
+
+    <div class="book-language">
+      العربية
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 9.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =================================================
+     BOOK 9 — COMING SOON
+================================================= -->
+
+<article
+  class="book-card coming-soon"
+  data-age="7-9"
+  data-language="id"
+  data-price-usd="9.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <div class="crescent"></div>
+
+      <div class="cover-placeholder-title">
+        Little Syami<br>
+        Book Nine
+      </div>
+
+      <div class="cover-placeholder-status">
+        DIGITAL BOOK
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Little Syami Book Nine
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 7–9
+    </div>
+
+
+    <div class="book-language">
+      Bahasa Indonesia
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 9.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
+
+
+
+<!-- =================================================
+     BOOK 10 — COMING SOON
+================================================= -->
+
+<article
+  class="book-card coming-soon"
+  data-age="4-9"
+  data-language="en"
+  data-price-usd="9.99"
+>
+
+  <div class="book-cover-wrap">
+
+    <div class="book-cover">
+
+      <div class="crescent"></div>
+
+      <div class="cover-placeholder-title">
+        Little Syami<br>
+        Book Ten
+      </div>
+
+      <div class="cover-placeholder-status">
+        DIGITAL BOOK
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="book-info">
+
+    <div
+      class="book-type"
+      data-i18n="digitalBook"
+    >
+      DIGITAL BOOK
+    </div>
+
+
+    <h3 class="book-title">
+      Little Syami Book Ten
+    </h3>
+
+
+    <div class="book-meta">
+      Ages 4–9
+    </div>
+
+
+    <div class="book-language">
+      English
+    </div>
+
+
+    <div
+      class="book-price"
+      data-price
+    >
+      USD 9.99
+    </div>
+
+
+    <a
+      href="#"
+      class="buy-button"
+      data-i18n="buy"
+    >
+      Buy
+    </a>
+
+  </div>
+
+</article>
 
 
   </div>
@@ -1985,6 +2653,7 @@ footer{
 </section>
 
 </main>
+
 
 
 <!-- =====================================================
@@ -2011,15 +2680,29 @@ footer{
   </div>
 
 </footer>
-
-
 <script>
+
+/* =====================================================
+   LITTLE SYAMI SETTINGS
+===================================================== */
+
+/*
+   Base price used only as fallback.
+   Each book has its own data-price-usd.
+*/
+
+const BOOK_PRICE_USD = 9.99;
+
+
+/* =====================================================
+   CURRENCY RATES
+===================================================== */
 
 const CURRENCY_RATES = {
 
   USD: 1,
 
-  TRY: 41,
+  TRY: 41.00,
 
   IDR: 16500,
 
@@ -2033,6 +2716,10 @@ const CURRENCY_RATES = {
 
 };
 
+
+/* =====================================================
+   CURRENCY CONFIG
+===================================================== */
 
 const CURRENCY_CONFIG = {
 
@@ -2101,19 +2788,13 @@ const TRANSLATIONS = {
       "Printables",
 
     eyebrow:
-      "LITTLE SYAMI PRINTABLES",
+      "LITTLE SYAMI PUBLISHING",
 
     heroTitle:
-      "Little Things<br>to Make &amp; Explore",
+      "Stories to<br>Grow With",
 
     heroDescription:
-      "Printable activities inspired by Little Syami's stories, learning, imagination, and play.",
-
-    ourPrintables:
-      "Printables",
-
-    catalogIntro:
-      "Printable resources for stories, learning, play, and little moments of creativity.",
+      "Thoughtful children's books inspired by faith, family, imagination, and the beauty of the world around us.",
 
     showFilters:
       "Show Filters",
@@ -2124,11 +2805,11 @@ const TRANSLATIONS = {
     sortBy:
       "Sort by",
 
-    sortDefault:
-      "Default",
-
     sortLatest:
       "Latest",
+
+    sortCategory:
+      "Category",
 
     sortPriceAsc:
       "Price Ascending",
@@ -2136,11 +2817,11 @@ const TRANSLATIONS = {
     sortPriceDesc:
       "Price Descending",
 
-    ageLabel:
-      "Age",
+    categoryLabel:
+      "Category",
 
-    allAges:
-      "All Ages",
+    allCategories:
+      "All Categories",
 
     earlyChildhood:
       "Early Childhood",
@@ -2163,59 +2844,32 @@ const TRANSLATIONS = {
     youngAdults:
       "Young Adults",
 
-    printableLanguageLabel:
-      "Printable Language",
+    ageLabel:
+      "Age",
 
-    productOneType:
-      "STORIES",
+    bookLanguageLabel:
+      "Book Language",
 
-    productOneTitle:
-      "Shahzade Story Activity Pack",
+    allAges:
+      "All Ages",
 
-    productOneDescription:
-      "Printable activities inspired by Shahzade's story.",
+    ages46:
+      "Ages 4–6",
 
-    productOneFormat:
-      "PDF · Instant Download",
+    ages79:
+      "Ages 7–9",
 
-    productTwoType:
-      "LEARNING",
+    ages49:
+      "Ages 4–9",
 
-    productTwoTitle:
-      "Little Syami Learning Printable",
+    allLanguages:
+      "All Languages",
 
-    productTwoDescription:
-      "Gentle learning activities for curious little minds.",
+    digitalBook:
+      "DIGITAL BOOK",
 
-    productTwoFormat:
-      "PDF · Instant Download",
-
-    productThreeType:
-      "PLAY",
-
-    productThreeTitle:
-      "Little Syami Play Pack",
-
-    productThreeDescription:
-      "Simple printable games and creative activities.",
-
-    productThreeFormat:
-      "PDF · Instant Download",
-
-    productFourType:
-      "BUNDLE",
-
-    productFourTitle:
-      "Little Syami Printable Bundle",
-
-    productFourDescription:
-      "A collection of Little Syami printables in one bundle.",
-
-    productFourFormat:
-      "PDF · Instant Download",
-
-    view:
-      "View",
+    buy:
+      "Buy",
 
     copyright:
       "© 2026 Little Syami Publishing. All Rights Reserved."
@@ -2244,19 +2898,13 @@ const TRANSLATIONS = {
       "Printables",
 
     eyebrow:
-      "PRINTABLE LITTLE SYAMI",
+      "LITTLE SYAMI PUBLISHING",
 
     heroTitle:
-      "Hal-Hal Kecil<br>untuk Dibuat &amp; Dieksplorasi",
+      "Cerita untuk<br>Bertumbuh Bersama",
 
     heroDescription:
-      "Aktivitas printable yang terinspirasi dari cerita, pembelajaran, imajinasi, dan permainan Little Syami.",
-
-    ourPrintables:
-      "Printables",
-
-    catalogIntro:
-      "Materi printable untuk cerita, belajar, bermain, dan momen-momen kecil penuh kreativitas.",
+      "Buku anak yang penuh makna, terinspirasi oleh iman, keluarga, imajinasi, dan keindahan dunia di sekitar kita.",
 
     showFilters:
       "Tampilkan Filter",
@@ -2267,11 +2915,11 @@ const TRANSLATIONS = {
     sortBy:
       "Urutkan",
 
-    sortDefault:
-      "Default",
-
     sortLatest:
       "Terbaru",
+
+    sortCategory:
+      "Kategori",
 
     sortPriceAsc:
       "Harga Terendah",
@@ -2279,11 +2927,11 @@ const TRANSLATIONS = {
     sortPriceDesc:
       "Harga Tertinggi",
 
-    ageLabel:
-      "Usia",
+    categoryLabel:
+      "Kategori",
 
-    allAges:
-      "Semua Usia",
+    allCategories:
+      "Semua Kategori",
 
     earlyChildhood:
       "Anak Usia Dini",
@@ -2306,59 +2954,32 @@ const TRANSLATIONS = {
     youngAdults:
       "Remaja",
 
-    printableLanguageLabel:
-      "Bahasa Printable",
+    ageLabel:
+      "Usia",
 
-    productOneType:
-      "STORIES",
+    bookLanguageLabel:
+      "Bahasa Buku",
 
-    productOneTitle:
-      "Shahzade Story Activity Pack",
+    allAges:
+      "Semua Usia",
 
-    productOneDescription:
-      "Aktivitas printable yang terinspirasi dari cerita Shahzade.",
+    ages46:
+      "Usia 4–6",
 
-    productOneFormat:
-      "PDF · Unduhan Instan",
+    ages79:
+      "Usia 7–9",
 
-    productTwoType:
-      "LEARNING",
+    ages49:
+      "Usia 4–9",
 
-    productTwoTitle:
-      "Little Syami Learning Printable",
+    allLanguages:
+      "Semua Bahasa",
 
-    productTwoDescription:
-      "Aktivitas belajar ringan untuk pikiran kecil yang penuh rasa ingin tahu.",
+    digitalBook:
+      "BUKU DIGITAL",
 
-    productTwoFormat:
-      "PDF · Unduhan Instan",
-
-    productThreeType:
-      "PLAY",
-
-    productThreeTitle:
-      "Little Syami Play Pack",
-
-    productThreeDescription:
-      "Permainan printable sederhana dan aktivitas kreatif.",
-
-    productThreeFormat:
-      "PDF · Unduhan Instan",
-
-    productFourType:
-      "BUNDLE",
-
-    productFourTitle:
-      "Little Syami Printable Bundle",
-
-    productFourDescription:
-      "Kumpulan printable Little Syami dalam satu paket.",
-
-    productFourFormat:
-      "PDF · Unduhan Instan",
-
-    view:
-      "Lihat",
+    buy:
+      "Beli",
 
     copyright:
       "© 2026 Little Syami Publishing. Hak Cipta Dilindungi."
@@ -2387,19 +3008,13 @@ const TRANSLATIONS = {
       "Printables",
 
     eyebrow:
-      "LITTLE SYAMI PRINTABLELAR",
+      "LITTLE SYAMI PUBLISHING",
 
     heroTitle:
-      "Yapılacak ve<br>Keşfedilecek Küçük Şeyler",
+      "Birlikte<br>Büyüten Hikâyeler",
 
     heroDescription:
-      "Little Syami'nin hikâyelerinden, öğrenmeden, hayal gücünden ve oyundan ilham alan yazdırılabilir etkinlikler.",
-
-    ourPrintables:
-      "Printables",
-
-    catalogIntro:
-      "Hikâyeler, öğrenme, oyun ve küçük yaratıcılık anları için yazdırılabilir kaynaklar.",
+      "İnançtan, aileden, hayal gücünden ve çevremizdeki dünyanın güzelliklerinden ilham alan çocuk kitapları.",
 
     showFilters:
       "Filtreleri Göster",
@@ -2408,25 +3023,25 @@ const TRANSLATIONS = {
       "Filtreleri Gizle",
 
     sortBy:
-      "Sıralama",
-
-    sortDefault:
-      "Varsayılan",
+      "Sırala",
 
     sortLatest:
       "En Yeni",
 
+    sortCategory:
+      "Kategori",
+
     sortPriceAsc:
-      "En Düşük Fiyat",
+      "Artan Fiyat",
 
     sortPriceDesc:
-      "En Yüksek Fiyat",
+      "Azalan Fiyat",
 
-    ageLabel:
-      "Yaş",
+    categoryLabel:
+      "Kategori",
 
-    allAges:
-      "Tüm Yaşlar",
+    allCategories:
+      "Tüm Kategoriler",
 
     earlyChildhood:
       "Erken Çocukluk",
@@ -2447,61 +3062,34 @@ const TRANSLATIONS = {
       "9–12 Yaş",
 
     youngAdults:
-      "Gençler",
+      "Genç Yetişkinler",
 
-    printableLanguageLabel:
-      "Printable Dili",
+    ageLabel:
+      "Yaş",
 
-    productOneType:
-      "STORIES",
+    bookLanguageLabel:
+      "Kitap Dili",
 
-    productOneTitle:
-      "Shahzade Story Activity Pack",
+    allAges:
+      "Tüm Yaşlar",
 
-    productOneDescription:
-      "Shahzade'nin hikâyesinden ilham alan yazdırılabilir etkinlikler.",
+    ages46:
+      "4–6 Yaş",
 
-    productOneFormat:
-      "PDF · Anında İndirme",
+    ages79:
+      "7–9 Yaş",
 
-    productTwoType:
-      "LEARNING",
+    ages49:
+      "4–9 Yaş",
 
-    productTwoTitle:
-      "Little Syami Learning Printable",
+    allLanguages:
+      "Tüm Diller",
 
-    productTwoDescription:
-      "Meraklı küçük zihinler için nazik öğrenme etkinlikleri.",
+    digitalBook:
+      "DİJİTAL KİTAP",
 
-    productTwoFormat:
-      "PDF · Anında İndirme",
-
-    productThreeType:
-      "PLAY",
-
-    productThreeTitle:
-      "Little Syami Play Pack",
-
-    productThreeDescription:
-      "Basit yazdırılabilir oyunlar ve yaratıcı etkinlikler.",
-
-    productThreeFormat:
-      "PDF · Anında İndirme",
-
-    productFourType:
-      "BUNDLE",
-
-    productFourTitle:
-      "Little Syami Printable Bundle",
-
-    productFourDescription:
-      "Little Syami printables koleksiyonunu tek pakette bir araya getirir.",
-
-    productFourFormat:
-      "PDF · Anında İndirme",
-
-    view:
-      "İncele",
+    buy:
+      "Satın Al",
 
     copyright:
       "© 2026 Little Syami Publishing. Tüm Hakları Saklıdır."
@@ -2527,22 +3115,16 @@ const TRANSLATIONS = {
       "المنتجات",
 
     printablesLink:
-      "المطبوعات",
+      "الملفات القابلة للطباعة",
 
     eyebrow:
-      "مطبوعات ليتل شايما",
+      "دار ليتل شايما للنشر",
 
     heroTitle:
-      "أشياء صغيرة<br>لنصنعها ونكتشفها",
+      "قصص تنمو<br>معها",
 
     heroDescription:
-      "أنشطة قابلة للطباعة مستوحاة من قصص ليتل شايما والتعلّم والخيال واللعب.",
-
-    ourPrintables:
-      "المطبوعات",
-
-    catalogIntro:
-      "موارد قابلة للطباعة للقصص والتعلّم واللعب ولحظات صغيرة من الإبداع.",
+      "كتب أطفال هادفة مستوحاة من الإيمان والعائلة والخيال وجمال العالم من حولنا.",
 
     showFilters:
       "إظهار الفلاتر",
@@ -2553,23 +3135,23 @@ const TRANSLATIONS = {
     sortBy:
       "ترتيب حسب",
 
-    sortDefault:
-      "افتراضي",
-
     sortLatest:
       "الأحدث",
 
+    sortCategory:
+      "التصنيف",
+
     sortPriceAsc:
-      "السعر: من الأقل",
+      "السعر: من الأقل إلى الأعلى",
 
     sortPriceDesc:
-      "السعر: من الأعلى",
+      "السعر: من الأعلى إلى الأقل",
 
-    ageLabel:
-      "العمر",
+    categoryLabel:
+      "التصنيف",
 
-    allAges:
-      "جميع الأعمار",
+    allCategories:
+      "جميع التصنيفات",
 
     earlyChildhood:
       "الطفولة المبكرة",
@@ -2592,59 +3174,32 @@ const TRANSLATIONS = {
     youngAdults:
       "اليافعون",
 
-    printableLanguageLabel:
-      "لغة المطبوعات",
+    ageLabel:
+      "العمر",
 
-    productOneType:
-      "القصص",
+    bookLanguageLabel:
+      "لغة الكتاب",
 
-    productOneTitle:
-      "مجموعة أنشطة قصة شاهزاده",
+    allAges:
+      "جميع الأعمار",
 
-    productOneDescription:
-      "أنشطة قابلة للطباعة مستوحاة من قصة شاهزاده.",
+    ages46:
+      "الأعمار ٤–٦",
 
-    productOneFormat:
-      "PDF · تنزيل فوري",
+    ages79:
+      "الأعمار ٧–٩",
 
-    productTwoType:
-      "التعلّم",
+    ages49:
+      "الأعمار ٤–٩",
 
-    productTwoTitle:
-      "مطبوعات ليتل شايما التعليمية",
+    allLanguages:
+      "جميع اللغات",
 
-    productTwoDescription:
-      "أنشطة تعليمية لطيفة للعقول الصغيرة المحبة للاستكشاف.",
+    digitalBook:
+      "كتاب رقمي",
 
-    productTwoFormat:
-      "PDF · تنزيل فوري",
-
-    productThreeType:
-      "اللعب",
-
-    productThreeTitle:
-      "مجموعة ألعاب ليتل شايما",
-
-    productThreeDescription:
-      "ألعاب وأنشطة إبداعية بسيطة قابلة للطباعة.",
-
-    productThreeFormat:
-      "PDF · تنزيل فوري",
-
-    productFourType:
-      "حزمة",
-
-    productFourTitle:
-      "حزمة مطبوعات ليتل شايما",
-
-    productFourDescription:
-      "مجموعة من مطبوعات ليتل شايما في حزمة واحدة.",
-
-    productFourFormat:
-      "PDF · تنزيل فوري",
-
-    view:
-      "عرض",
+    buy:
+      "شراء",
 
     copyright:
       "© 2026 Little Syami Publishing. جميع الحقوق محفوظة."
@@ -2653,21 +3208,23 @@ const TRANSLATIONS = {
 
 };
 
+
 /* =====================================================
-   INITIAL LANGUAGE
+   DETECT INITIAL LANGUAGE
 ===================================================== */
 
-function detectLanguage(){
+function detectLanguage() {
 
   const saved =
     localStorage.getItem(
       "littleSyamiLanguage"
     );
 
-  if(
+
+  if (
     saved &&
     TRANSLATIONS[saved]
-  ){
+  ) {
     return saved;
   }
 
@@ -2679,46 +3236,48 @@ function detectLanguage(){
     ).toLowerCase();
 
 
-  if(
+  if (
     browserLanguage.startsWith("id")
-  ){
+  ) {
     return "id";
   }
 
 
-  if(
+  if (
     browserLanguage.startsWith("tr")
-  ){
+  ) {
     return "tr";
   }
 
 
-  if(
+  if (
     browserLanguage.startsWith("ar")
-  ){
+  ) {
     return "ar";
   }
 
 
   return "en";
+
 }
 
 
 /* =====================================================
-   INITIAL CURRENCY
+   DETECT INITIAL CURRENCY
 ===================================================== */
 
-function detectCurrency(){
+function detectCurrency() {
 
   const saved =
     localStorage.getItem(
       "littleSyamiCurrency"
     );
 
-  if(
+
+  if (
     saved &&
     CURRENCY_CONFIG[saved]
-  ){
+  ) {
     return saved;
   }
 
@@ -2730,127 +3289,95 @@ function detectCurrency(){
     ).toLowerCase();
 
 
-  if(locale === "en-us"){
+  /* United States */
+
+  if (
+    locale === "en-us"
+  ) {
     return "USD";
   }
 
 
-  if(locale.startsWith("id-id")){
+  /* Indonesia */
+
+  if (
+    locale.startsWith("id-id")
+  ) {
     return "IDR";
   }
 
 
-  if(locale.startsWith("tr-tr")){
+  /* Turkey */
+
+  if (
+    locale.startsWith("tr-tr")
+  ) {
     return "TRY";
   }
 
 
-  if(locale.startsWith("ar-ae")){
+  /* United Arab Emirates */
+
+  if (
+    locale.startsWith("ar-ae")
+  ) {
     return "AED";
   }
 
 
-  if(locale.startsWith("ar-sa")){
+  /* Saudi Arabia */
+
+  if (
+    locale.startsWith("ar-sa")
+  ) {
     return "SAR";
   }
 
 
-  if(
-    /^(de|fr|es|it|nl|pt|el|fi|ie|at|be|lu)-/
-      .test(locale)
-  ){
+  /* European currencies */
+
+  if (
+    locale.startsWith("de-") ||
+    locale.startsWith("fr-") ||
+    locale.startsWith("es-") ||
+    locale.startsWith("it-") ||
+    locale.startsWith("nl-") ||
+    locale.startsWith("pt-") ||
+    locale.startsWith("el-") ||
+    locale.startsWith("fi-") ||
+    locale.startsWith("ie-") ||
+    locale.startsWith("at-") ||
+    locale.startsWith("be-") ||
+    locale.startsWith("lu-")
+  ) {
     return "EUR";
   }
 
 
+  /* Default */
+
   return "USD";
+
 }
 
 
 let currentLanguage =
   detectLanguage();
 
+
 let currentCurrency =
   detectCurrency();
-
-
-let selectedAge =
-  "all";
-
-let selectedLanguage =
-  "all";
-
-let selectedSearch =
-  "";
-
-let selectedSort =
-  "default";
-
-
-/* =====================================================
-   ELEMENTS
-===================================================== */
-
-const filtersToggle =
-  document.getElementById(
-    "filtersToggle"
-  );
-
-const filterPanel =
-  document.getElementById(
-    "filterPanel"
-  );
-
-const filtersToggleText =
-  document.getElementById(
-    "filtersToggleText"
-  );
-
-const searchInput =
-  document.getElementById(
-    "printableSearch"
-  );
-
-const sortSelect =
-  document.getElementById(
-    "sortSelect"
-  );
-
-const ageButtons =
-  [
-    ...document.querySelectorAll(
-      "[data-age-filter]"
-    )
-  ];
-
-const languageButtons =
-  [
-    ...document.querySelectorAll(
-      "#languageFilters .filter-btn"
-    )
-  ];
-
-const grid =
-  document.getElementById(
-    "printableGrid"
-  );
-
-let cards =
-  [
-    ...document.querySelectorAll(
-      ".printable-card"
-    )
-  ];
 
 
 /* =====================================================
    APPLY LANGUAGE
 ===================================================== */
 
-function applyLanguage(language){
+function applyLanguage(language) {
 
   currentLanguage =
     language;
+
 
   localStorage.setItem(
     "littleSyamiLanguage",
@@ -2881,9 +3408,10 @@ function applyLanguage(language){
       const key =
         element.dataset.i18n;
 
-      if(
+
+      if (
         translation[key]
-      ){
+      ) {
 
         element.innerHTML =
           translation[key];
@@ -2908,61 +3436,95 @@ function applyLanguage(language){
     });
 
 
-  filtersToggleText.textContent =
-    filterPanel.classList.contains("open")
-      ? translation.hideFilters
-      : translation.showFilters;
+  /*
+     Keep the filter toggle label
+     synchronized with its current state.
+  */
+
+  if (
+    typeof filterPanel !== "undefined" &&
+    filterPanel &&
+    typeof filtersToggleText !== "undefined" &&
+    filtersToggleText
+  ) {
+
+    filtersToggleText.textContent =
+      filterPanel.classList.contains("open")
+        ? translation.hideFilters
+        : translation.showFilters;
+
+  }
 
 }
 
 
 /* =====================================================
-   UPDATE PRICES
+   FORMAT PRICE
 ===================================================== */
 
-function updatePrices(){
+function formatPrice(
+  usdPrice,
+  currency
+) {
+
+  const converted =
+    usdPrice *
+    CURRENCY_RATES[currency];
+
+
+  const config =
+    CURRENCY_CONFIG[currency];
+
+
+  return new Intl.NumberFormat(
+    config.locale,
+    {
+      style: "currency",
+      currency: config.currency,
+      maximumFractionDigits:
+        currency === "IDR"
+          ? 0
+          : 2
+    }
+  ).format(converted);
+
+}
+
+
+/* =====================================================
+   UPDATE ALL PRICES
+===================================================== */
+
+function updatePrices() {
 
   document
     .querySelectorAll(
-      "[data-price]"
+      ".book-card"
     )
-    .forEach(element => {
+    .forEach(card => {
 
-      const usd =
+      const price =
         Number(
-          element.dataset.priceUsd
+          card.dataset.priceUsd ||
+          BOOK_PRICE_USD
         );
 
 
-      if(!usd){
+      const priceElement =
+        card.querySelector(
+          "[data-price]"
+        );
 
-        element.textContent =
-          "—";
 
-        return;
+      if (priceElement) {
+
+        priceElement.textContent =
+          formatPrice(
+            price,
+            currentCurrency
+          );
 
       }
-
-
-      const config =
-        CURRENCY_CONFIG[
-          currentCurrency
-        ];
-
-
-      element.textContent =
-        new Intl.NumberFormat(
-          config.locale,
-          {
-            style:"currency",
-            currency:config.currency
-          }
-        ).format(
-          usd *
-          CURRENCY_RATES[
-            currentCurrency
-          ]
-        );
 
     });
 
@@ -2985,244 +3547,396 @@ function updatePrices(){
 
 
 /* =====================================================
-   AGE MATCH
+   FILTER STATE
 ===================================================== */
 
-function ageMatches(
-  cardAge,
-  selectedRange
-){
-
-  if(
-    selectedRange === "all" ||
-    !cardAge
-  ){
-    return true;
-  }
+let selectedAgeCategory =
+  "all";
 
 
-  const bookParts =
-    cardAge
-      .split("-")
-      .map(Number);
+let selectedBookLanguage =
+  "en";
 
 
-  const filterParts =
-    selectedRange
-      .split("-")
-      .map(Number);
-
-
-  const bookMin =
-    bookParts[0];
-
-  const bookMax =
-    bookParts[1];
-
-  const filterMin =
-    filterParts[0];
-
-  const filterMax =
-    filterParts[1];
-
-
-  return (
-    bookMin <= filterMax &&
-    bookMax >= filterMin
-  );
-}
+let selectedSort =
+  "category";
+  
+let selectedSearchTerm =
+  "";
 
 
 /* =====================================================
-   LANGUAGE MATCH
+   FILTER ELEMENTS
 ===================================================== */
 
-function languageMatches(
-  cardLanguage
-){
-
-  return (
-    selectedLanguage === "all" ||
-    cardLanguage === "all" ||
-    cardLanguage === selectedLanguage
+const languageButtons =
+  document.querySelectorAll(
+    "#languageFilters .filter-btn"
   );
 
-}
 
+const categoryButtons =
+  document.querySelectorAll(
+    "#categoryFilters .category-btn"
+  );
+
+
+const books =
+  document.querySelectorAll(
+    ".book-card"
+  );
+const bookSearch =
+  document.getElementById(
+    "bookSearch"
+  );
 
 /* =====================================================
-   UPDATE PRINTABLES
+   FILTER PANEL
 ===================================================== */
 
-function updateCards(){
-
-  cards.forEach(card => {
-
-    const searchableText =
-      card.innerText
-        .toLowerCase();
+const filtersToggle =
+  document.getElementById(
+    "filtersToggle"
+  );
 
 
-    const searchMatch =
-      !selectedSearch ||
-      searchableText.includes(
-        selectedSearch
-      );
+const filterPanel =
+  document.getElementById(
+    "filterPanel"
+  );
 
 
-    const ageMatch =
-      ageMatches(
-        card.dataset.age,
-        selectedAge
-      );
+const filtersToggleText =
+  document.getElementById(
+    "filtersToggleText"
+  );
 
-
-    const languageMatch =
-      languageMatches(
-        card.dataset.language ||
-        "all"
-      );
-
-
-    const visible =
-      searchMatch &&
-      ageMatch &&
-      languageMatch;
-
-
-    card.classList.toggle(
-      "hidden",
-      !visible
-    );
-
-  });
-
-}
-
+const searchWrap =
+  document.getElementById("searchWrap");
+  
 
 /* =====================================================
-   COLLAPSE FILTERS
-===================================================== */
-
-function collapseFilters(){
-
-  filterPanel.classList.remove(
-    "open"
-  );
-
-  filtersToggle.classList.remove(
-    "open"
-  );
-
-  filtersToggle.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  filtersToggleText.textContent =
-    TRANSLATIONS[
-      currentLanguage
-    ].showFilters;
-
-}
-
-
-/* =====================================================
-   SHOW / HIDE FILTERS
+   SHOW / HIDE FILTER PANEL
 ===================================================== */
 
 filtersToggle.addEventListener(
   "click",
   () => {
 
-    const open =
+    const isOpen =
       filterPanel.classList.toggle(
         "open"
       );
 
+if (searchWrap) {
+  searchWrap.hidden = isOpen;
+}
 
     filtersToggle.classList.toggle(
       "open",
-      open
+      isOpen
     );
 
 
     filtersToggle.setAttribute(
       "aria-expanded",
-      String(open)
+      isOpen
     );
 
 
     filtersToggleText.textContent =
-      TRANSLATIONS[
-        currentLanguage
-      ][
-        open
-          ? "hideFilters"
-          : "showFilters"
-      ];
+      isOpen
+        ? TRANSLATIONS[currentLanguage].hideFilters
+        : TRANSLATIONS[currentLanguage].showFilters;
 
   }
 );
 
+
+/* =====================================================
+   AGE RANGE HELPER
+===================================================== */
+
+function getAgeRange(
+  ageValue
+) {
+
+  const parts =
+    ageValue.split("-");
+
+
+  return {
+
+    min:
+      parseInt(
+        parts[0],
+        10
+      ),
+
+    max:
+      parseInt(
+        parts[1],
+        10
+      )
+
+  };
+
+}
+
+
+/* =====================================================
+   AGE RANGE MATCH
+===================================================== */
+
+function ageRangeMatches(
+  bookAge,
+  selectedRange
+) {
+
+  if (
+    selectedRange === "all"
+  ) {
+    return true;
+  }
+
+
+  const bookRange =
+    getAgeRange(bookAge);
+
+
+  const filterRange =
+    getAgeRange(selectedRange);
+
+
+  return (
+    bookRange.min <=
+      filterRange.max &&
+
+    bookRange.max >=
+      filterRange.min
+  );
+
+}
+
+
+/* =====================================================
+   UPDATE BOOKS
+===================================================== */
+
+function updateBooks() {
+
+  books.forEach(book => {
+
+    const bookAge =
+      book.dataset.age;
+
+
+    const bookLanguage =
+      book.dataset.language;
+
+
+    const ageMatch =
+      ageRangeMatches(
+        bookAge,
+        selectedAgeCategory
+      );
+
+
+    const languageMatch =
+  selectedSearchTerm !== ""
+    ? true
+    : (
+        selectedBookLanguage === "all" ||
+        bookLanguage ===
+          selectedBookLanguage
+      );
+
+const searchableText =
+  book.innerText.toLowerCase();
+
+
+const searchMatch =
+  selectedSearchTerm === "" ||
+  searchableText.includes(
+    selectedSearchTerm
+  );
+  
+  if (
+  ageMatch &&
+  languageMatch &&
+  searchMatch
+) {
+
+
+
+      book.classList.remove(
+        "hidden"
+      );
+
+    } else {
+
+      book.classList.add(
+        "hidden"
+      );
+
+    }
+
+  });
+
+}
 
 /* =====================================================
    SEARCH
 ===================================================== */
 
-searchInput.addEventListener(
+bookSearch.addEventListener(
   "input",
   () => {
 
-    selectedSearch =
-      searchInput.value
+    selectedSearchTerm =
+      bookSearch.value
         .trim()
         .toLowerCase();
 
 
-    updateCards();
+    updateBooks();
 
   }
 );
 
-
 /* =====================================================
-   AGE BUTTONS
+   CATEGORY BUTTONS
 ===================================================== */
 
-ageButtons.forEach(
+categoryButtons.forEach(
   button => {
 
     button.addEventListener(
       "click",
       () => {
 
-        selectedAge =
-          button.dataset.ageFilter;
+        categoryButtons.forEach(
+          btn => {
 
-
-        ageButtons.forEach(
-          item => {
-
-            item.classList.toggle(
-              "active",
-              item === button
+            btn.classList.remove(
+              "active"
             );
 
           }
         );
 
 
-        updateCards();
+        button.classList.add(
+          "active"
+        );
 
 
-        collapseFilters();
+        /* -----------------------------
+           ALL CATEGORIES
+        ----------------------------- */
+
+        if (
+          button.dataset.category ===
+          "all"
+        ) {
+
+          selectedAgeCategory =
+            "all";
+
+        }
+
+
+        /* -----------------------------
+           INDIVIDUAL AGE RANGE
+        ----------------------------- */
+
+        else if (
+          button.dataset.ageCategory
+        ) {
+
+          selectedAgeCategory =
+            button.dataset.ageCategory;
+
+        }
+
+
+        /* -----------------------------
+           EARLY CHILDHOOD = 0–6
+        ----------------------------- */
+
+        else if (
+          button.dataset.category ===
+          "early-childhood"
+        ) {
+
+          selectedAgeCategory =
+            "0-6";
+
+        }
+
+
+        /* -----------------------------
+           CHILDREN = 6–12
+        ----------------------------- */
+
+        else if (
+          button.dataset.category ===
+          "children"
+        ) {
+
+          selectedAgeCategory =
+            "6-12";
+
+        }
+
+
+        /* -----------------------------
+           YOUNG ADULTS = 13–18
+        ----------------------------- */
+
+        else if (
+          button.dataset.category ===
+          "young-adults"
+        ) {
+
+          selectedAgeCategory =
+            "13-18";
+
+        }
+
+
+        updateBooks();
+
+
+        /* -----------------------------
+           CLOSE FILTER PANEL
+        ----------------------------- */
+
+        filterPanel.classList.remove(
+          "open"
+        );
+
+        filtersToggle.classList.remove(
+          "open"
+        );
+
+        filtersToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        filtersToggleText.textContent =
+          TRANSLATIONS[
+            currentLanguage
+          ].showFilters;
 
       }
+
     );
 
   }
 );
+
 
 
 /* =====================================================
@@ -3236,34 +3950,52 @@ languageButtons.forEach(
       "click",
       () => {
 
-        selectedLanguage =
-          button.dataset.language;
-
-
         languageButtons.forEach(
-          item => {
+          btn => {
 
-            item.classList.toggle(
-              "active",
-              item === button
+            btn.classList.remove(
+              "active"
             );
 
           }
         );
 
 
-        updateCards();
+        button.classList.add(
+          "active"
+        );
+
+
+        selectedBookLanguage =
+          button.dataset.language;
+
+
+        updateBooks();
 
       }
+
     );
 
   }
 );
 
 
+
 /* =====================================================
    SORT
 ===================================================== */
+
+const sortSelect =
+  document.getElementById(
+    "sortSelect"
+  );
+
+
+const bookGrid =
+  document.getElementById(
+    "bookGrid"
+  );
+
 
 sortSelect.addEventListener(
   "change",
@@ -3273,17 +4005,21 @@ sortSelect.addEventListener(
       sortSelect.value;
 
 
-    const sortedCards =
-      [...cards];
+    const bookArray =
+      Array.from(books);
 
 
-    if(
+    /* -----------------------------
+       PRICE LOW → HIGH
+    ----------------------------- */
+
+    if (
       selectedSort ===
       "price-asc"
-    ){
+    ) {
 
-      sortedCards.sort(
-        (a,b) =>
+      bookArray.sort(
+        (a, b) =>
           Number(
             a.dataset.priceUsd
           ) -
@@ -3295,13 +4031,17 @@ sortSelect.addEventListener(
     }
 
 
-    if(
+    /* -----------------------------
+       PRICE HIGH → LOW
+    ----------------------------- */
+
+    else if (
       selectedSort ===
       "price-desc"
-    ){
+    ) {
 
-      sortedCards.sort(
-        (a,b) =>
+      bookArray.sort(
+        (a, b) =>
           Number(
             b.dataset.priceUsd
           ) -
@@ -3313,46 +4053,101 @@ sortSelect.addEventListener(
     }
 
 
-    if(
+    /* -----------------------------
+       LATEST
+       
+       Current books do not yet have
+       publication dates, so this
+       temporarily reverses the
+       current order.
+    ----------------------------- */
+
+    else if (
       selectedSort ===
       "latest"
-    ){
+    ) {
 
-      sortedCards.sort(
-        (a,b) =>
-          (
-            b.dataset.date ||
-            ""
-          ).localeCompare(
-            a.dataset.date ||
-            ""
+      bookArray.reverse();
+
+    }
+
+
+    /* -----------------------------
+       CATEGORY
+       
+       Restores the original
+       HTML order.
+    ----------------------------- */
+
+    else if (
+      selectedSort ===
+      "category"
+    ) {
+
+      bookArray.sort(
+        (a, b) =>
+          Number(
+            a.dataset.originalIndex
+          ) -
+          Number(
+            b.dataset.originalIndex
           )
       );
 
     }
 
 
-    sortedCards.forEach(
-      card =>
-        grid.appendChild(card)
+    bookArray.forEach(
+      book =>
+        bookGrid.appendChild(
+          book
+        )
     );
 
 
-    cards =
-      [
-        ...grid.querySelectorAll(
-          ".printable-card"
-        )
-      ];
+    /* -----------------------------
+       CLOSE FILTER PANEL
+    ----------------------------- */
+
+    filterPanel.classList.remove(
+      "open"
+    );
+
+    filtersToggle.classList.remove(
+      "open"
+    );
+
+    filtersToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    filtersToggleText.textContent =
+      TRANSLATIONS[
+        currentLanguage
+      ].showFilters;
 
 
-    updateCards();
-
-
-    collapseFilters();
+    updateBooks();
 
   }
 );
+
+
+
+/* =====================================================
+   STORE ORIGINAL BOOK ORDER
+===================================================== */
+
+books.forEach(
+  (book, index) => {
+
+    book.dataset.originalIndex =
+      index;
+
+  }
+);
+
 
 
 /* =====================================================
@@ -3364,10 +4159,12 @@ const menuButton =
     "menuButton"
   );
 
+
 const menuOverlay =
   document.getElementById(
     "menuOverlay"
   );
+
 
 const menuClose =
   document.getElementById(
@@ -3375,11 +4172,19 @@ const menuClose =
   );
 
 
-function openMenu(){
+const menuBooks =
+  document.getElementById(
+    "menuBooks"
+  );
+
+
+
+function openMenu() {
 
   menuOverlay.classList.add(
     "open"
   );
+
 
   document.body.classList.add(
     "menu-open"
@@ -3388,11 +4193,13 @@ function openMenu(){
 }
 
 
-function closeMenu(){
+
+function closeMenu() {
 
   menuOverlay.classList.remove(
     "open"
   );
+
 
   document.body.classList.remove(
     "menu-open"
@@ -3401,10 +4208,12 @@ function closeMenu(){
 }
 
 
+
 menuButton.addEventListener(
   "click",
   openMenu
 );
+
 
 
 menuClose.addEventListener(
@@ -3413,14 +4222,15 @@ menuClose.addEventListener(
 );
 
 
+
 menuOverlay.addEventListener(
   "click",
   event => {
 
-    if(
+    if (
       event.target ===
       menuOverlay
-    ){
+    ) {
 
       closeMenu();
 
@@ -3430,27 +4240,53 @@ menuOverlay.addEventListener(
 );
 
 
-[
-  "menuBooks",
-  "menuMerchandise",
-  "menuPrintables"
-]
-.forEach(
-  id => {
 
-    document
-      .getElementById(id)
-      .addEventListener(
-        "click",
-        closeMenu
-      );
-
-  }
+menuBooks.addEventListener(
+  "click",
+  closeMenu
 );
 
 
+
 /* =====================================================
-   UI LANGUAGE SELECTOR
+   MENU LINKS
+===================================================== */
+
+const menuMerchandise =
+  document.getElementById(
+    "menuMerchandise"
+  );
+
+
+const menuPrintables =
+  document.getElementById(
+    "menuPrintables"
+  );
+
+
+if (menuMerchandise) {
+
+  menuMerchandise.addEventListener(
+    "click",
+    closeMenu
+  );
+
+}
+
+
+if (menuPrintables) {
+
+  menuPrintables.addEventListener(
+    "click",
+    closeMenu
+  );
+
+}
+
+
+
+/* =====================================================
+   LANGUAGE SELECTOR
 ===================================================== */
 
 document
@@ -3473,6 +4309,7 @@ document
 
     }
   );
+
 
 
 /* =====================================================
@@ -3509,6 +4346,25 @@ document
   );
 
 
+
+/* =====================================================
+   INITIAL ACTIVE LANGUAGE
+===================================================== */
+
+languageButtons.forEach(
+  button => {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.language ===
+        selectedBookLanguage
+    );
+
+  }
+);
+
+
+
 /* =====================================================
    INITIALIZE
 ===================================================== */
@@ -3517,13 +4373,14 @@ applyLanguage(
   currentLanguage
 );
 
+
 updatePrices();
 
-updateCards();
+
+updateBooks();
 
 </script>
 
 
 </body>
-
 </html>
