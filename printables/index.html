@@ -18,46 +18,32 @@
 
 <style>
 
-/* =====================================================
-   ROOT
-===================================================== */
-
-:root {
-  --paper: #f8f3e8;
-  --paper-soft: #fcf9f1;
-  --olive: #555633;
-  --olive-soft: #777653;
-  --gold: #b58b45;
-  --gold-soft: #d8c6a4;
-  --text: #454531;
-  --muted: #858273;
-  --line: #e4dccb;
-  --white: #fffdf8;
+:root{
+  --paper:#f8f3e8;
+  --paper-soft:#fcf9f1;
+  --olive:#555633;
+  --olive-soft:#777653;
+  --gold:#b58b45;
+  --gold-soft:#d8c6a4;
+  --text:#454531;
+  --muted:#858273;
+  --line:#e4dccb;
+  --white:#fffdf8;
 }
 
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-
-body {
-  background:
-    var(--paper);
-
-  color:
-    var(--text);
+body{
+  background:var(--paper);
+  color:var(--text);
 
   font-family:
     -apple-system,
@@ -67,24 +53,19 @@ body {
     Arial,
     sans-serif;
 
-  line-height: 1.5;
+  line-height:1.5;
 }
 
-
-body.menu-open {
-  overflow: hidden;
+body.menu-open{
+  overflow:hidden;
 }
 
-
-button {
-  font: inherit;
+button{
+  font:inherit;
 }
 
-
-/* Arabic typography */
-
-:lang(ar) {
-  letter-spacing: 0 !important;
+:lang(ar){
+  letter-spacing:0 !important;
 }
 
 
@@ -92,104 +73,78 @@ button {
    HEADER
 ===================================================== */
 
-header {
-  position: sticky;
-
-  top: 0;
-
-  z-index: 100;
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
 
   background:
-    rgba(248, 243, 232, 0.96);
+    rgba(248,243,232,.96);
 
-  backdrop-filter:
-    blur(14px);
+  backdrop-filter:blur(14px);
 
   border-bottom:
     1px solid var(--line);
 }
 
+.header-inner{
+  max-width:1180px;
 
-.header-inner {
-  max-width: 1180px;
+  height:92px;
 
-  height: 92px;
-
-  margin: 0 auto;
+  margin:0 auto;
 
   padding:
     0 28px;
 
-  display: flex;
+  display:flex;
 
-  align-items: center;
+  align-items:center;
 
-  justify-content: space-between;
+  justify-content:space-between;
 }
 
+.brand{
+  display:flex;
 
-.brand {
-  display: flex;
+  align-items:center;
 
-  align-items: center;
+  color:var(--text);
 
-  color:
-    var(--text);
-
-  text-decoration: none;
+  text-decoration:none;
 }
 
-
-.brand-text {
-  line-height: 1;
-}
-
-
-.brand-name {
+.brand-name{
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 22px;
+  font-size:22px;
 
-  letter-spacing:
-    -0.4px;
+  letter-spacing:-.4px;
+
+  line-height:1;
 }
 
+.brand-subtitle{
+  margin-top:5px;
 
-.brand-subtitle {
-  margin-top: 5px;
+  color:var(--muted);
 
-  color:
-    var(--muted);
+  font-size:9px;
 
-  font-size: 9px;
-
-  letter-spacing:
-    3px;
+  letter-spacing:3px;
 }
 
-
-.header-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-}
-
-
-.menu-button {
-  width: 52px;
-
-  height: 52px;
+.menu-button{
+  width:52px;
+  height:52px;
 
   border:
     1px solid var(--line);
 
-  border-radius:
-    50%;
+  border-radius:50%;
 
   background:
     var(--paper-soft);
@@ -197,15 +152,15 @@ header {
   color:
     var(--olive);
 
-  display: flex;
+  display:flex;
 
-  align-items: center;
+  align-items:center;
 
-  justify-content: center;
+  justify-content:center;
 
-  cursor: pointer;
+  cursor:pointer;
 
-  font-size: 22px;
+  font-size:22px;
 }
 
 
@@ -213,34 +168,29 @@ header {
    HERO
 ===================================================== */
 
-.hero {
-  max-width: 900px;
+.hero{
+  max-width:900px;
 
-  margin: 0 auto;
+  margin:0 auto;
 
   padding:
-    86px 28px 70px;
+    72px 28px 58px;
 
-  text-align: center;
+  text-align:center;
 }
 
+.eyebrow{
+  margin-bottom:20px;
 
-.eyebrow {
-  margin-bottom: 24px;
+  color:var(--gold);
 
-  color:
-    var(--gold);
+  font-size:12px;
 
-  font-size: 12px;
-
-  letter-spacing:
-    5px;
+  letter-spacing:5px;
 }
 
-
-.hero h1 {
-  color:
-    var(--olive);
+.hero h1{
+  color:var(--olive);
 
   font-family:
     Georgia,
@@ -248,230 +198,180 @@ header {
     serif;
 
   font-size:
-    clamp(48px, 8vw, 76px);
+    clamp(46px,8vw,72px);
 
-  font-weight:
-    400;
+  font-weight:400;
 
-  line-height:
-    0.98;
+  line-height:.98;
 
-  letter-spacing:
-    -2px;
+  letter-spacing:-2px;
 }
 
-
-.hero p {
-  max-width: 650px;
+.hero p{
+  max-width:650px;
 
   margin:
-    30px auto 0;
+    26px auto 0;
 
-  color:
-    #77756c;
+  color:#77756c;
 
-  font-size: 18px;
+  font-size:18px;
 
-  line-height:
-    1.7;
+  line-height:1.7;
 }
 
-
-.ornament {
+.ornament{
   margin:
-    38px auto 0;
+    34px auto 0;
 
-  display: flex;
+  display:flex;
 
-  align-items: center;
+  align-items:center;
 
-  justify-content: center;
+  justify-content:center;
 
-  gap: 18px;
+  gap:18px;
 }
 
+.ornament-line{
+  width:115px;
 
-.ornament-line {
-  width: 115px;
-
-  height: 1px;
+  height:1px;
 
   background:
     var(--gold-soft);
 }
 
+.ornament-heart{
+  color:var(--gold);
 
-.ornament-heart {
-  color:
-    var(--gold);
-
-  font-size: 18px;
+  font-size:18px;
 }
 
 
 /* =====================================================
-   PRINTABLE CATALOG
+   PRINTABLES
 ===================================================== */
 
-.printables {
-  max-width: 1180px;
+.printables{
+  max-width:1180px;
 
-  margin: 0 auto;
+  margin:0 auto;
 
   padding:
-    0 28px 110px;
+    0 28px 100px;
 }
 
+.section-title{
+  margin-bottom:10px;
 
-.section-title {
-  margin-bottom: 12px;
-
-  color:
-    var(--olive);
+  color:var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 38px;
+  font-size:38px;
 
-  font-weight:
-    400;
+  font-weight:400;
 }
 
+.section-intro{
+  max-width:650px;
 
-.section-intro {
-  max-width: 650px;
+  margin-bottom:34px;
 
-  margin-bottom: 34px;
+  color:var(--muted);
 
-  color:
-    var(--muted);
+  font-size:16px;
 
-  font-size: 16px;
-
-  line-height:
-    1.7;
+  line-height:1.7;
 }
 
 
 /* =====================================================
-   SHOW / HIDE FILTERS
+   FILTER TOGGLE
 ===================================================== */
 
-.filters-toggle {
-  display: flex;
+.filters-toggle{
+  display:flex;
 
-  align-items: center;
+  align-items:center;
 
-  justify-content: space-between;
+  justify-content:space-between;
 
-  width: 100%;
+  width:100%;
 
   padding:
     16px 0;
 
-  margin-bottom:
-    22px;
+  margin-bottom:22px;
 
-  border: 0;
+  border:0;
 
   border-bottom:
     1px solid var(--line);
 
-  background:
-    transparent;
+  background:transparent;
 
-  color:
-    var(--olive);
+  color:var(--olive);
 
-  font-size: 13px;
+  font-size:13px;
 
-  letter-spacing:
-    2px;
+  letter-spacing:2px;
 
-  text-transform:
-    uppercase;
+  text-transform:uppercase;
 
-  cursor: pointer;
+  cursor:pointer;
 }
 
-
-.filters-toggle-icon {
-  font-size: 14px;
+.filters-toggle-icon{
+  font-size:18px;
 
   transition:
-    transform 0.2s ease;
+    transform .2s ease;
 }
 
-
 .filters-toggle.open
-.filters-toggle-icon {
+.filters-toggle-icon{
   transform:
     rotate(180deg);
 }
 
 
 /* =====================================================
-   SEARCH
+   SEARCH — ALWAYS VISIBLE
 ===================================================== */
 
-.search-wrap {
-  width: 100%;
-
-  margin-top:
-    22px;
-
-  margin-bottom:
-    30px;
+.search-wrap{
+  margin-bottom:28px;
 }
 
-
-.search-input {
-  display: block;
-
-  width: 100%;
+.search-input{
+  width:100%;
 
   padding:
-    12px 0 13px;
+    15px 0;
 
-  border: none;
+  border:0;
 
   border-bottom:
     1px solid var(--line);
 
-  outline: none;
+  outline:none;
 
-  background:
-    transparent;
+  background:transparent;
 
-  color:
-    var(--olive);
+  color:var(--olive);
 
-  font-family:
-    inherit;
-
-  font-size:
-    18px;
-
-  line-height:
-    1.4;
+  font-size:20px;
 }
 
+.search-input::placeholder{
+  color:var(--muted);
 
-.search-input::placeholder {
-  color:
-    var(--muted);
-
-  opacity:
-    1;
-}
-
-
-.search-input:focus {
-  border-bottom-color:
-    var(--olive);
+  opacity:1;
 }
 
 
@@ -479,18 +379,32 @@ header {
    HIDDEN FILTER PANEL
 ===================================================== */
 
-.filter-panel {
-  display:
-    none !important;
+.filter-panel{
+  display:none;
 
-  padding-bottom:
-    8px;
+  padding-bottom:10px;
 }
 
+.filter-panel.open{
+  display:block;
+}
 
-.filter-panel.open {
-  display:
-    block !important;
+.filter-group{
+  margin-bottom:30px;
+}
+
+.filter-label{
+  display:block;
+
+  margin-bottom:12px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
 }
 
 
@@ -498,46 +412,16 @@ header {
    SORT
 ===================================================== */
 
-.sort-row {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 16px;
-
-  margin-bottom:
-    28px;
-}
-
-
-.sort-label {
-  color:
-    var(--muted);
-
-  font-size: 11px;
-
-  letter-spacing:
-    2px;
-
-  text-transform:
-    uppercase;
-}
-
-
-.sort-select {
-  min-width:
-    210px;
+.sort-select{
+  width:100%;
 
   padding:
-    11px 38px 11px 16px;
+    15px 38px 15px 16px;
 
   border:
     1px solid var(--line);
 
-  border-radius:
-    999px;
+  border-radius:999px;
 
   background:
     var(--paper-soft);
@@ -545,70 +429,111 @@ header {
   color:
     var(--olive);
 
-  font:
-    inherit;
+  font:inherit;
 
-  font-size:
-    14px;
+  font-size:16px;
 
-  cursor:
-    pointer;
+  cursor:pointer;
 }
+
 
 /* =====================================================
-   PRINTABLE LANGUAGE
-   ALWAYS VISIBLE
+   AGE — COMPACT LIST
 ===================================================== */
 
-.filter-group {
-  margin-bottom:
-    20px;
+.age-list{
+  display:flex;
+
+  flex-direction:column;
+
+  border-top:
+    1px solid var(--line);
 }
 
+.age-button{
+  width:100%;
 
-.filter-label {
-  display: block;
+  padding:
+    14px 0;
 
-  margin-bottom:
-    10px;
+  border:0;
+
+  border-bottom:
+    1px solid var(--line);
+
+  background:transparent;
 
   color:
-    var(--muted);
+    var(--olive);
 
-  font-size:
-    11px;
+  text-align:left;
 
-  letter-spacing:
-    2px;
+  cursor:pointer;
 
-  text-transform:
-    uppercase;
+  font-size:16px;
+}
+
+.age-button.active{
+  font-weight:600;
+
+  color:
+    var(--gold);
+}
+
+.age-group-title{
+  padding:
+    14px 0 8px;
+
+  color:
+    var(--olive-soft);
+
+  font-size:15px;
+
+  font-weight:600;
+}
+
+.age-subbutton{
+  padding-left:18px;
+
+  color:
+    var(--text);
+}
+
+.age-subbutton.active{
+  color:
+    var(--gold);
+
+  font-weight:600;
 }
 
 
-.filters {
-  display: flex;
+/* =====================================================
+   LANGUAGE — ALWAYS VISIBLE
+===================================================== */
 
-  gap:
-    10px;
+.language-group{
+  margin-top:0;
 
-  overflow-x:
-    auto;
-
-  padding-bottom:
-    4px;
-
-  scrollbar-width:
-    none;
+  margin-bottom:42px;
 }
 
+.filters{
+  display:flex;
 
-.filters::-webkit-scrollbar {
-  display: none;
+  gap:10px;
+
+  overflow-x:auto;
+
+  padding-bottom:4px;
+
+  scrollbar-width:none;
 }
 
+.filters::-webkit-scrollbar{
+  display:none;
+}
 
-.filter-btn {
+.filter-btn{
   flex:
     0 0 auto;
 
@@ -618,8 +543,7 @@ header {
   border:
     1px solid var(--line);
 
-  border-radius:
-    999px;
+  border-radius:999px;
 
   background:
     var(--paper-soft);
@@ -627,18 +551,15 @@ header {
   color:
     var(--olive-soft);
 
-  white-space:
-    nowrap;
+  white-space:nowrap;
 
-  cursor:
-    pointer;
+  cursor:pointer;
 
   transition:
-    0.2s ease;
+    .2s ease;
 }
 
-
-.filter-btn.active {
+.filter-btn.active{
   border-color:
     var(--olive);
 
@@ -646,7 +567,7 @@ header {
     var(--olive);
 
   color:
-    #fffdf7;
+    var(--white);
 }
 
 
@@ -654,30 +575,22 @@ header {
    PRINTABLE GRID
 ===================================================== */
 
-.printable-grid {
-  margin-top:
-    48px;
-
-  display:
-    grid;
+.printable-grid{
+  display:grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(2,minmax(0,1fr));
 
   gap:
     58px 28px;
 }
 
-
-.printable-card {
-  min-width:
-    0;
+.printable-card{
+  min-width:0;
 }
 
-
-.printable-card.hidden {
-  display:
-    none;
+.printable-card.hidden{
+  display:none;
 }
 
 
@@ -685,18 +598,14 @@ header {
    PRODUCT IMAGE
 ===================================================== */
 
-.product-image-wrap {
-  position:
-    relative;
+.product-image-wrap{
+  position:relative;
 
-  width:
-    100%;
+  width:100%;
 
-  aspect-ratio:
-    1 / 1;
+  aspect-ratio:1/1;
 
-  overflow:
-    hidden;
+  overflow:hidden;
 
   background:
     var(--paper-soft);
@@ -704,41 +613,30 @@ header {
   border:
     1px solid var(--line);
 
-  border-radius:
-    2px;
+  border-radius:2px;
 }
 
+.product-placeholder{
+  width:100%;
 
-.product-placeholder {
-  width:
-    100%;
+  height:100%;
 
-  height:
-    100%;
+  display:flex;
 
-  display:
-    flex;
+  align-items:center;
 
-  align-items:
-    center;
+  justify-content:center;
 
-  justify-content:
-    center;
-
-  text-align:
-    center;
+  text-align:center;
 
   color:
     var(--muted);
 
-  font-size:
-    11px;
+  font-size:11px;
 
-  letter-spacing:
-    2px;
+  letter-spacing:2px;
 
-  text-transform:
-    uppercase;
+  text-transform:uppercase;
 }
 
 
@@ -746,28 +644,23 @@ header {
    PRODUCT INFO
 ===================================================== */
 
-.product-info {
+.product-info{
   padding:
     22px 4px 0;
 }
 
-
-.product-type {
-  margin-bottom:
-    8px;
+.product-type{
+  margin-bottom:8px;
 
   color:
     var(--gold);
 
-  font-size:
-    10px;
+  font-size:10px;
 
-  letter-spacing:
-    2px;
+  letter-spacing:2px;
 }
 
-
-.product-title {
+.product-title{
   color:
     var(--olive);
 
@@ -776,62 +669,46 @@ header {
     "Times New Roman",
     serif;
 
-  font-size:
-    23px;
+  font-size:23px;
 
-  line-height:
-    1.2;
+  line-height:1.2;
 }
 
-
-.product-description {
-  margin-top:
-    9px;
+.product-description{
+  margin-top:9px;
 
   color:
     var(--muted);
 
-  font-size:
-    14px;
+  font-size:14px;
 
-  line-height:
-    1.6;
+  line-height:1.6;
 }
 
-
-.product-format {
-  margin-top:
-    9px;
+.product-format{
+  margin-top:9px;
 
   color:
     var(--muted);
 
-  font-size:
-    12px;
+  font-size:12px;
 }
 
-
-.product-price {
-  margin-top:
-    10px;
+.product-price{
+  margin-top:10px;
 
   color:
     var(--olive);
 
-  font-size:
-    15px;
+  font-size:15px;
 
-  font-weight:
-    500;
+  font-weight:500;
 }
 
+.buy-button{
+  display:inline-block;
 
-.buy-button {
-  display:
-    inline-block;
-
-  margin-top:
-    16px;
+  margin-top:16px;
 
   padding:
     9px 18px;
@@ -839,8 +716,7 @@ header {
   border:
     1px solid var(--olive);
 
-  border-radius:
-    999px;
+  border-radius:999px;
 
   background:
     var(--olive);
@@ -848,75 +724,57 @@ header {
   color:
     #fffdf7;
 
-  text-decoration:
-    none;
+  text-decoration:none;
 
-  font-size:
-    10px;
+  font-size:10px;
 
-  letter-spacing:
-    1.5px;
+  letter-spacing:1.5px;
 
-  text-transform:
-    uppercase;
+  text-transform:uppercase;
 }
 
 
 /* =====================================================
-   MENU OVERLAY
+   MENU
 ===================================================== */
 
-.menu-overlay {
-  position:
-    fixed;
+.menu-overlay{
+  position:fixed;
 
-  inset:
-    0;
+  inset:0;
 
-  z-index:
-    200;
+  z-index:200;
 
   background:
-    rgba(69, 69, 49, 0.25);
+    rgba(69,69,49,.25);
 
-  opacity:
-    0;
+  opacity:0;
 
-  pointer-events:
-    none;
+  pointer-events:none;
 
   transition:
-    opacity 0.25s ease;
+    opacity .25s ease;
 }
 
+.menu-overlay.open{
+  opacity:1;
 
-.menu-overlay.open {
-  opacity:
-    1;
-
-  pointer-events:
-    auto;
+  pointer-events:auto;
 }
 
+.menu-panel{
+  position:absolute;
 
-.menu-panel {
-  position:
-    absolute;
+  top:0;
 
-  top:
-    0;
-
-  right:
-    0;
+  right:0;
 
   width:
-    min(430px, 92vw);
+    min(430px,92vw);
 
-  height:
-    100%;
+  height:100%;
 
-  overflow-y:
-    auto;
+  overflow-y:auto;
 
   padding:
     32px 28px 40px;
@@ -926,38 +784,32 @@ header {
 
   box-shadow:
     -10px 0 35px
-    rgba(60, 60, 40, 0.12);
+    rgba(60,60,40,.12);
 
   transform:
     translateX(100%);
 
   transition:
-    transform 0.28s ease;
+    transform .28s ease;
 }
 
-
 .menu-overlay.open
-.menu-panel {
+.menu-panel{
   transform:
     translateX(0);
 }
 
+.menu-close{
+  width:48px;
 
-.menu-close {
-  width:
-    48px;
+  height:48px;
 
-  height:
-    48px;
-
-  margin-left:
-    auto;
+  margin-left:auto;
 
   border:
     1px solid var(--line);
 
-  border-radius:
-    50%;
+  border-radius:50%;
 
   background:
     var(--paper-soft);
@@ -965,26 +817,19 @@ header {
   color:
     var(--olive);
 
-  cursor:
-    pointer;
+  cursor:pointer;
 
-  display:
-    flex;
+  display:flex;
 
-  align-items:
-    center;
+  align-items:center;
 
-  justify-content:
-    center;
+  justify-content:center;
 
-  font-size:
-    22px;
+  font-size:22px;
 }
 
-
-.menu-title {
-  margin-top:
-    35px;
+.menu-title{
+  margin-top:35px;
 
   color:
     var(--olive);
@@ -994,101 +839,76 @@ header {
     "Times New Roman",
     serif;
 
-  font-size:
-    32px;
+  font-size:32px;
 }
 
-
-.menu-section {
-  margin-top:
-    35px;
+.menu-section{
+  margin-top:35px;
 }
 
-
-.menu-section-label {
-  margin-bottom:
-    14px;
+.menu-section-label{
+  margin-bottom:14px;
 
   color:
     var(--gold);
 
-  font-size:
-    11px;
+  font-size:11px;
 
-  letter-spacing:
-    2px;
+  letter-spacing:2px;
 
-  text-transform:
-    uppercase;
+  text-transform:uppercase;
 }
 
-
-.menu-option {
-  width:
-    100%;
+.menu-option{
+  width:100%;
 
   padding:
     16px 0;
 
-  border:
-    0;
+  border:0;
 
   border-bottom:
     1px solid var(--line);
 
-  background:
-    transparent;
+  background:transparent;
 
   color:
     var(--olive);
 
-  text-align:
-    left;
+  text-align:left;
 
-  cursor:
-    pointer;
+  cursor:pointer;
 
-  display:
-    flex;
+  display:flex;
 
-  align-items:
-    center;
+  align-items:center;
 
-  justify-content:
-    space-between;
+  justify-content:space-between;
 
-  text-decoration:
-    none;
+  text-decoration:none;
 }
 
-
-.menu-option small {
+.menu-option small{
   color:
     var(--muted);
 }
 
-
-.menu-option.selected {
+.menu-option.selected{
   color:
     var(--gold);
 
-  font-weight:
-    600;
+  font-weight:600;
 }
 
-
-.menu-option.selected::after {
-  content:
-    "✓";
+.menu-option.selected::after{
+  content:"✓";
 
   color:
     var(--gold);
 }
 
-
-.menu-divider {
-  height:
-    1px;
+.menu-divider{
+  height:1px;
 
   margin:
     32px 0;
@@ -1103,30 +923,25 @@ header {
 ===================================================== */
 
 html[dir="rtl"]
-.menu-panel {
-  right:
-    auto;
+.menu-panel{
+  right:auto;
 
-  left:
-    0;
+  left:0;
 
   transform:
     translateX(-100%);
 }
 
-
 html[dir="rtl"]
 .menu-overlay.open
-.menu-panel {
+.menu-panel{
   transform:
     translateX(0);
 }
 
-
 html[dir="rtl"]
-.menu-option {
-  text-align:
-    right;
+.menu-option{
+  text-align:right;
 }
 
 
@@ -1134,19 +949,17 @@ html[dir="rtl"]
    FOOTER
 ===================================================== */
 
-footer {
+footer{
   padding:
     55px 28px;
 
   border-top:
     1px solid var(--line);
 
-  text-align:
-    center;
+  text-align:center;
 }
 
-
-.footer-name {
+.footer-name{
   color:
     var(--olive);
 
@@ -1155,35 +968,27 @@ footer {
     "Times New Roman",
     serif;
 
-  font-size:
-    24px;
+  font-size:24px;
 }
 
-
-.footer-sub {
-  margin-top:
-    8px;
+.footer-sub{
+  margin-top:8px;
 
   color:
     var(--muted);
 
-  font-size:
-    10px;
+  font-size:10px;
 
-  letter-spacing:
-    3px;
+  letter-spacing:3px;
 }
 
-
-.footer-copy {
-  margin-top:
-    28px;
+.footer-copy{
+  margin-top:28px;
 
   color:
     var(--muted);
 
-  font-size:
-    12px;
+  font-size:12px;
 }
 
 
@@ -1191,26 +996,21 @@ footer {
    DESKTOP
 ===================================================== */
 
-@media (min-width: 800px) {
+@media(min-width:800px){
 
-  .header-inner {
-    height:
-      104px;
+  .header-inner{
+    height:104px;
   }
 
+  .hero{
+    padding-top:90px;
 
-  .hero {
-    padding-top:
-      110px;
-
-    padding-bottom:
-      90px;
+    padding-bottom:75px;
   }
 
-
-  .printable-grid {
+  .printable-grid{
     grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+      repeat(3,minmax(0,1fr));
 
     gap:
       65px 35px;
@@ -1218,94 +1018,52 @@ footer {
 
 }
 
+@media(max-width:600px){
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 600px) {
-
-  .header-inner {
-    height:
-      88px;
+  .header-inner{
+    height:88px;
 
     padding:
       0 18px;
   }
 
-
-  .hero {
+  .hero{
     padding:
-      72px 28px 65px;
+      62px 28px 55px;
   }
 
-
-  .hero h1 {
-    font-size:
-      49px;
+  .hero h1{
+    font-size:49px;
   }
 
-
-  .hero p {
-    font-size:
-      16px;
+  .hero p{
+    font-size:16px;
   }
 
-
-  .printables {
+  .printables{
     padding:
       0 30px 80px;
   }
 
-
-  .section-title {
-    font-size:
-      34px;
+  .section-title{
+    font-size:34px;
   }
 
-
-  .section-intro {
-    font-size:
-      15px;
-
-    margin-bottom:
-      28px;
+  .section-intro{
+    font-size:15px;
   }
 
-
-  .sort-row {
-    align-items:
-      flex-start;
-
-    flex-direction:
-      column;
-
-    gap:
-      10px;
-  }
-
-
-  .sort-select {
-    width:
-      100%;
-  }
-
-
-  .printable-grid {
+  .printable-grid{
     gap:
       48px 24px;
   }
 
-
-  .product-title {
-    font-size:
-      20px;
+  .product-title{
+    font-size:20px;
   }
 
-
-  .menu-panel {
-    width:
-      90vw;
+  .menu-panel{
+    width:90vw;
   }
 
 }
@@ -1314,7 +1072,9 @@ footer {
 
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -1329,7 +1089,7 @@ footer {
       class="brand"
     >
 
-      <div class="brand-text">
+      <div>
 
         <div class="brand-name">
           Little Syami
@@ -1344,17 +1104,13 @@ footer {
     </a>
 
 
-    <div class="header-actions">
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
-
-    </div>
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
 
   </div>
 
@@ -1583,17 +1339,13 @@ footer {
   </div>
 
 
-  <h1
-    data-i18n="heroTitle"
-  >
+  <h1 data-i18n="heroTitle">
     Little Things<br>
     to Make &amp; Explore
   </h1>
 
 
-  <p
-    data-i18n="heroDescription"
-  >
+  <p data-i18n="heroDescription">
     Printable activities inspired by Little Syami's stories,
     learning, imagination, and play.
   </p>
@@ -1635,14 +1387,12 @@ footer {
     class="section-intro"
     data-i18n="catalogIntro"
   >
-    Printable resources for stories, learning,
-    play, and little moments of creativity.
+    Printable resources for stories, learning, play,
+    and little moments of creativity.
   </p>
 
 
-  <!-- =================================================
-       SHOW / HIDE FILTERS
-  ================================================= -->
+  <!-- FILTER TOGGLE -->
 
   <button
     type="button"
@@ -1659,7 +1409,6 @@ footer {
       Show Filters
     </span>
 
-
     <span
       class="filters-toggle-icon"
       aria-hidden="true"
@@ -1670,14 +1419,9 @@ footer {
   </button>
 
 
-  <!-- =================================================
-       SEARCH
-  ================================================= -->
+  <!-- SEARCH — ALWAYS VISIBLE -->
 
-  <div
-    class="search-wrap"
-    id="searchWrap"
-  >
+  <div class="search-wrap">
 
     <input
       type="search"
@@ -1691,19 +1435,21 @@ footer {
   </div>
 
 
-  <!-- =================================================
-       HIDDEN FILTER PANEL
-  ================================================= -->
+  <!-- HIDDEN FILTER PANEL -->
 
   <div
     class="filter-panel"
     id="filterPanel"
   >
 
-    <div class="sort-row">
+      <!-- =================================================
+         SORT BY
+    ================================================== -->
+
+    <div class="filter-group">
 
       <span
-        class="sort-label"
+        class="filter-label"
         data-i18n="sortBy"
       >
         Sort by
@@ -1751,19 +1497,126 @@ footer {
 
     </div>
 
+
+    <!-- =================================================
+         AGE
+    ================================================== -->
+
+    <div class="filter-group">
+
+      <span
+        class="filter-label"
+        data-i18n="ageLabel"
+      >
+        Age
+      </span>
+
+
+      <div
+        class="age-list"
+        id="ageFilters"
+      >
+
+        <button
+          type="button"
+          class="age-button active"
+          data-age-filter="all"
+          data-i18n="allAges"
+        >
+          All Ages
+        </button>
+
+
+        <div
+          class="age-group-title"
+          data-i18n="earlyChildhood"
+        >
+          Early Childhood
+        </div>
+
+
+        <button
+          type="button"
+          class="age-button age-subbutton"
+          data-age-filter="0-3"
+          data-i18n="ages03"
+        >
+          0–3 Years
+        </button>
+
+
+        <button
+          type="button"
+          class="age-button age-subbutton"
+          data-age-filter="3-6"
+          data-i18n="ages36"
+        >
+          3–6 Years
+        </button>
+
+
+        <div
+          class="age-group-title"
+          data-i18n="childrenCategory"
+        >
+          Children
+        </div>
+
+
+        <button
+          type="button"
+          class="age-button age-subbutton"
+          data-age-filter="6-9"
+          data-i18n="ages69"
+        >
+          6–9 Years
+        </button>
+
+
+        <button
+          type="button"
+          class="age-button age-subbutton"
+          data-age-filter="9-12"
+          data-i18n="ages912"
+        >
+          9–12 Years
+        </button>
+
+
+        <div
+          class="age-group-title"
+          data-i18n="youngAdults"
+        >
+          Young Adults
+        </div>
+
+
+        <button
+          type="button"
+          class="age-button age-subbutton"
+          data-age-filter="13-18"
+        >
+          13–18 Years
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
 
   <!-- =================================================
-       PRINTABLE LANGUAGE
-       ALWAYS VISIBLE
-  ================================================= -->
+       PRINTABLE LANGUAGE — ALWAYS VISIBLE
+  ================================================== -->
 
-  <div class="filter-group">
+  <div
+    class="filter-group language-group"
+  >
 
     <span
       class="filter-label"
-      data-i18n="languageLabelBooks"
+      data-i18n="printableLanguageLabel"
     >
       Printable Language
     </span>
@@ -1775,16 +1628,14 @@ footer {
     >
 
       <button
-        type="button"
         class="filter-btn active"
-        data-language="en"
+        data-language="all"
       >
         English
       </button>
 
 
       <button
-        type="button"
         class="filter-btn"
         data-language="ar"
       >
@@ -1793,7 +1644,6 @@ footer {
 
 
       <button
-        type="button"
         class="filter-btn"
         data-language="id"
       >
@@ -1802,21 +1652,10 @@ footer {
 
 
       <button
-        type="button"
         class="filter-btn"
         data-language="tr"
       >
         Türkçe
-      </button>
-
-
-      <button
-        type="button"
-        class="filter-btn"
-        data-language="all"
-        data-i18n="allLanguages"
-      >
-        All Languages
       </button>
 
     </div>
@@ -1826,7 +1665,7 @@ footer {
 
   <!-- =================================================
        PRINTABLE GRID
-  ================================================= -->
+  ================================================== -->
 
   <div
     class="printable-grid"
@@ -1835,11 +1674,12 @@ footer {
 
       <!-- =================================================
          PRODUCT 1
-    ================================================= -->
+    ================================================== -->
 
     <article
       class="printable-card"
-      data-language="en"
+      data-age="4-8"
+      data-language="all"
       data-price-usd="0"
       data-date="2026-09-23"
     >
@@ -1875,8 +1715,7 @@ footer {
           class="product-description"
           data-i18n="productOneDescription"
         >
-          Printable activities inspired by
-          Shahzade's story.
+          Printable activities inspired by Shahzade's story.
         </div>
 
 
@@ -1912,13 +1751,14 @@ footer {
 
     <!-- =================================================
          PRODUCT 2
-    ================================================= -->
+    ================================================== -->
 
     <article
       class="printable-card"
-      data-language="en"
+      data-age="4-8"
+      data-language="all"
       data-price-usd="0"
-      data-date="2026-09-22"
+      data-date="2026-09-23"
     >
 
       <div class="product-image-wrap">
@@ -1952,8 +1792,7 @@ footer {
           class="product-description"
           data-i18n="productTwoDescription"
         >
-          Gentle learning activities for
-          curious little minds.
+          Gentle learning activities for curious little minds.
         </div>
 
 
@@ -1989,13 +1828,14 @@ footer {
 
     <!-- =================================================
          PRODUCT 3
-    ================================================= -->
+    ================================================== -->
 
     <article
       class="printable-card"
-      data-language="en"
+      data-age="4-8"
+      data-language="all"
       data-price-usd="0"
-      data-date="2026-09-21"
+      data-date="2026-09-23"
     >
 
       <div class="product-image-wrap">
@@ -2029,8 +1869,7 @@ footer {
           class="product-description"
           data-i18n="productThreeDescription"
         >
-          Simple printable games and
-          creative activities.
+          Simple printable games and creative activities.
         </div>
 
 
@@ -2066,13 +1905,14 @@ footer {
 
     <!-- =================================================
          PRODUCT 4
-    ================================================= -->
+    ================================================== -->
 
     <article
       class="printable-card"
-      data-language="en"
+      data-age="4-8"
+      data-language="all"
       data-price-usd="0"
-      data-date="2026-09-20"
+      data-date="2026-09-23"
     >
 
       <div class="product-image-wrap">
@@ -2106,8 +1946,7 @@ footer {
           class="product-description"
           data-i18n="productFourDescription"
         >
-          A collection of Little Syami
-          printables in one bundle.
+          A collection of Little Syami printables in one bundle.
         </div>
 
 
@@ -2168,8 +2007,7 @@ footer {
     class="footer-copy"
     data-i18n="copyright"
   >
-    © 2026 Little Syami Publishing.
-    All Rights Reserved.
+    © 2026 Little Syami Publishing. All Rights Reserved.
   </div>
 
 </footer>
@@ -2177,15 +2015,11 @@ footer {
 
 <script>
 
-/* =====================================================
-   CURRENCY
-===================================================== */
-
 const CURRENCY_RATES = {
 
   USD: 1,
 
-  TRY: 41.00,
+  TRY: 41,
 
   IDR: 16500,
 
@@ -2287,15 +2121,6 @@ const TRANSLATIONS = {
     hideFilters:
       "Hide Filters",
 
-    searchPlaceholder:
-      "Search",
-
-    languageLabelBooks:
-      "Printable Language",
-
-    allLanguages:
-      "All Languages",
-
     sortBy:
       "Sort by",
 
@@ -2310,6 +2135,36 @@ const TRANSLATIONS = {
 
     sortPriceDesc:
       "Price Descending",
+
+    ageLabel:
+      "Age",
+
+    allAges:
+      "All Ages",
+
+    earlyChildhood:
+      "Early Childhood",
+
+    ages03:
+      "0–3 Years",
+
+    ages36:
+      "3–6 Years",
+
+    childrenCategory:
+      "Children",
+
+    ages69:
+      "6–9 Years",
+
+    ages912:
+      "9–12 Years",
+
+    youngAdults:
+      "Young Adults",
+
+    printableLanguageLabel:
+      "Printable Language",
 
     productOneType:
       "STORIES",
@@ -2409,15 +2264,6 @@ const TRANSLATIONS = {
     hideFilters:
       "Sembunyikan Filter",
 
-    searchPlaceholder:
-      "Cari",
-
-    languageLabelBooks:
-      "Bahasa Printable",
-
-    allLanguages:
-      "Semua Bahasa",
-
     sortBy:
       "Urutkan",
 
@@ -2432,6 +2278,36 @@ const TRANSLATIONS = {
 
     sortPriceDesc:
       "Harga Tertinggi",
+
+    ageLabel:
+      "Usia",
+
+    allAges:
+      "Semua Usia",
+
+    earlyChildhood:
+      "Anak Usia Dini",
+
+    ages03:
+      "0–3 Tahun",
+
+    ages36:
+      "3–6 Tahun",
+
+    childrenCategory:
+      "Anak-anak",
+
+    ages69:
+      "6–9 Tahun",
+
+    ages912:
+      "9–12 Tahun",
+
+    youngAdults:
+      "Remaja",
+
+    printableLanguageLabel:
+      "Bahasa Printable",
 
     productOneType:
       "STORIES",
@@ -2531,15 +2407,6 @@ const TRANSLATIONS = {
     hideFilters:
       "Filtreleri Gizle",
 
-    searchPlaceholder:
-      "Ara",
-
-    languageLabelBooks:
-      "Printable Dili",
-
-    allLanguages:
-      "Tüm Diller",
-
     sortBy:
       "Sıralama",
 
@@ -2550,10 +2417,40 @@ const TRANSLATIONS = {
       "En Yeni",
 
     sortPriceAsc:
-      "Fiyat: Artan",
+      "En Düşük Fiyat",
 
     sortPriceDesc:
-      "Fiyat: Azalan",
+      "En Yüksek Fiyat",
+
+    ageLabel:
+      "Yaş",
+
+    allAges:
+      "Tüm Yaşlar",
+
+    earlyChildhood:
+      "Erken Çocukluk",
+
+    ages03:
+      "0–3 Yaş",
+
+    ages36:
+      "3–6 Yaş",
+
+    childrenCategory:
+      "Çocuklar",
+
+    ages69:
+      "6–9 Yaş",
+
+    ages912:
+      "9–12 Yaş",
+
+    youngAdults:
+      "Gençler",
+
+    printableLanguageLabel:
+      "Printable Dili",
 
     productOneType:
       "STORIES",
@@ -2653,20 +2550,11 @@ const TRANSLATIONS = {
     hideFilters:
       "إخفاء الفلاتر",
 
-    searchPlaceholder:
-      "بحث",
-
-    languageLabelBooks:
-      "لغة المطبوعات",
-
-    allLanguages:
-      "جميع اللغات",
-
     sortBy:
       "ترتيب حسب",
 
     sortDefault:
-      "الافتراضي",
+      "افتراضي",
 
     sortLatest:
       "الأحدث",
@@ -2676,6 +2564,36 @@ const TRANSLATIONS = {
 
     sortPriceDesc:
       "السعر: من الأعلى",
+
+    ageLabel:
+      "العمر",
+
+    allAges:
+      "جميع الأعمار",
+
+    earlyChildhood:
+      "الطفولة المبكرة",
+
+    ages03:
+      "٠–٣ سنوات",
+
+    ages36:
+      "٣–٦ سنوات",
+
+    childrenCategory:
+      "الأطفال",
+
+    ages69:
+      "٦–٩ سنوات",
+
+    ages912:
+      "٩–١٢ سنة",
+
+    youngAdults:
+      "اليافعون",
+
+    printableLanguageLabel:
+      "لغة المطبوعات",
 
     productOneType:
       "القصص",
@@ -2739,17 +2657,17 @@ const TRANSLATIONS = {
    INITIAL LANGUAGE
 ===================================================== */
 
-function detectLanguage() {
+function detectLanguage(){
 
   const saved =
     localStorage.getItem(
       "littleSyamiLanguage"
     );
 
-  if (
+  if(
     saved &&
     TRANSLATIONS[saved]
-  ) {
+  ){
     return saved;
   }
 
@@ -2761,23 +2679,23 @@ function detectLanguage() {
     ).toLowerCase();
 
 
-  if (
+  if(
     browserLanguage.startsWith("id")
-  ) {
+  ){
     return "id";
   }
 
 
-  if (
+  if(
     browserLanguage.startsWith("tr")
-  ) {
+  ){
     return "tr";
   }
 
 
-  if (
+  if(
     browserLanguage.startsWith("ar")
-  ) {
+  ){
     return "ar";
   }
 
@@ -2790,17 +2708,17 @@ function detectLanguage() {
    INITIAL CURRENCY
 ===================================================== */
 
-function detectCurrency() {
+function detectCurrency(){
 
   const saved =
     localStorage.getItem(
       "littleSyamiCurrency"
     );
 
-  if (
+  if(
     saved &&
     CURRENCY_CONFIG[saved]
-  ) {
+  ){
     return saved;
   }
 
@@ -2812,55 +2730,35 @@ function detectCurrency() {
     ).toLowerCase();
 
 
-  if (
-    locale === "en-us"
-  ) {
+  if(locale === "en-us"){
     return "USD";
   }
 
 
-  if (
-    locale.startsWith("id-id")
-  ) {
+  if(locale.startsWith("id-id")){
     return "IDR";
   }
 
 
-  if (
-    locale.startsWith("tr-tr")
-  ) {
+  if(locale.startsWith("tr-tr")){
     return "TRY";
   }
 
 
-  if (
-    locale.startsWith("ar-ae")
-  ) {
+  if(locale.startsWith("ar-ae")){
     return "AED";
   }
 
 
-  if (
-    locale.startsWith("ar-sa")
-  ) {
+  if(locale.startsWith("ar-sa")){
     return "SAR";
   }
 
 
-  if (
-    locale.startsWith("de-") ||
-    locale.startsWith("fr-") ||
-    locale.startsWith("es-") ||
-    locale.startsWith("it-") ||
-    locale.startsWith("nl-") ||
-    locale.startsWith("pt-") ||
-    locale.startsWith("el-") ||
-    locale.startsWith("fi-") ||
-    locale.startsWith("ie-") ||
-    locale.startsWith("at-") ||
-    locale.startsWith("be-") ||
-    locale.startsWith("lu-")
-  ) {
+  if(
+    /^(de|fr|es|it|nl|pt|el|fi|ie|at|be|lu)-/
+      .test(locale)
+  ){
     return "EUR";
   }
 
@@ -2872,9 +2770,21 @@ function detectCurrency() {
 let currentLanguage =
   detectLanguage();
 
-
 let currentCurrency =
   detectCurrency();
+
+
+let selectedAge =
+  "all";
+
+let selectedLanguage =
+  "all";
+
+let selectedSearch =
+  "";
+
+let selectedSort =
+  "default";
 
 
 /* =====================================================
@@ -2886,76 +2796,61 @@ const filtersToggle =
     "filtersToggle"
   );
 
-
 const filterPanel =
   document.getElementById(
     "filterPanel"
   );
-
 
 const filtersToggleText =
   document.getElementById(
     "filtersToggleText"
   );
 
-
 const searchInput =
   document.getElementById(
     "printableSearch"
   );
-
 
 const sortSelect =
   document.getElementById(
     "sortSelect"
   );
 
+const ageButtons =
+  [
+    ...document.querySelectorAll(
+      "[data-age-filter]"
+    )
+  ];
 
-const printableGrid =
+const languageButtons =
+  [
+    ...document.querySelectorAll(
+      "#languageFilters .filter-btn"
+    )
+  ];
+
+const grid =
   document.getElementById(
     "printableGrid"
   );
 
-
-const languageButtons =
-  document.querySelectorAll(
-    "#languageFilters .filter-btn"
-  );
-
-
-const printableCards =
-  Array.from(
-    document.querySelectorAll(
+let cards =
+  [
+    ...document.querySelectorAll(
       ".printable-card"
     )
-  );
+  ];
 
 
 /* =====================================================
-   ORIGINAL ORDER
+   APPLY LANGUAGE
 ===================================================== */
 
-printableCards.forEach(
-  (card, index) => {
-
-    card.dataset.originalOrder =
-      index;
-
-  }
-);
-
-
-/* =====================================================
-   LANGUAGE
-===================================================== */
-
-function applyLanguage(
-  language
-) {
+function applyLanguage(language){
 
   currentLanguage =
     language;
-
 
   localStorage.setItem(
     "littleSyamiLanguage",
@@ -2986,10 +2881,9 @@ function applyLanguage(
       const key =
         element.dataset.i18n;
 
-
-      if (
+      if(
         translation[key]
-      ) {
+      ){
 
         element.innerHTML =
           translation[key];
@@ -3014,16 +2908,6 @@ function applyLanguage(
     });
 
 
-  searchInput.placeholder =
-    translation.searchPlaceholder;
-
-
-  searchInput.setAttribute(
-    "aria-label",
-    translation.searchPlaceholder
-  );
-
-
   filtersToggleText.textContent =
     filterPanel.classList.contains("open")
       ? translation.hideFilters
@@ -3033,10 +2917,10 @@ function applyLanguage(
 
 
 /* =====================================================
-   PRICE
+   UPDATE PRICES
 ===================================================== */
 
-function updatePrices() {
+function updatePrices(){
 
   document
     .querySelectorAll(
@@ -3050,9 +2934,7 @@ function updatePrices() {
         );
 
 
-      if (
-        !usd
-      ) {
+      if(!usd){
 
         element.textContent =
           "—";
@@ -3060,13 +2942,6 @@ function updatePrices() {
         return;
 
       }
-
-
-      const converted =
-        usd *
-        CURRENCY_RATES[
-          currentCurrency
-        ];
 
 
       const config =
@@ -3079,19 +2954,14 @@ function updatePrices() {
         new Intl.NumberFormat(
           config.locale,
           {
-            style:
-              "currency",
-
-            currency:
-              config.currency,
-
-            maximumFractionDigits:
-              currentCurrency === "IDR"
-                ? 0
-                : 2
+            style:"currency",
+            currency:config.currency
           }
         ).format(
-          converted
+          usd *
+          CURRENCY_RATES[
+            currentCurrency
+          ]
         );
 
     });
@@ -3115,70 +2985,150 @@ function updatePrices() {
 
 
 /* =====================================================
-   PRINTABLE FILTER STATE
+   AGE MATCH
 ===================================================== */
 
-let selectedLanguage =
-  "en";
+function ageMatches(
+  cardAge,
+  selectedRange
+){
+
+  if(
+    selectedRange === "all" ||
+    !cardAge
+  ){
+    return true;
+  }
 
 
-let selectedSearch =
-  "";
+  const bookParts =
+    cardAge
+      .split("-")
+      .map(Number);
 
 
-let selectedSort =
-  "default";
+  const filterParts =
+    selectedRange
+      .split("-")
+      .map(Number);
+
+
+  const bookMin =
+    bookParts[0];
+
+  const bookMax =
+    bookParts[1];
+
+  const filterMin =
+    filterParts[0];
+
+  const filterMax =
+    filterParts[1];
+
+
+  return (
+    bookMin <= filterMax &&
+    bookMax >= filterMin
+  );
+}
 
 
 /* =====================================================
-   UPDATE PRINTABLES
+   LANGUAGE MATCH
 ===================================================== */
 
-function updatePrintables() {
+function languageMatches(
+  cardLanguage
+){
 
-  const term =
-    selectedSearch
-      .trim()
-      .toLowerCase();
-
-
-  printableCards.forEach(
-    card => {
-
-      const languageMatch =
-        selectedLanguage === "all" ||
-        card.dataset.language ===
-        selectedLanguage;
-
-
-      const searchableText =
-        card.innerText
-          .toLowerCase();
-
-
-      const searchMatch =
-        !term ||
-        searchableText.includes(
-          term
-        );
-
-
-      card.classList.toggle(
-        "hidden",
-        !(
-          languageMatch &&
-          searchMatch
-        )
-      );
-
-    }
+  return (
+    selectedLanguage === "all" ||
+    cardLanguage === "all" ||
+    cardLanguage === selectedLanguage
   );
 
 }
 
 
 /* =====================================================
-   SHOW / HIDE FILTER PANEL
+   UPDATE PRINTABLES
+===================================================== */
+
+function updateCards(){
+
+  cards.forEach(card => {
+
+    const searchableText =
+      card.innerText
+        .toLowerCase();
+
+
+    const searchMatch =
+      !selectedSearch ||
+      searchableText.includes(
+        selectedSearch
+      );
+
+
+    const ageMatch =
+      ageMatches(
+        card.dataset.age,
+        selectedAge
+      );
+
+
+    const languageMatch =
+      languageMatches(
+        card.dataset.language ||
+        "all"
+      );
+
+
+    const visible =
+      searchMatch &&
+      ageMatch &&
+      languageMatch;
+
+
+    card.classList.toggle(
+      "hidden",
+      !visible
+    );
+
+  });
+
+}
+
+
+/* =====================================================
+   COLLAPSE FILTERS
+===================================================== */
+
+function collapseFilters(){
+
+  filterPanel.classList.remove(
+    "open"
+  );
+
+  filtersToggle.classList.remove(
+    "open"
+  );
+
+  filtersToggle.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  filtersToggleText.textContent =
+    TRANSLATIONS[
+      currentLanguage
+    ].showFilters;
+
+}
+
+
+/* =====================================================
+   SHOW / HIDE FILTERS
 ===================================================== */
 
 filtersToggle.addEventListener(
@@ -3186,15 +3136,9 @@ filtersToggle.addEventListener(
   () => {
 
     const open =
-      !filterPanel.classList.contains(
+      filterPanel.classList.toggle(
         "open"
       );
-
-
-    filterPanel.classList.toggle(
-      "open",
-      open
-    );
 
 
     filtersToggle.classList.toggle(
@@ -3210,46 +3154,16 @@ filtersToggle.addEventListener(
 
 
     filtersToggleText.textContent =
-      open
-        ? TRANSLATIONS[
-            currentLanguage
-          ].hideFilters
-        : TRANSLATIONS[
-            currentLanguage
-          ].showFilters;
+      TRANSLATIONS[
+        currentLanguage
+      ][
+        open
+          ? "hideFilters"
+          : "showFilters"
+      ];
 
   }
 );
-
-
-/* =====================================================
-   CLOSE FILTER PANEL
-===================================================== */
-
-function closeFilters() {
-
-  filterPanel.classList.remove(
-    "open"
-  );
-
-
-  filtersToggle.classList.remove(
-    "open"
-  );
-
-
-  filtersToggle.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-
-  filtersToggleText.textContent =
-    TRANSLATIONS[
-      currentLanguage
-    ].showFilters;
-
-}
 
 
 /* =====================================================
@@ -3261,17 +3175,58 @@ searchInput.addEventListener(
   () => {
 
     selectedSearch =
-      searchInput.value;
+      searchInput.value
+        .trim()
+        .toLowerCase();
 
 
-    updatePrintables();
+    updateCards();
 
   }
 );
 
 
 /* =====================================================
-   LANGUAGE FILTER
+   AGE BUTTONS
+===================================================== */
+
+ageButtons.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        selectedAge =
+          button.dataset.ageFilter;
+
+
+        ageButtons.forEach(
+          item => {
+
+            item.classList.toggle(
+              "active",
+              item === button
+            );
+
+          }
+        );
+
+
+        updateCards();
+
+
+        collapseFilters();
+
+      }
+    );
+
+  }
+);
+
+
+/* =====================================================
+   LANGUAGE BUTTONS
 ===================================================== */
 
 languageButtons.forEach(
@@ -3281,27 +3236,23 @@ languageButtons.forEach(
       "click",
       () => {
 
+        selectedLanguage =
+          button.dataset.language;
+
+
         languageButtons.forEach(
           item => {
 
-            item.classList.remove(
-              "active"
+            item.classList.toggle(
+              "active",
+              item === button
             );
 
           }
         );
 
 
-        button.classList.add(
-          "active"
-        );
-
-
-        selectedLanguage =
-          button.dataset.language;
-
-
-        updatePrintables();
+        updateCards();
 
       }
     );
@@ -3322,21 +3273,17 @@ sortSelect.addEventListener(
       sortSelect.value;
 
 
-    const cards =
-      Array.from(
-        printableGrid.querySelectorAll(
-          ".printable-card"
-        )
-      );
+    const sortedCards =
+      [...cards];
 
 
-    if (
+    if(
       selectedSort ===
       "price-asc"
-    ) {
+    ){
 
-      cards.sort(
-        (a, b) =>
+      sortedCards.sort(
+        (a,b) =>
           Number(
             a.dataset.priceUsd
           ) -
@@ -3348,13 +3295,13 @@ sortSelect.addEventListener(
     }
 
 
-    else if (
+    if(
       selectedSort ===
       "price-desc"
-    ) {
+    ){
 
-      cards.sort(
-        (a, b) =>
+      sortedCards.sort(
+        (a,b) =>
           Number(
             b.dataset.priceUsd
           ) -
@@ -3366,13 +3313,13 @@ sortSelect.addEventListener(
     }
 
 
-    else if (
+    if(
       selectedSort ===
       "latest"
-    ) {
+    ){
 
-      cards.sort(
-        (a, b) =>
+      sortedCards.sort(
+        (a,b) =>
           (
             b.dataset.date ||
             ""
@@ -3385,33 +3332,24 @@ sortSelect.addEventListener(
     }
 
 
-    else {
-
-      cards.sort(
-        (a, b) =>
-          Number(
-            a.dataset.originalOrder
-          ) -
-          Number(
-            b.dataset.originalOrder
-          )
-      );
-
-    }
-
-
-    cards.forEach(
+    sortedCards.forEach(
       card =>
-        printableGrid.appendChild(
-          card
-        )
+        grid.appendChild(card)
     );
 
 
-    closeFilters();
+    cards =
+      [
+        ...grid.querySelectorAll(
+          ".printable-card"
+        )
+      ];
 
 
-    updatePrintables();
+    updateCards();
+
+
+    collapseFilters();
 
   }
 );
@@ -3426,12 +3364,10 @@ const menuButton =
     "menuButton"
   );
 
-
 const menuOverlay =
   document.getElementById(
     "menuOverlay"
   );
-
 
 const menuClose =
   document.getElementById(
@@ -3439,30 +3375,11 @@ const menuClose =
   );
 
 
-const menuBooks =
-  document.getElementById(
-    "menuBooks"
-  );
-
-
-const menuMerchandise =
-  document.getElementById(
-    "menuMerchandise"
-  );
-
-
-const menuPrintables =
-  document.getElementById(
-    "menuPrintables"
-  );
-
-
-function openMenu() {
+function openMenu(){
 
   menuOverlay.classList.add(
     "open"
   );
-
 
   document.body.classList.add(
     "menu-open"
@@ -3471,12 +3388,11 @@ function openMenu() {
 }
 
 
-function closeMenu() {
+function closeMenu(){
 
   menuOverlay.classList.remove(
     "open"
   );
-
 
   document.body.classList.remove(
     "menu-open"
@@ -3501,10 +3417,10 @@ menuOverlay.addEventListener(
   "click",
   event => {
 
-    if (
+    if(
       event.target ===
       menuOverlay
-    ) {
+    ){
 
       closeMenu();
 
@@ -3514,21 +3430,22 @@ menuOverlay.addEventListener(
 );
 
 
-menuBooks.addEventListener(
-  "click",
-  closeMenu
-);
+[
+  "menuBooks",
+  "menuMerchandise",
+  "menuPrintables"
+]
+.forEach(
+  id => {
 
+    document
+      .getElementById(id)
+      .addEventListener(
+        "click",
+        closeMenu
+      );
 
-menuMerchandise.addEventListener(
-  "click",
-  closeMenu
-);
-
-
-menuPrintables.addEventListener(
-  "click",
-  closeMenu
+  }
 );
 
 
@@ -3540,20 +3457,22 @@ document
   .querySelectorAll(
     "[data-ui-language]"
   )
-  .forEach(button => {
+  .forEach(
+    button => {
 
-    button.addEventListener(
-      "click",
-      () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-        applyLanguage(
-          button.dataset.uiLanguage
-        );
+          applyLanguage(
+            button.dataset.uiLanguage
+          );
 
-      }
-    );
+        }
+      );
 
-  });
+    }
+  );
 
 
 /* =====================================================
@@ -3564,28 +3483,30 @@ document
   .querySelectorAll(
     "[data-currency]"
   )
-  .forEach(button => {
+  .forEach(
+    button => {
 
-    button.addEventListener(
-      "click",
-      () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-        currentCurrency =
-          button.dataset.currency;
-
-
-        localStorage.setItem(
-          "littleSyamiCurrency",
-          currentCurrency
-        );
+          currentCurrency =
+            button.dataset.currency;
 
 
-        updatePrices();
+          localStorage.setItem(
+            "littleSyamiCurrency",
+            currentCurrency
+          );
 
-      }
-    );
 
-  });
+          updatePrices();
+
+        }
+      );
+
+    }
+  );
 
 
 /* =====================================================
@@ -3596,14 +3517,13 @@ applyLanguage(
   currentLanguage
 );
 
-
 updatePrices();
 
-
-updatePrintables();
+updateCards();
 
 </script>
 
 
 </body>
+
 </html>
