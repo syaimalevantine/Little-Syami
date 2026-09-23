@@ -18,6 +18,10 @@
 
 <style>
 
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root {
   --paper: #f8f3e8;
   --paper-soft: #fcf9f1;
@@ -29,8 +33,12 @@
   --muted: #858273;
   --line: #e4dccb;
   --white: #fffdf8;
-  --shadow: rgba(83, 82, 52, 0.13);
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
   box-sizing: border-box;
@@ -38,13 +46,18 @@
   padding: 0;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
-  background: var(--paper);
-  color: var(--text);
+  background:
+    var(--paper);
+
+  color:
+    var(--text);
 
   font-family:
     -apple-system,
@@ -57,13 +70,18 @@ body {
   line-height: 1.5;
 }
 
+
 body.menu-open {
   overflow: hidden;
 }
 
+
 button {
   font: inherit;
 }
+
+
+/* Arabic typography */
 
 :lang(ar) {
   letter-spacing: 0 !important;
@@ -76,17 +94,21 @@ button {
 
 header {
   position: sticky;
+
   top: 0;
+
   z-index: 100;
 
   background:
     rgba(248, 243, 232, 0.96);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter:
+    blur(14px);
 
   border-bottom:
     1px solid var(--line);
 }
+
 
 .header-inner {
   max-width: 1180px;
@@ -94,24 +116,34 @@ header {
   height: 92px;
 
   margin: 0 auto;
-  padding: 0 28px;
+
+  padding:
+    0 28px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
+
 .brand {
   display: flex;
+
   align-items: center;
 
-  color: var(--text);
+  color:
+    var(--text);
+
   text-decoration: none;
 }
+
 
 .brand-text {
   line-height: 1;
 }
+
 
 .brand-name {
   font-family:
@@ -121,33 +153,43 @@ header {
 
   font-size: 22px;
 
-  letter-spacing: -0.4px;
+  letter-spacing:
+    -0.4px;
 }
+
 
 .brand-subtitle {
   margin-top: 5px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
   font-size: 9px;
 
-  letter-spacing: 3px;
+  letter-spacing:
+    3px;
 }
+
 
 .header-actions {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 }
 
+
 .menu-button {
   width: 52px;
+
   height: 52px;
 
   border:
     1px solid var(--line);
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   background:
     var(--paper-soft);
@@ -156,7 +198,9 @@ header {
     var(--olive);
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   cursor: pointer;
@@ -180,18 +224,23 @@ header {
   text-align: center;
 }
 
+
 .eyebrow {
   margin-bottom: 24px;
 
-  color: var(--gold);
+  color:
+    var(--gold);
 
   font-size: 12px;
 
-  letter-spacing: 5px;
+  letter-spacing:
+    5px;
 }
 
+
 .hero h1 {
-  color: var(--olive);
+  color:
+    var(--olive);
 
   font-family:
     Georgia,
@@ -201,12 +250,16 @@ header {
   font-size:
     clamp(48px, 8vw, 76px);
 
-  font-weight: 400;
+  font-weight:
+    400;
 
-  line-height: 0.98;
+  line-height:
+    0.98;
 
-  letter-spacing: -2px;
+  letter-spacing:
+    -2px;
 }
+
 
 .hero p {
   max-width: 650px;
@@ -214,41 +267,50 @@ header {
   margin:
     30px auto 0;
 
-  color: #77756c;
+  color:
+    #77756c;
 
   font-size: 18px;
 
-  line-height: 1.7;
+  line-height:
+    1.7;
 }
+
 
 .ornament {
   margin:
     38px auto 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 18px;
 }
 
+
 .ornament-line {
   width: 115px;
+
   height: 1px;
 
   background:
     var(--gold-soft);
 }
 
+
 .ornament-heart {
-  color: var(--gold);
+  color:
+    var(--gold);
 
   font-size: 18px;
 }
 
 
 /* =====================================================
-   PRINTABLES
+   PRINTABLE CATALOG
 ===================================================== */
 
 .printables {
@@ -260,10 +322,12 @@ header {
     0 28px 110px;
 }
 
+
 .section-title {
   margin-bottom: 12px;
 
-  color: var(--olive);
+  color:
+    var(--olive);
 
   font-family:
     Georgia,
@@ -272,43 +336,208 @@ header {
 
   font-size: 38px;
 
-  font-weight: 400;
+  font-weight:
+    400;
 }
+
 
 .section-intro {
   max-width: 650px;
 
   margin-bottom: 34px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
   font-size: 16px;
 
-  line-height: 1.7;
+  line-height:
+    1.7;
 }
 
 
 /* =====================================================
-   CATEGORY FILTER
+   SHOW / HIDE FILTERS
 ===================================================== */
 
-.category-nav {
+.filters-toggle {
   display: flex;
-  flex-wrap: wrap;
 
-  gap: 10px;
+  align-items: center;
 
-  margin-bottom: 48px;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding:
+    16px 0;
+
+  margin-bottom:
+    22px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid var(--line);
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+
+  font-size: 13px;
+
+  letter-spacing:
+    2px;
+
+  text-transform:
+    uppercase;
+
+  cursor: pointer;
 }
 
-.category-button {
+
+.filters-toggle-icon {
+  font-size: 14px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.filters-toggle.open
+.filters-toggle-icon {
+  transform:
+    rotate(180deg);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-wrap {
+  width: 100%;
+
+  margin-top:
+    22px;
+
+  margin-bottom:
+    30px;
+}
+
+
+.search-input {
+  display: block;
+
+  width: 100%;
+
   padding:
-    10px 18px;
+    12px 0 13px;
+
+  border: none;
+
+  border-bottom:
+    1px solid var(--line);
+
+  outline: none;
+
+  background:
+    transparent;
+
+  color:
+    var(--olive);
+
+  font-family:
+    inherit;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.4;
+}
+
+
+.search-input::placeholder {
+  color:
+    var(--muted);
+
+  opacity:
+    1;
+}
+
+
+.search-input:focus {
+  border-bottom-color:
+    var(--olive);
+}
+
+
+/* =====================================================
+   HIDDEN FILTER PANEL
+===================================================== */
+
+.filter-panel {
+  display:
+    none !important;
+
+  padding-bottom:
+    8px;
+}
+
+
+.filter-panel.open {
+  display:
+    block !important;
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+.sort-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom:
+    28px;
+}
+
+
+.sort-label {
+  color:
+    var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing:
+    2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.sort-select {
+  min-width:
+    210px;
+
+  padding:
+    11px 38px 11px 16px;
 
   border:
     1px solid var(--line);
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     var(--paper-soft);
@@ -316,32 +545,108 @@ header {
   color:
     var(--olive);
 
-  cursor: pointer;
+  font:
+    inherit;
 
-  font-size: 11px;
+  font-size:
+    14px;
 
-  letter-spacing: 1px;
+  cursor:
+    pointer;
+}
+
+/* =====================================================
+   PRINTABLE LANGUAGE
+   ALWAYS VISIBLE
+===================================================== */
+
+.filter-group {
+  margin-bottom:
+    20px;
+}
+
+
+.filter-label {
+  display: block;
+
+  margin-bottom:
+    10px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    11px;
+
+  letter-spacing:
+    2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.filters {
+  display: flex;
+
+  gap:
+    10px;
+
+  overflow-x:
+    auto;
+
+  padding-bottom:
+    4px;
+
+  scrollbar-width:
+    none;
+}
+
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+
+.filter-btn {
+  flex:
+    0 0 auto;
+
+  padding:
+    11px 20px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:
+    999px;
+
+  background:
+    var(--paper-soft);
+
+  color:
+    var(--olive-soft);
+
+  white-space:
+    nowrap;
+
+  cursor:
+    pointer;
 
   transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    0.2s ease;
 }
 
-.category-button:hover {
+
+.filter-btn.active {
   border-color:
     var(--olive);
-}
 
-.category-button.active {
   background:
     var(--olive);
 
-  border-color:
-    var(--olive);
-
   color:
-    var(--white);
+    #fffdf7;
 }
 
 
@@ -350,7 +655,11 @@ header {
 ===================================================== */
 
 .printable-grid {
-  display: grid;
+  margin-top:
+    48px;
+
+  display:
+    grid;
 
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
@@ -359,12 +668,16 @@ header {
     58px 28px;
 }
 
+
 .printable-card {
-  min-width: 0;
+  min-width:
+    0;
 }
 
+
 .printable-card.hidden {
-  display: none;
+  display:
+    none;
 }
 
 
@@ -373,13 +686,17 @@ header {
 ===================================================== */
 
 .product-image-wrap {
-  position: relative;
+  position:
+    relative;
 
-  width: 100%;
+  width:
+    100%;
 
-  aspect-ratio: 1 / 1;
+  aspect-ratio:
+    1 / 1;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
   background:
     var(--paper-soft);
@@ -387,52 +704,41 @@ header {
   border:
     1px solid var(--line);
 
-  border-radius: 2px;
+  border-radius:
+    2px;
 }
 
-.product-image {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-}
-
-
-/*
-   TEMPORARY PLACEHOLDER
-
-   Replace this div with the real image.
-
-   Example:
-
-   <img
-     class="product-image"
-     src="../assets/printables/shahzade-activity-pack.webp"
-     alt="Shahzade Pear Harvest Activity Pack"
-   >
-*/
 
 .product-placeholder {
-  width: 100%;
-  height: 100%;
+  width:
+    100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height:
+    100%;
 
-  text-align: center;
+  display:
+    flex;
 
-  color: var(--muted);
+  align-items:
+    center;
 
-  font-size: 11px;
+  justify-content:
+    center;
 
-  letter-spacing: 2px;
+  text-align:
+    center;
 
-  text-transform: uppercase;
+  color:
+    var(--muted);
+
+  font-size:
+    11px;
+
+  letter-spacing:
+    2px;
+
+  text-transform:
+    uppercase;
 }
 
 
@@ -445,61 +751,87 @@ header {
     22px 4px 0;
 }
 
+
 .product-type {
-  margin-bottom: 8px;
+  margin-bottom:
+    8px;
 
-  color: var(--gold);
+  color:
+    var(--gold);
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  letter-spacing: 2px;
+  letter-spacing:
+    2px;
 }
 
+
 .product-title {
-  color: var(--olive);
+  color:
+    var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 23px;
+  font-size:
+    23px;
 
-  line-height: 1.2;
+  line-height:
+    1.2;
 }
+
 
 .product-description {
-  margin-top: 9px;
+  margin-top:
+    9px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 14px;
+  font-size:
+    14px;
 
-  line-height: 1.6;
+  line-height:
+    1.6;
 }
+
 
 .product-format {
-  margin-top: 9px;
+  margin-top:
+    9px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 12px;
+  font-size:
+    12px;
 }
+
 
 .product-price {
-  margin-top: 10px;
+  margin-top:
+    10px;
 
-  color: var(--olive);
+  color:
+    var(--olive);
 
-  font-size: 15px;
+  font-size:
+    15px;
 
-  font-weight: 500;
+  font-weight:
+    500;
 }
 
-.buy-button {
-  display: inline-block;
 
-  margin-top: 16px;
+.buy-button {
+  display:
+    inline-block;
+
+  margin-top:
+    16px;
 
   padding:
     9px 18px;
@@ -507,7 +839,8 @@ header {
   border:
     1px solid var(--olive);
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     var(--olive);
@@ -515,13 +848,17 @@ header {
   color:
     #fffdf7;
 
-  text-decoration: none;
+  text-decoration:
+    none;
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  letter-spacing: 1.5px;
+  letter-spacing:
+    1.5px;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 }
 
 
@@ -530,41 +867,56 @@ header {
 ===================================================== */
 
 .menu-overlay {
-  position: fixed;
+  position:
+    fixed;
 
-  inset: 0;
+  inset:
+    0;
 
-  z-index: 200;
+  z-index:
+    200;
 
   background:
     rgba(69, 69, 49, 0.25);
 
-  opacity: 0;
+  opacity:
+    0;
 
-  pointer-events: none;
+  pointer-events:
+    none;
 
   transition:
     opacity 0.25s ease;
 }
 
-.menu-overlay.open {
-  opacity: 1;
 
-  pointer-events: auto;
+.menu-overlay.open {
+  opacity:
+    1;
+
+  pointer-events:
+    auto;
 }
 
-.menu-panel {
-  position: absolute;
 
-  top: 0;
-  right: 0;
+.menu-panel {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  right:
+    0;
 
   width:
     min(430px, 92vw);
 
-  height: 100%;
+  height:
+    100%;
 
-  overflow-y: auto;
+  overflow-y:
+    auto;
 
   padding:
     32px 28px 40px;
@@ -583,21 +935,29 @@ header {
     transform 0.28s ease;
 }
 
-.menu-overlay.open .menu-panel {
+
+.menu-overlay.open
+.menu-panel {
   transform:
     translateX(0);
 }
 
-.menu-close {
-  width: 48px;
-  height: 48px;
 
-  margin-left: auto;
+.menu-close {
+  width:
+    48px;
+
+  height:
+    48px;
+
+  margin-left:
+    auto;
 
   border:
     1px solid var(--line);
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   background:
     var(--paper-soft);
@@ -605,88 +965,130 @@ header {
   color:
     var(--olive);
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:
+    flex;
 
-  font-size: 22px;
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font-size:
+    22px;
 }
 
-.menu-title {
-  margin-top: 35px;
 
-  color: var(--olive);
+.menu-title {
+  margin-top:
+    35px;
+
+  color:
+    var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 32px;
+  font-size:
+    32px;
 }
+
 
 .menu-section {
-  margin-top: 35px;
+  margin-top:
+    35px;
 }
+
 
 .menu-section-label {
-  margin-bottom: 14px;
+  margin-bottom:
+    14px;
 
-  color: var(--gold);
+  color:
+    var(--gold);
 
-  font-size: 11px;
+  font-size:
+    11px;
 
-  letter-spacing: 2px;
+  letter-spacing:
+    2px;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 }
 
+
 .menu-option {
-  width: 100%;
+  width:
+    100%;
 
   padding:
     16px 0;
 
-  border: 0;
+  border:
+    0;
 
   border-bottom:
     1px solid var(--line);
 
-  background: transparent;
+  background:
+    transparent;
 
-  color: var(--olive);
+  color:
+    var(--olive);
 
-  text-align: left;
+  text-align:
+    left;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display:
+    flex;
 
-  text-decoration: none;
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  text-decoration:
+    none;
 }
+
 
 .menu-option small {
-  color: var(--muted);
+  color:
+    var(--muted);
 }
+
 
 .menu-option.selected {
-  color: var(--gold);
+  color:
+    var(--gold);
 
-  font-weight: 600;
+  font-weight:
+    600;
 }
+
 
 .menu-option.selected::after {
-  content: "✓";
+  content:
+    "✓";
 
-  color: var(--gold);
+  color:
+    var(--gold);
 }
 
+
 .menu-divider {
-  height: 1px;
+  height:
+    1px;
 
   margin:
     32px 0;
@@ -700,21 +1102,31 @@ header {
    RTL
 ===================================================== */
 
-html[dir="rtl"] .menu-panel {
-  right: auto;
-  left: 0;
+html[dir="rtl"]
+.menu-panel {
+  right:
+    auto;
+
+  left:
+    0;
 
   transform:
     translateX(-100%);
 }
 
-html[dir="rtl"] .menu-overlay.open .menu-panel {
+
+html[dir="rtl"]
+.menu-overlay.open
+.menu-panel {
   transform:
     translateX(0);
 }
 
-html[dir="rtl"] .menu-option {
-  text-align: right;
+
+html[dir="rtl"]
+.menu-option {
+  text-align:
+    right;
 }
 
 
@@ -729,36 +1141,49 @@ footer {
   border-top:
     1px solid var(--line);
 
-  text-align: center;
+  text-align:
+    center;
 }
 
+
 .footer-name {
-  color: var(--olive);
+  color:
+    var(--olive);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 24px;
+  font-size:
+    24px;
 }
+
 
 .footer-sub {
-  margin-top: 8px;
+  margin-top:
+    8px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  letter-spacing: 3px;
+  letter-spacing:
+    3px;
 }
 
+
 .footer-copy {
-  margin-top: 28px;
+  margin-top:
+    28px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 12px;
+  font-size:
+    12px;
 }
 
 
@@ -769,13 +1194,19 @@ footer {
 @media (min-width: 800px) {
 
   .header-inner {
-    height: 104px;
+    height:
+      104px;
   }
 
+
   .hero {
-    padding-top: 110px;
-    padding-bottom: 90px;
+    padding-top:
+      110px;
+
+    padding-bottom:
+      90px;
   }
+
 
   .printable-grid {
     grid-template-columns:
@@ -795,64 +1226,86 @@ footer {
 @media (max-width: 600px) {
 
   .header-inner {
-    height: 88px;
+    height:
+      88px;
 
     padding:
       0 18px;
   }
+
 
   .hero {
     padding:
       72px 28px 65px;
   }
 
+
   .hero h1 {
-    font-size: 49px;
+    font-size:
+      49px;
   }
 
+
   .hero p {
-    font-size: 16px;
+    font-size:
+      16px;
   }
+
 
   .printables {
     padding:
       0 30px 80px;
   }
 
+
   .section-title {
-    font-size: 34px;
+    font-size:
+      34px;
   }
+
 
   .section-intro {
-    font-size: 15px;
+    font-size:
+      15px;
 
-    margin-bottom: 28px;
+    margin-bottom:
+      28px;
   }
 
-  .category-nav {
-    gap: 8px;
 
-    margin-bottom: 38px;
+  .sort-row {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      10px;
   }
 
-  .category-button {
-    padding:
-      9px 14px;
 
-    font-size: 10px;
+  .sort-select {
+    width:
+      100%;
   }
+
 
   .printable-grid {
     gap:
       48px 24px;
   }
 
+
   .product-title {
-    font-size: 20px;
+    font-size:
+      20px;
   }
 
+
   .menu-panel {
-    width: 90vw;
+    width:
+      90vw;
   }
 
 }
@@ -861,9 +1314,7 @@ footer {
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      HEADER
@@ -908,7 +1359,6 @@ footer {
   </div>
 
 </header>
-
 
 
 <!-- =====================================================
@@ -1112,7 +1562,6 @@ footer {
 </div>
 
 
-
 <!-- =====================================================
      MAIN
 ===================================================== -->
@@ -1134,13 +1583,17 @@ footer {
   </div>
 
 
-  <h1 data-i18n="heroTitle">
+  <h1
+    data-i18n="heroTitle"
+  >
     Little Things<br>
     to Make &amp; Explore
   </h1>
 
 
-  <p data-i18n="heroDescription">
+  <p
+    data-i18n="heroDescription"
+  >
     Printable activities inspired by Little Syami's stories,
     learning, imagination, and play.
   </p>
@@ -1161,12 +1614,14 @@ footer {
 </section>
 
 
-
 <!-- =====================================================
      PRINTABLE CATALOG
 ===================================================== -->
 
-<section class="printables">
+<section
+  class="printables"
+  id="printables"
+>
 
   <h2
     class="section-title"
@@ -1180,71 +1635,213 @@ footer {
     class="section-intro"
     data-i18n="catalogIntro"
   >
-    Printable resources for stories, learning, play, and little moments of creativity.
+    Printable resources for stories, learning,
+    play, and little moments of creativity.
   </p>
 
 
-  <!-- CATEGORY FILTER -->
+  <!-- =================================================
+       SHOW / HIDE FILTERS
+  ================================================= -->
 
-  <nav
-    class="category-nav"
-    aria-label="Printable categories"
+  <button
+    type="button"
+    class="filters-toggle"
+    id="filtersToggle"
+    aria-expanded="false"
+    aria-controls="filterPanel"
   >
 
-    <button
-      class="category-button active"
-      data-category="all"
-      data-i18n="categoryAll"
+    <span
+      id="filtersToggleText"
+      data-i18n="showFilters"
     >
-      All
-    </button>
+      Show Filters
+    </span>
 
-    <button
-      class="category-button"
-      data-category="stories"
-      data-i18n="categoryStories"
+
+    <span
+      class="filters-toggle-icon"
+      aria-hidden="true"
     >
-      Stories
-    </button>
+      ↓
+    </span>
 
-    <button
-      class="category-button"
-      data-category="learning"
-      data-i18n="categoryLearning"
+  </button>
+
+
+  <!-- =================================================
+       SEARCH
+  ================================================= -->
+
+  <div
+    class="search-wrap"
+    id="searchWrap"
+  >
+
+    <input
+      type="search"
+      class="search-input"
+      id="printableSearch"
+      placeholder="Search"
+      autocomplete="off"
+      aria-label="Search printables"
     >
-      Learning
-    </button>
 
-    <button
-      class="category-button"
-      data-category="play"
-      data-i18n="categoryPlay"
+  </div>
+
+
+  <!-- =================================================
+       HIDDEN FILTER PANEL
+  ================================================= -->
+
+  <div
+    class="filter-panel"
+    id="filterPanel"
+  >
+
+    <div class="sort-row">
+
+      <span
+        class="sort-label"
+        data-i18n="sortBy"
+      >
+        Sort by
+      </span>
+
+
+      <select
+        class="sort-select"
+        id="sortSelect"
+        aria-label="Sort printables"
+      >
+
+        <option
+          value="default"
+          data-i18n="sortDefault"
+        >
+          Default
+        </option>
+
+
+        <option
+          value="latest"
+          data-i18n="sortLatest"
+        >
+          Latest
+        </option>
+
+
+        <option
+          value="price-asc"
+          data-i18n="sortPriceAsc"
+        >
+          Price Ascending
+        </option>
+
+
+        <option
+          value="price-desc"
+          data-i18n="sortPriceDesc"
+        >
+          Price Descending
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       PRINTABLE LANGUAGE
+       ALWAYS VISIBLE
+  ================================================= -->
+
+  <div class="filter-group">
+
+    <span
+      class="filter-label"
+      data-i18n="languageLabelBooks"
     >
-      Play
-    </button>
+      Printable Language
+    </span>
 
-    <button
-      class="category-button"
-      data-category="bundles"
-      data-i18n="categoryBundles"
+
+    <div
+      class="filters"
+      id="languageFilters"
     >
-      Bundles
-    </button>
 
-  </nav>
+      <button
+        type="button"
+        class="filter-btn active"
+        data-language="en"
+      >
+        English
+      </button>
 
 
+      <button
+        type="button"
+        class="filter-btn"
+        data-language="ar"
+      >
+        العربية
+      </button>
 
-  <div class="printable-grid">
+
+      <button
+        type="button"
+        class="filter-btn"
+        data-language="id"
+      >
+        Bahasa
+      </button>
 
 
-    <!-- =================================================
-         PRODUCT 1 — STORIES
-    ================================================== -->
+      <button
+        type="button"
+        class="filter-btn"
+        data-language="tr"
+      >
+        Türkçe
+      </button>
+
+
+      <button
+        type="button"
+        class="filter-btn"
+        data-language="all"
+        data-i18n="allLanguages"
+      >
+        All Languages
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       PRINTABLE GRID
+  ================================================= -->
+
+  <div
+    class="printable-grid"
+    id="printableGrid"
+  >
+
+      <!-- =================================================
+         PRODUCT 1
+    ================================================= -->
 
     <article
       class="printable-card"
-      data-category="stories"
+      data-language="en"
+      data-price-usd="0"
+      data-date="2026-09-23"
     >
 
       <div class="product-image-wrap">
@@ -1278,7 +1875,8 @@ footer {
           class="product-description"
           data-i18n="productOneDescription"
         >
-          Printable activities inspired by Shahzade's story.
+          Printable activities inspired by
+          Shahzade's story.
         </div>
 
 
@@ -1312,14 +1910,15 @@ footer {
     </article>
 
 
-
     <!-- =================================================
-         PRODUCT 2 — LEARNING
-    ================================================== -->
+         PRODUCT 2
+    ================================================= -->
 
     <article
       class="printable-card"
-      data-category="learning"
+      data-language="en"
+      data-price-usd="0"
+      data-date="2026-09-22"
     >
 
       <div class="product-image-wrap">
@@ -1353,7 +1952,8 @@ footer {
           class="product-description"
           data-i18n="productTwoDescription"
         >
-          Gentle learning activities for curious little minds.
+          Gentle learning activities for
+          curious little minds.
         </div>
 
 
@@ -1387,14 +1987,15 @@ footer {
     </article>
 
 
-
     <!-- =================================================
-         PRODUCT 3 — PLAY
-    ================================================== -->
+         PRODUCT 3
+    ================================================= -->
 
     <article
       class="printable-card"
-      data-category="play"
+      data-language="en"
+      data-price-usd="0"
+      data-date="2026-09-21"
     >
 
       <div class="product-image-wrap">
@@ -1428,7 +2029,8 @@ footer {
           class="product-description"
           data-i18n="productThreeDescription"
         >
-          Simple printable games and creative activities.
+          Simple printable games and
+          creative activities.
         </div>
 
 
@@ -1462,14 +2064,15 @@ footer {
     </article>
 
 
-
     <!-- =================================================
-         PRODUCT 4 — BUNDLE
-    ================================================== -->
+         PRODUCT 4
+    ================================================= -->
 
     <article
       class="printable-card"
-      data-category="bundles"
+      data-language="en"
+      data-price-usd="0"
+      data-date="2026-09-20"
     >
 
       <div class="product-image-wrap">
@@ -1503,7 +2106,8 @@ footer {
           class="product-description"
           data-i18n="productFourDescription"
         >
-          A collection of Little Syami printables in one bundle.
+          A collection of Little Syami
+          printables in one bundle.
         </div>
 
 
@@ -1544,7 +2148,6 @@ footer {
 </main>
 
 
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
@@ -1555,19 +2158,21 @@ footer {
     Little Syami
   </div>
 
+
   <div class="footer-sub">
     PUBLISHING
   </div>
+
 
   <div
     class="footer-copy"
     data-i18n="copyright"
   >
-    © 2026 Little Syami Publishing. All Rights Reserved.
+    © 2026 Little Syami Publishing.
+    All Rights Reserved.
   </div>
 
 </footer>
-
 
 
 <script>
@@ -1676,20 +2281,35 @@ const TRANSLATIONS = {
     catalogIntro:
       "Printable resources for stories, learning, play, and little moments of creativity.",
 
-    categoryAll:
-      "All",
+    showFilters:
+      "Show Filters",
 
-    categoryStories:
-      "Stories",
+    hideFilters:
+      "Hide Filters",
 
-    categoryLearning:
-      "Learning",
+    searchPlaceholder:
+      "Search",
 
-    categoryPlay:
-      "Play",
+    languageLabelBooks:
+      "Printable Language",
 
-    categoryBundles:
-      "Bundles",
+    allLanguages:
+      "All Languages",
+
+    sortBy:
+      "Sort by",
+
+    sortDefault:
+      "Default",
+
+    sortLatest:
+      "Latest",
+
+    sortPriceAsc:
+      "Price Ascending",
+
+    sortPriceDesc:
+      "Price Descending",
 
     productOneType:
       "STORIES",
@@ -1783,20 +2403,35 @@ const TRANSLATIONS = {
     catalogIntro:
       "Materi printable untuk cerita, belajar, bermain, dan momen-momen kecil penuh kreativitas.",
 
-    categoryAll:
-      "Semua",
+    showFilters:
+      "Tampilkan Filter",
 
-    categoryStories:
-      "Stories",
+    hideFilters:
+      "Sembunyikan Filter",
 
-    categoryLearning:
-      "Learning",
+    searchPlaceholder:
+      "Cari",
 
-    categoryPlay:
-      "Play",
+    languageLabelBooks:
+      "Bahasa Printable",
 
-    categoryBundles:
-      "Bundles",
+    allLanguages:
+      "Semua Bahasa",
+
+    sortBy:
+      "Urutkan",
+
+    sortDefault:
+      "Default",
+
+    sortLatest:
+      "Terbaru",
+
+    sortPriceAsc:
+      "Harga Terendah",
+
+    sortPriceDesc:
+      "Harga Tertinggi",
 
     productOneType:
       "STORIES",
@@ -1890,20 +2525,35 @@ const TRANSLATIONS = {
     catalogIntro:
       "Hikâyeler, öğrenme, oyun ve küçük yaratıcılık anları için yazdırılabilir kaynaklar.",
 
-    categoryAll:
-      "Tümü",
+    showFilters:
+      "Filtreleri Göster",
 
-    categoryStories:
-      "Stories",
+    hideFilters:
+      "Filtreleri Gizle",
 
-    categoryLearning:
-      "Learning",
+    searchPlaceholder:
+      "Ara",
 
-    categoryPlay:
-      "Play",
+    languageLabelBooks:
+      "Printable Dili",
 
-    categoryBundles:
-      "Bundles",
+    allLanguages:
+      "Tüm Diller",
+
+    sortBy:
+      "Sıralama",
+
+    sortDefault:
+      "Varsayılan",
+
+    sortLatest:
+      "En Yeni",
+
+    sortPriceAsc:
+      "Fiyat: Artan",
+
+    sortPriceDesc:
+      "Fiyat: Azalan",
 
     productOneType:
       "STORIES",
@@ -1997,20 +2647,35 @@ const TRANSLATIONS = {
     catalogIntro:
       "موارد قابلة للطباعة للقصص والتعلّم واللعب ولحظات صغيرة من الإبداع.",
 
-    categoryAll:
-      "الكل",
+    showFilters:
+      "إظهار الفلاتر",
 
-    categoryStories:
-      "القصص",
+    hideFilters:
+      "إخفاء الفلاتر",
 
-    categoryLearning:
-      "التعلّم",
+    searchPlaceholder:
+      "بحث",
 
-    categoryPlay:
-      "اللعب",
+    languageLabelBooks:
+      "لغة المطبوعات",
 
-    categoryBundles:
-      "الحزم",
+    allLanguages:
+      "جميع اللغات",
+
+    sortBy:
+      "ترتيب حسب",
+
+    sortDefault:
+      "الافتراضي",
+
+    sortLatest:
+      "الأحدث",
+
+    sortPriceAsc:
+      "السعر: من الأقل",
+
+    sortPriceDesc:
+      "السعر: من الأعلى",
 
     productOneType:
       "القصص",
@@ -2070,7 +2735,6 @@ const TRANSLATIONS = {
 
 };
 
-
 /* =====================================================
    INITIAL LANGUAGE
 ===================================================== */
@@ -2097,23 +2761,33 @@ function detectLanguage() {
     ).toLowerCase();
 
 
-  if (browserLanguage.startsWith("id")) {
+  if (
+    browserLanguage.startsWith("id")
+  ) {
     return "id";
   }
 
-  if (browserLanguage.startsWith("tr")) {
+
+  if (
+    browserLanguage.startsWith("tr")
+  ) {
     return "tr";
   }
 
-  if (browserLanguage.startsWith("ar")) {
+
+  if (
+    browserLanguage.startsWith("ar")
+  ) {
     return "ar";
   }
+
 
   return "en";
 }
 
+
 /* =====================================================
-   DETECT INITIAL CURRENCY
+   INITIAL CURRENCY
 ===================================================== */
 
 function detectCurrency() {
@@ -2138,37 +2812,41 @@ function detectCurrency() {
     ).toLowerCase();
 
 
-  /* United States */
-  if (locale === "en-us") {
+  if (
+    locale === "en-us"
+  ) {
     return "USD";
   }
 
 
-  /* Indonesia */
-  if (locale.startsWith("id-id")) {
+  if (
+    locale.startsWith("id-id")
+  ) {
     return "IDR";
   }
 
 
-  /* Turkey */
-  if (locale.startsWith("tr-tr")) {
+  if (
+    locale.startsWith("tr-tr")
+  ) {
     return "TRY";
   }
 
 
-  /* United Arab Emirates */
-  if (locale.startsWith("ar-ae")) {
+  if (
+    locale.startsWith("ar-ae")
+  ) {
     return "AED";
   }
 
 
-  /* Saudi Arabia */
-  if (locale.startsWith("ar-sa")) {
+  if (
+    locale.startsWith("ar-sa")
+  ) {
     return "SAR";
   }
 
 
-  /* European currencies */
   if (
     locale.startsWith("de-") ||
     locale.startsWith("fr-") ||
@@ -2187,25 +2865,97 @@ function detectCurrency() {
   }
 
 
-  /* Default */
   return "USD";
 }
 
+
 let currentLanguage =
   detectLanguage();
+
 
 let currentCurrency =
   detectCurrency();
 
 
 /* =====================================================
+   ELEMENTS
+===================================================== */
+
+const filtersToggle =
+  document.getElementById(
+    "filtersToggle"
+  );
+
+
+const filterPanel =
+  document.getElementById(
+    "filterPanel"
+  );
+
+
+const filtersToggleText =
+  document.getElementById(
+    "filtersToggleText"
+  );
+
+
+const searchInput =
+  document.getElementById(
+    "printableSearch"
+  );
+
+
+const sortSelect =
+  document.getElementById(
+    "sortSelect"
+  );
+
+
+const printableGrid =
+  document.getElementById(
+    "printableGrid"
+  );
+
+
+const languageButtons =
+  document.querySelectorAll(
+    "#languageFilters .filter-btn"
+  );
+
+
+const printableCards =
+  Array.from(
+    document.querySelectorAll(
+      ".printable-card"
+    )
+  );
+
+
+/* =====================================================
+   ORIGINAL ORDER
+===================================================== */
+
+printableCards.forEach(
+  (card, index) => {
+
+    card.dataset.originalOrder =
+      index;
+
+  }
+);
+
+
+/* =====================================================
    LANGUAGE
 ===================================================== */
 
-function applyLanguage(language) {
+function applyLanguage(
+  language
+) {
 
   currentLanguage =
     language;
+
 
   localStorage.setItem(
     "littleSyamiLanguage",
@@ -2236,6 +2986,7 @@ function applyLanguage(language) {
       const key =
         element.dataset.i18n;
 
+
       if (
         translation[key]
       ) {
@@ -2256,10 +3007,27 @@ function applyLanguage(language) {
 
       button.classList.toggle(
         "selected",
-        button.dataset.uiLanguage === language
+        button.dataset.uiLanguage ===
+        language
       );
 
     });
+
+
+  searchInput.placeholder =
+    translation.searchPlaceholder;
+
+
+  searchInput.setAttribute(
+    "aria-label",
+    translation.searchPlaceholder
+  );
+
+
+  filtersToggleText.textContent =
+    filterPanel.classList.contains("open")
+      ? translation.hideFilters
+      : translation.showFilters;
 
 }
 
@@ -2281,6 +3049,7 @@ function updatePrices() {
           element.dataset.priceUsd
         );
 
+
       if (
         !usd
       ) {
@@ -2295,21 +3064,35 @@ function updatePrices() {
 
       const converted =
         usd *
-        CURRENCY_RATES[currentCurrency];
+        CURRENCY_RATES[
+          currentCurrency
+        ];
 
 
       const config =
-        CURRENCY_CONFIG[currentCurrency];
+        CURRENCY_CONFIG[
+          currentCurrency
+        ];
 
 
       element.textContent =
         new Intl.NumberFormat(
           config.locale,
           {
-            style: "currency",
-            currency: config.currency
+            style:
+              "currency",
+
+            currency:
+              config.currency,
+
+            maximumFractionDigits:
+              currentCurrency === "IDR"
+                ? 0
+                : 2
           }
-        ).format(converted);
+        ).format(
+          converted
+        );
 
     });
 
@@ -2332,62 +3115,306 @@ function updatePrices() {
 
 
 /* =====================================================
-   CATEGORY FILTER
+   PRINTABLE FILTER STATE
 ===================================================== */
 
-const categoryButtons =
-  document.querySelectorAll(
-    "[data-category]"
-  );
-
-const printableCards =
-  document.querySelectorAll(
-    ".printable-card"
-  );
+let selectedLanguage =
+  "en";
 
 
-categoryButtons.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      const category =
-        button.dataset.category;
+let selectedSearch =
+  "";
 
 
-      categoryButtons.forEach(
-        item => {
-
-          item.classList.toggle(
-            "active",
-            item === button
-          );
-
-        }
-      );
+let selectedSort =
+  "default";
 
 
-      printableCards.forEach(
-        card => {
+/* =====================================================
+   UPDATE PRINTABLES
+===================================================== */
 
-          const matches =
-            category === "all" ||
-            card.dataset.category === category;
+function updatePrintables() {
+
+  const term =
+    selectedSearch
+      .trim()
+      .toLowerCase();
 
 
-          card.classList.toggle(
-            "hidden",
-            !matches
-          );
+  printableCards.forEach(
+    card => {
 
-        }
+      const languageMatch =
+        selectedLanguage === "all" ||
+        card.dataset.language ===
+        selectedLanguage;
+
+
+      const searchableText =
+        card.innerText
+          .toLowerCase();
+
+
+      const searchMatch =
+        !term ||
+        searchableText.includes(
+          term
+        );
+
+
+      card.classList.toggle(
+        "hidden",
+        !(
+          languageMatch &&
+          searchMatch
+        )
       );
 
     }
   );
 
-});
+}
+
+
+/* =====================================================
+   SHOW / HIDE FILTER PANEL
+===================================================== */
+
+filtersToggle.addEventListener(
+  "click",
+  () => {
+
+    const open =
+      !filterPanel.classList.contains(
+        "open"
+      );
+
+
+    filterPanel.classList.toggle(
+      "open",
+      open
+    );
+
+
+    filtersToggle.classList.toggle(
+      "open",
+      open
+    );
+
+
+    filtersToggle.setAttribute(
+      "aria-expanded",
+      String(open)
+    );
+
+
+    filtersToggleText.textContent =
+      open
+        ? TRANSLATIONS[
+            currentLanguage
+          ].hideFilters
+        : TRANSLATIONS[
+            currentLanguage
+          ].showFilters;
+
+  }
+);
+
+
+/* =====================================================
+   CLOSE FILTER PANEL
+===================================================== */
+
+function closeFilters() {
+
+  filterPanel.classList.remove(
+    "open"
+  );
+
+
+  filtersToggle.classList.remove(
+    "open"
+  );
+
+
+  filtersToggle.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+
+  filtersToggleText.textContent =
+    TRANSLATIONS[
+      currentLanguage
+    ].showFilters;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+searchInput.addEventListener(
+  "input",
+  () => {
+
+    selectedSearch =
+      searchInput.value;
+
+
+    updatePrintables();
+
+  }
+);
+
+
+/* =====================================================
+   LANGUAGE FILTER
+===================================================== */
+
+languageButtons.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        languageButtons.forEach(
+          item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        selectedLanguage =
+          button.dataset.language;
+
+
+        updatePrintables();
+
+      }
+    );
+
+  }
+);
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+sortSelect.addEventListener(
+  "change",
+  () => {
+
+    selectedSort =
+      sortSelect.value;
+
+
+    const cards =
+      Array.from(
+        printableGrid.querySelectorAll(
+          ".printable-card"
+        )
+      );
+
+
+    if (
+      selectedSort ===
+      "price-asc"
+    ) {
+
+      cards.sort(
+        (a, b) =>
+          Number(
+            a.dataset.priceUsd
+          ) -
+          Number(
+            b.dataset.priceUsd
+          )
+      );
+
+    }
+
+
+    else if (
+      selectedSort ===
+      "price-desc"
+    ) {
+
+      cards.sort(
+        (a, b) =>
+          Number(
+            b.dataset.priceUsd
+          ) -
+          Number(
+            a.dataset.priceUsd
+          )
+      );
+
+    }
+
+
+    else if (
+      selectedSort ===
+      "latest"
+    ) {
+
+      cards.sort(
+        (a, b) =>
+          (
+            b.dataset.date ||
+            ""
+          ).localeCompare(
+            a.dataset.date ||
+            ""
+          )
+      );
+
+    }
+
+
+    else {
+
+      cards.sort(
+        (a, b) =>
+          Number(
+            a.dataset.originalOrder
+          ) -
+          Number(
+            b.dataset.originalOrder
+          )
+      );
+
+    }
+
+
+    cards.forEach(
+      card =>
+        printableGrid.appendChild(
+          card
+        )
+    );
+
+
+    closeFilters();
+
+
+    updatePrintables();
+
+  }
+);
 
 
 /* =====================================================
@@ -2399,25 +3426,30 @@ const menuButton =
     "menuButton"
   );
 
+
 const menuOverlay =
   document.getElementById(
     "menuOverlay"
   );
+
 
 const menuClose =
   document.getElementById(
     "menuClose"
   );
 
+
 const menuBooks =
   document.getElementById(
     "menuBooks"
   );
 
+
 const menuMerchandise =
   document.getElementById(
     "menuMerchandise"
   );
+
 
 const menuPrintables =
   document.getElementById(
@@ -2431,6 +3463,7 @@ function openMenu() {
     "open"
   );
 
+
   document.body.classList.add(
     "menu-open"
   );
@@ -2443,6 +3476,7 @@ function closeMenu() {
   menuOverlay.classList.remove(
     "open"
   );
+
 
   document.body.classList.remove(
     "menu-open"
@@ -2499,7 +3533,7 @@ menuPrintables.addEventListener(
 
 
 /* =====================================================
-   LANGUAGE SELECTOR
+   UI LANGUAGE SELECTOR
 ===================================================== */
 
 document
@@ -2562,7 +3596,11 @@ applyLanguage(
   currentLanguage
 );
 
+
 updatePrices();
+
+
+updatePrintables();
 
 </script>
 
