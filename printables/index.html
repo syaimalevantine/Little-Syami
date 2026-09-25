@@ -1170,6 +1170,293 @@ footer {
 
 }
 
+/* =====================================================
+   LITTLE SYAMI — FLOATING CART
+===================================================== */
+
+.cart-floating {
+  position: fixed;
+  right: 22px;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+
+  z-index: 999;
+
+  width: 76px;
+  height: 76px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(181, 139, 69, 0.16);
+  border-radius: 50%;
+
+  background: #F8F3E8;
+  color: #555633;
+
+  box-shadow:
+    0 8px 20px rgba(69, 60, 42, 0.16),
+    0 2px 6px rgba(69, 60, 42, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cart-floating.is-visible {
+  display: flex;
+}
+
+.cart-floating:active {
+  transform: scale(0.95);
+}
+
+.cart-floating svg {
+  width: 34px;
+  height: 34px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+
+  min-width: 29px;
+  height: 29px;
+  padding: 0 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #F8F3E8;
+  border-radius: 50%;
+
+  background: #D97750;
+  color: #FFFDF8;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Cart panel */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 16px;
+
+  background: rgba(45, 42, 32, 0.32);
+  backdrop-filter: blur(3px);
+}
+
+.cart-overlay.is-open {
+  display: flex;
+}
+
+.cart-panel {
+  width: 100%;
+  max-width: 520px;
+  max-height: 82dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+  border-radius: 24px;
+
+  background: var(--paper);
+
+  box-shadow:
+    0 18px 50px rgba(45, 42, 32, 0.20);
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.cart-close {
+  width: 38px;
+  height: 38px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.cart-items {
+  overflow-y: auto;
+  padding: 0 22px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item img {
+  width: 64px;
+  height: 76px;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+  background: var(--paper-soft);
+}
+
+.cart-item-name {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.cart-item-price {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cart-remove {
+  padding: 8px;
+
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.cart-footer {
+  padding: 20px 22px;
+
+  border-top: 1px solid var(--line);
+}
+
+.cart-subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+
+  font-size: 16px;
+}
+
+.cart-checkout {
+  width: 100%;
+  min-height: 52px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background: var(--olive);
+  color: var(--white);
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cart-checkout:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cart-empty {
+  padding: 32px 8px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.cart-note {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cart-add-button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 16px;
+
+  border: 1px solid var(--olive);
+  border-radius: 12px;
+
+  background: var(--olive);
+  color: var(--white);
+
+  font: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.cart-add-button:active {
+  transform: scale(0.98);
+}
+
+@media (min-width: 700px) {
+  .cart-overlay {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-floating {
+    right: 16px;
+    bottom: calc(18px + env(safe-area-inset-bottom));
+
+    width: 68px;
+    height: 68px;
+  }
+
+  .cart-floating svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart-panel {
+    max-height: 86dvh;
+    border-radius: 22px;
+  }
+}
+
 </style>
 
 </head>
@@ -2027,6 +2314,90 @@ footer {
   </div>
 
 </section>
+
+<!-- =====================================================
+     FLOATING CART BUTTON
+===================================================== -->
+
+<button
+  type="button"
+  class="cart-floating"
+  id="cartFloating"
+  aria-label="Open shopping cart"
+  aria-controls="cartOverlay"
+  aria-expanded="false"
+>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="9" cy="21" r="1"/>
+    <circle cx="20" cy="21" r="1"/>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+  </svg>
+
+  <span class="cart-count" id="cartCount">0</span>
+</button>
+
+
+<!-- =====================================================
+     CART PANEL
+===================================================== -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  aria-hidden="true"
+>
+  <section
+    class="cart-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cartTitle"
+  >
+    <header class="cart-header">
+      <h2 class="cart-title" id="cartTitle">
+        Your Cart (0)
+      </h2>
+
+      <button
+        type="button"
+        class="cart-close"
+        id="cartClose"
+        aria-label="Close cart"
+      >
+        ×
+      </button>
+    </header>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <footer class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">USD 0.00</strong>
+      </div>
+
+      <button
+        type="button"
+        class="cart-checkout"
+        id="cartCheckout"
+        disabled
+      >
+        Checkout with Payhip
+      </button>
+
+      <p class="cart-note">
+        Secure checkout via Payhip
+      </p>
+    </footer>
+  </section>
+</div>
 
 </main>
 
@@ -3754,6 +4125,247 @@ updatePrices();
 
 
 updateBooks();
+
+/* =====================================================
+   LITTLE SYAMI — CART LOGIC
+===================================================== */
+
+const CART_STORAGE_KEY = "littleSyamiPrintableCart";
+
+const cartFloating =
+  document.getElementById("cartFloating");
+
+const cartCount =
+  document.getElementById("cartCount");
+
+const cartOverlay =
+  document.getElementById("cartOverlay");
+
+const cartClose =
+  document.getElementById("cartClose");
+
+const cartItems =
+  document.getElementById("cartItems");
+
+const cartTitle =
+  document.getElementById("cartTitle");
+
+const cartSubtotal =
+  document.getElementById("cartSubtotal");
+
+const cartCheckout =
+  document.getElementById("cartCheckout");
+
+
+let cart = [];
+
+try {
+  cart = JSON.parse(
+    localStorage.getItem(CART_STORAGE_KEY) || "[]"
+  );
+} catch {
+  cart = [];
+}
+
+
+/* Get current product information */
+
+function getCartProduct(card) {
+  return {
+    id: card.dataset.payhipProduct,
+    name:
+      card.querySelector(".book-title")?.textContent.trim()
+      || "Printable",
+    image:
+      card.querySelector(".book-cover-image")?.getAttribute("src")
+      || "",
+    price: Number(card.dataset.priceUsd || 0)
+  };
+}
+
+
+/* Save cart */
+
+function saveCart() {
+  localStorage.setItem(
+    CART_STORAGE_KEY,
+    JSON.stringify(cart)
+  );
+}
+
+
+/* Add buttons to all four printable cards */
+
+document.querySelectorAll(".book-card").forEach(card => {
+  if (!card.dataset.payhipProduct) return;
+
+  const button = document.createElement("button");
+
+  button.type = "button";
+  button.className = "cart-add-button";
+  button.textContent = "Add to Cart";
+
+  button.addEventListener("click", () => {
+    const product = getCartProduct(card);
+
+    const alreadyAdded = cart.some(
+      item => item.id === product.id
+    );
+
+    if (!alreadyAdded) {
+      cart.push(product);
+      saveCart();
+      renderCart();
+    } else {
+      openCart();
+    }
+  });
+
+  card.appendChild(button);
+});
+
+
+/* Format price using the existing currency selector */
+
+function formatCartPrice(price) {
+  return formatPrice(price, currentCurrency);
+}
+
+
+/* Render cart */
+
+function renderCart() {
+  const count = cart.length;
+
+  cartCount.textContent = count;
+  cartTitle.textContent = `Your Cart (${count})`;
+
+  cartFloating.classList.toggle(
+    "is-visible",
+    count > 0
+  );
+
+  cartItems.innerHTML = "";
+
+  if (count === 0) {
+    cartItems.innerHTML = `
+      <p class="cart-empty">
+        Your cart is empty.
+      </p>
+    `;
+  }
+
+  cart.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "cart-item";
+
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = "";
+
+    const details = document.createElement("div");
+
+    const name = document.createElement("div");
+    name.className = "cart-item-name";
+    name.textContent = item.name;
+
+    const price = document.createElement("div");
+    price.className = "cart-item-price";
+    price.textContent = formatCartPrice(item.price);
+
+    details.append(name, price);
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "cart-remove";
+    remove.textContent = "×";
+    remove.setAttribute("aria-label", `Remove ${item.name}`);
+
+    remove.addEventListener("click", () => {
+      cart = cart.filter(product => product.id !== item.id);
+      saveCart();
+      renderCart();
+    });
+
+    row.append(image, details, remove);
+    cartItems.appendChild(row);
+  });
+
+  const subtotal = cart.reduce(
+    (sum, item) => sum + item.price,
+    0
+  );
+
+  cartSubtotal.textContent = formatCartPrice(subtotal);
+  cartCheckout.disabled = count === 0;
+}
+
+
+/* Open and close cart */
+
+function openCart() {
+  cartOverlay.classList.add("is-open");
+  cartOverlay.setAttribute("aria-hidden", "false");
+  cartFloating.setAttribute("aria-expanded", "true");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCart() {
+  cartOverlay.classList.remove("is-open");
+  cartOverlay.setAttribute("aria-hidden", "true");
+  cartFloating.setAttribute("aria-expanded", "false");
+  document.body.style.overflow = "";
+}
+
+cartFloating.addEventListener("click", openCart);
+cartClose.addEventListener("click", closeCart);
+
+cartOverlay.addEventListener("click", event => {
+  if (event.target === cartOverlay) {
+    closeCart();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeCart();
+  }
+});
+
+
+/* Payhip multi-product checkout */
+
+cartCheckout.addEventListener("click", () => {
+  if (cart.length === 0) return;
+
+  const checkoutURL = new URL(
+    "https://payhip.com/buy"
+  );
+
+  cart.forEach(item => {
+    checkoutURL.searchParams.append(
+      "cart_links[]",
+      item.id
+    );
+  });
+
+  window.location.href = checkoutURL.toString();
+});
+
+
+/* Refresh cart total when currency changes */
+
+const originalUpdatePrices = updatePrices;
+
+updatePrices = function () {
+  originalUpdatePrices();
+  renderCart();
+};
+
+
+/* Initial cart state */
+
+renderCart();
 
 </script>
 
