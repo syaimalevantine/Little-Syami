@@ -390,43 +390,115 @@ header {
   font-weight: 600;
 }
 
-
 /* =====================================================
-   ADD TO CART
+   LITTLE SYAMI — SHARED CART
+   Uses the same cart as Printables index.html
 ===================================================== */
 
-.add-to-cart {
-  width: 100%;
+const CART_STORAGE_KEY =
+  "littleSyamiPrintableCart";
 
-  min-height: 50px;
 
-  margin-top: 14px;
+const LEVEL_1_PRODUCT = {
 
-  padding: 13px 20px;
+  id: "QLuVk",
 
-  border: 1px solid var(--olive);
+  name:
+    "Shahzade’s Little Brain Adventure — Level 1",
 
-  border-radius: 13px;
+  image:
+    "/assets/printables/Shahzade%20printable%201.webp",
 
-  background: var(--olive);
+  price: 0
 
-  color: var(--white);
+};
 
-  font-size: 15px;
 
-  font-weight: 600;
+const addToCartButton =
+  document.getElementById("addToCart");
 
-  cursor: pointer;
+
+/* Get the existing Little Syami cart */
+
+function getSharedCart() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(
+        CART_STORAGE_KEY
+      ) || "[]"
+    );
+
+  } catch {
+
+    return [];
+
+  }
+
 }
 
-.add-to-cart:active {
-  transform: scale(0.98);
+
+/* Save to the SAME cart used by Printables */
+
+function saveSharedCart(cart) {
+
+  localStorage.setItem(
+    CART_STORAGE_KEY,
+    JSON.stringify(cart)
+  );
+
 }
 
-.add-to-cart.added {
-  background: var(--olive-soft);
-}
 
+/* Add Level 1 to the shared cart */
+
+if (addToCartButton) {
+
+  addToCartButton.addEventListener(
+    "click",
+    function () {
+
+      const cart =
+        getSharedCart();
+
+
+      const alreadyAdded =
+        cart.some(
+          item =>
+            item.id ===
+            LEVEL_1_PRODUCT.id
+        );
+
+
+      if (!alreadyAdded) {
+
+        cart.push(
+          LEVEL_1_PRODUCT
+        );
+
+        saveSharedCart(cart);
+
+
+        addToCartButton.textContent =
+          "Added to Cart ✓";
+
+        addToCartButton.classList.add(
+          "added"
+        );
+
+
+      } else {
+
+        addToCartButton.textContent =
+          "Already in Cart ✓";
+
+      }
+
+    }
+  );
+
+}
 
 /* =====================================================
    DESCRIPTION
