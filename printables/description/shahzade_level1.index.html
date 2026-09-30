@@ -390,115 +390,6 @@ header {
   font-weight: 600;
 }
 
-/* =====================================================
-   LITTLE SYAMI — SHARED CART
-   Uses the same cart as Printables index.html
-===================================================== */
-
-const CART_STORAGE_KEY =
-  "littleSyamiPrintableCart";
-
-
-const LEVEL_1_PRODUCT = {
-
-  id: "QLuVk",
-
-  name:
-    "Shahzade’s Little Brain Adventure — Level 1",
-
-  image:
-    "/assets/printables/Shahzade%20printable%201.webp",
-
-  price: 0
-
-};
-
-
-const addToCartButton =
-  document.getElementById("addToCart");
-
-
-/* Get the existing Little Syami cart */
-
-function getSharedCart() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem(
-        CART_STORAGE_KEY
-      ) || "[]"
-    );
-
-  } catch {
-
-    return [];
-
-  }
-
-}
-
-
-/* Save to the SAME cart used by Printables */
-
-function saveSharedCart(cart) {
-
-  localStorage.setItem(
-    CART_STORAGE_KEY,
-    JSON.stringify(cart)
-  );
-
-}
-
-
-/* Add Level 1 to the shared cart */
-
-if (addToCartButton) {
-
-  addToCartButton.addEventListener(
-    "click",
-    function () {
-
-      const cart =
-        getSharedCart();
-
-
-      const alreadyAdded =
-        cart.some(
-          item =>
-            item.id ===
-            LEVEL_1_PRODUCT.id
-        );
-
-
-      if (!alreadyAdded) {
-
-        cart.push(
-          LEVEL_1_PRODUCT
-        );
-
-        saveSharedCart(cart);
-
-
-        addToCartButton.textContent =
-          "Added to Cart ✓";
-
-        addToCartButton.classList.add(
-          "added"
-        );
-
-
-      } else {
-
-        addToCartButton.textContent =
-          "Already in Cart ✓";
-
-      }
-
-    }
-  );
-
-}
 
 /* =====================================================
    DESCRIPTION
@@ -558,6 +449,14 @@ if (addToCartButton) {
 
   line-height: 1.65;
 }
+
+
+/* Justify introductory description */
+
+.product-description .intro-text {
+  text-align: justify;
+}
+
 
 .product-description .intro-title {
   color: var(--olive);
@@ -728,26 +627,35 @@ footer {
   }
 
 }
+
+
 /* =====================================================
    ADD TO CART BUTTON
 ===================================================== */
 
 .cart-add-button {
   display: block;
+
   width: 100%;
+
   min-height: 52px;
+
   margin-top: 18px;
 
   padding: 14px 24px;
 
   border: 1px solid var(--olive);
+
   border-radius: 14px;
 
   background: var(--olive);
+
   color: var(--white);
 
   font: inherit;
+
   font-size: 17px;
+
   font-weight: 600;
 
   text-align: center;
@@ -755,25 +663,39 @@ footer {
   cursor: pointer;
 
   -webkit-appearance: none;
+
   appearance: none;
 }
 
 .cart-add-button:active {
   transform: scale(0.98);
 }
-/* What Children Can Practice */
+
+
+/* =====================================================
+   REMOVE BULLETS FROM
+   WHAT CHILDREN CAN PRACTICE
+===================================================== */
+
 .product-description ul.practice-list {
   list-style: none !important;
+
   padding-left: 0 !important;
+
   padding-right: 0 !important;
+
   margin-left: 0 !important;
+
   margin-right: 0 !important;
 }
 
 .product-description ul.practice-list li {
   list-style: none !important;
+
   padding-left: 0 !important;
+
   margin-left: 0 !important;
+
   margin-bottom: 22px;
 }
 
@@ -994,13 +916,14 @@ footer {
 
       <!-- ADD TO CART -->
 
-<button
-  type="button"
-  class="cart-add-button"
-  id="addToCart"
->
-  Add to Cart
-</button>
+      <button
+        type="button"
+        class="cart-add-button"
+        id="addToCart"
+      >
+        Add to Cart
+      </button>
+
 
       <!-- =================================================
            PRODUCT DESCRIPTION
@@ -1019,7 +942,7 @@ footer {
         </p>
 
 
-        <p>
+        <p class="intro-text">
           Turn learning time into a playful adventure with
           Shahzade’s Little Brain Adventure – Level 1, a printable
           activity pack designed for young children ages 4–5.
@@ -1068,27 +991,27 @@ footer {
         <ul>
 
           <li>
-             12 printable activity pages
+            12 printable activity pages
           </li>
 
           <li>
-             Designed for ages 4–5
+            Designed for ages 4–5
           </li>
 
           <li>
-             Village and nature-themed activities
+            Village and nature-themed activities
           </li>
 
           <li>
-             Cute Shahzade &amp; his little cat illustrations
+            Cute Shahzade &amp; his little cat illustrations
           </li>
 
           <li>
-             Simple instructions made for young learners
+            Simple instructions made for young learners
           </li>
 
           <li>
-             Great for independent play or parent-child activities
+            Great for independent play or parent-child activities
           </li>
 
         </ul>
@@ -1107,9 +1030,13 @@ footer {
 
         <ul>
 
-          <li>US Letter</li>
+          <li>
+            US Letter
+          </li>
 
-          <li>A4</li>
+          <li>
+            A4
+          </li>
 
         </ul>
 
@@ -1121,21 +1048,37 @@ footer {
 
         <ul>
 
-          <li>Preschoolers ages 4–5</li>
+          <li>
+            Preschoolers ages 4–5
+          </li>
 
-          <li>Homeschool activities</li>
+          <li>
+            Homeschool activities
+          </li>
 
-          <li>Quiet time and screen-free play</li>
+          <li>
+            Quiet time and screen-free play
+          </li>
 
-          <li>Preschool learning activities</li>
+          <li>
+            Preschool learning activities
+          </li>
 
-          <li>Brain activation activities for kids</li>
+          <li>
+            Brain activation activities for kids
+          </li>
 
-          <li>Parent-child learning time</li>
+          <li>
+            Parent-child learning time
+          </li>
 
-          <li>Travel and activity folders</li>
+          <li>
+            Travel and activity folders
+          </li>
 
-          <li>Classroom or home learning</li>
+          <li>
+            Classroom or home learning
+          </li>
 
         </ul>
 
@@ -1499,10 +1442,24 @@ addToCartButton.addEventListener(
   }
 );
 
+
 /* Remove decorative sparkle emojis from product description lists */
-document.querySelectorAll('.product-description li').forEach(function (item) {
-  item.innerHTML = item.innerHTML.replace(/✨\s*/g, '');
-});
+
+document
+  .querySelectorAll(
+    ".product-description li"
+  )
+  .forEach(
+    function (item) {
+
+      item.innerHTML =
+        item.innerHTML.replace(
+          /✨\s*/g,
+          ""
+        );
+
+    }
+  );
 
 </script>
 
