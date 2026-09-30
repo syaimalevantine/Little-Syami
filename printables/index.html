@@ -4407,6 +4407,67 @@ updatePrices = function () {
 
 renderCart();
 
+/* =====================================================
+   LEVEL 1 — OPEN PRODUCT DESCRIPTION PAGE
+===================================================== */
+
+const level1Card = document.querySelector(
+  '.book-card[data-payhip-product="QLuVk"]'
+);
+
+if (level1Card) {
+
+  const level1Image = level1Card.querySelector(
+    ".book-cover-image"
+  );
+
+  const level1Title = level1Card.querySelector(
+    ".book-title"
+  );
+
+  const level1DescriptionURL =
+    "./description/shahzade_level1.index.html";
+
+
+  /* Image → Description */
+
+  if (level1Image) {
+
+    level1Image.style.cursor = "pointer";
+
+    level1Image.addEventListener(
+      "click",
+      function () {
+
+        window.location.href =
+          level1DescriptionURL;
+
+      }
+    );
+
+  }
+
+
+  /* Title → Description */
+
+  if (level1Title) {
+
+    level1Title.style.cursor = "pointer";
+
+    level1Title.addEventListener(
+      "click",
+      function () {
+
+        window.location.href =
+          level1DescriptionURL;
+
+      }
+    );
+
+  }
+
+}
+
 </script>
 
 
