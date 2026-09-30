@@ -1483,6 +1483,11 @@ addToCartButton.addEventListener(
   }
 );
 
+/* Remove decorative sparkle emojis from product description lists */
+document.querySelectorAll('.product-description li').forEach(function (item) {
+  item.innerHTML = item.innerHTML.replace(/✨\s*/g, '');
+});
+
 </script>
 
 
