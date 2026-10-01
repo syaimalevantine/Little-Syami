@@ -4467,6 +4467,64 @@ if (level1Card) {
   }
 
 }
+/* =====================================================
+   LEVEL 2 — PRODUCT DESCRIPTION LINK
+===================================================== */
+
+const level2Card = document.querySelector(
+  '.book-card[data-payhip-product="PNadX"]'
+);
+
+if (level2Card) {
+
+  const level2Image =
+    level2Card.querySelector(".book-cover-image");
+
+  const level2Title =
+    level2Card.querySelector(".book-title");
+
+  const level2DescriptionURL =
+    "/printables/description/shahzade_level2.index.html";
+
+
+  /* Make Level 2 image clickable */
+
+  if (level2Image) {
+
+    level2Image.style.cursor = "pointer";
+
+    level2Image.addEventListener(
+      "click",
+      function () {
+
+        window.location.href =
+          level2DescriptionURL;
+
+      }
+    );
+
+  }
+
+
+  /* Make Level 2 title clickable */
+
+  if (level2Title) {
+
+    level2Title.style.cursor = "pointer";
+
+    level2Title.addEventListener(
+      "click",
+      function () {
+
+        window.location.href =
+          level2DescriptionURL;
+
+      }
+    );
+
+  }
+
+}
 
 </script>
 
