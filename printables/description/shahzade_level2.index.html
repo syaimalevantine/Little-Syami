@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>
+  Shahzade’s Little Brain Adventure — Level 2 | Little Syami Publishing
+</title>
+
+<meta
+  name="description"
+  content="Shahzade’s Little Brain Adventure — Level 2, a fun printable brain adventure for curious thinkers ages 6–7."
+>
+
+<style>
+
+:root {
+  --paper: #F8F3E8;
+  --paper-soft: #FCF9F1;
+  --olive: #555633;
+  --olive-soft: #777653;
+  --gold: #B58B45;
+  --gold-soft: #D8C6A4;
+  --text: #454531;
+  --muted: #858273;
+  --line: #E4DCCB;
+  --white: #FFFDF8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248, 243, 232, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: 1180px;
+  height: 88px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--olive);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   PRODUCT PAGE
+===================================================== */
+
+.product-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 34px 22px 100px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.product-card {
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 12px 35px rgba(83, 82, 52, 0.08);
+}
+
+
+/* =====================================================
+   IMAGE GALLERY
+===================================================== */
+
+.product-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.gallery-track {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+}
+
+.gallery-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 820px;
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   GALLERY ARROWS
+===================================================== */
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(85, 86, 51, 0.16);
+  border-radius: 50%;
+  background: rgba(252, 249, 241, 0.88);
+  color: var(--olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  font-size: 22px;
+  backdrop-filter: blur(8px);
+}
+
+.gallery-arrow.left {
+  left: 14px;
+}
+
+.gallery-arrow.right {
+  right: 14px;
+}
+
+
+/* =====================================================
+   GALLERY DOTS
+===================================================== */
+
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 15px 0 17px;
+  background: var(--paper);
+}
+
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #CFC8B7;
+  cursor: pointer;
+}
+
+.gallery-dot.active {
+  background: var(--olive);
+  transform: scale(1.25);
+}
+
+
+/* =====================================================
+   PRODUCT INFORMATION
+===================================================== */
+
+.product-info {
+  padding: 30px 28px 34px;
+}
+
+.product-type {
+  margin-bottom: 13px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.product-title {
+  color: var(--olive);
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: clamp(31px, 6vw, 45px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.product-subtitle {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 20px;
+  color: var(--olive-soft);
+  font-size: 14px;
+}
+
+.product-price {
+  margin-top: 25px;
+  color: var(--olive);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.product-description {
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.product-description h2 {
+  margin-top: 32px;
+  margin-bottom: 13px;
+  color: var(--olive);
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.product-description h2:first-child {
+  margin-top: 0;
+}
+
+.product-description p {
+  color: #666558;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.product-description ul {
+  margin-top: 8px;
+  padding-left: 22px;
+}
+
+.product-description li {
+  margin-bottom: 7px;
+  color: #666558;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.product-description .intro-text {
+  text-align: justify;
+}
+
+.product-description .intro-title {
+  color: var(--olive);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   FILE INFO
+===================================================== */
+
+.file-info {
+  margin-top: 34px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--paper);
+}
+
+.file-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.file-info strong {
+  color: var(--olive);
+}
+
+
+/* =====================================================
+   LICENSE
+===================================================== */
+
+.license-box {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+}
+
+
+/* =====================================================
+   BACK TO SHOP
+===================================================== */
+
+.back-shop {
+  display: inline-flex;
+  margin-top: 35px;
+  color: var(--olive);
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid var(--gold-soft);
+  padding-bottom: 3px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  padding: 50px 28px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.footer-name {
+  color: var(--olive);
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 23px;
+}
+
+.footer-sub {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.footer-copy {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .header-inner {
+    height: 78px;
+    padding: 0 18px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .product-page {
+    padding: 22px 14px 75px;
+  }
+
+  .product-card {
+    border-radius: 20px;
+  }
+
+  .product-info {
+    padding: 26px 21px 30px;
+  }
+
+  .product-title {
+    font-size: 31px;
+  }
+
+  .product-subtitle {
+    font-size: 15px;
+  }
+
+  .product-description p,
+  .product-description li {
+    font-size: 14px;
+  }
+
+  .gallery-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+}
+
+
+/* =====================================================
+   ADD TO CART BUTTON
+===================================================== */
+
+.cart-add-button {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 18px;
+  padding: 14px 24px;
+  border: 1px solid var(--olive);
+  border-radius: 14px;
+  background: var(--olive);
+  color: var(--white);
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cart-add-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =====================================================
+   REMOVE BULLETS FROM
+   SKILLS CHILDREN CAN PRACTICE
+===================================================== */
+
+.product-description ul.practice-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.product-description ul.practice-list li {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 22px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+  <div class="header-inner">
+
+    <a
+      href="/printables/"
+      class="brand"
+    >
+
+      <div class="brand-name">
+        Little Syami
+      </div>
+
+      <div class="brand-subtitle">
+        PUBLISHING
+      </div>
+
+    </a>
+
+
+    <a
+      href="/printables/"
+      class="back-link"
+    >
+      ← Back to Printables
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     PRODUCT PAGE
+===================================================== -->
+
+<main class="product-page">
+
+  <div class="product-card">
+
+
+    <!-- =================================================
+         FOUR IMAGE GALLERY
+    ================================================= -->
+
+    <section
+      class="product-gallery"
+      aria-label="Product images"
+    >
+
+      <div
+        class="gallery-track"
+        id="galleryTrack"
+      >
+
+
+        <!-- IMAGE 1 -->
+
+        <div class="gallery-slide">
+
+          <img
+            src="/assets/printables/Shahzade%20printable%202.webp"
+            alt="Shahzade’s Little Brain Adventure — Level 2"
+          >
+
+        </div>
+
+
+        <!-- IMAGE 2 -->
+
+        <div class="gallery-slide">
+
+          <img
+            src="/assets/printables/level2eg1.webp"
+            alt="Shahzade’s Little Brain Adventure — Level 2 printable preview 1"
+          >
+
+        </div>
+
+
+        <!-- IMAGE 3 -->
+
+        <div class="gallery-slide">
+
+          <img
+            src="/assets/printables/level2eg2.webp"
+            alt="Shahzade’s Little Brain Adventure — Level 2 printable preview 2"
+          >
+
+        </div>
+
+
+        <!-- IMAGE 4 -->
+
+        <div class="gallery-slide">
+
+          <img
+            src="/assets/printables/level2eg3.webp"
+            alt="Shahzade’s Little Brain Adventure — Level 2 printable preview 3"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- PREVIOUS -->
+
+      <button
+        type="button"
+        class="gallery-arrow left"
+        id="galleryPrev"
+        aria-label="Previous image"
+      >
+        ‹
+      </button>
+
+
+      <!-- NEXT -->
+
+      <button
+        type="button"
+        class="gallery-arrow right"
+        id="galleryNext"
+        aria-label="Next image"
+      >
+        ›
+      </button>
+
+
+      <!-- DOTS -->
+
+      <div
+        class="gallery-dots"
+        id="galleryDots"
+      >
+
+        <button
+          type="button"
+          class="gallery-dot active"
+          aria-label="Image 1"
+        ></button>
+
+        <button
+          type="button"
+          class="gallery-dot"
+          aria-label="Image 2"
+        ></button>
+
+        <button
+          type="button"
+          class="gallery-dot"
+          aria-label="Image 3"
+        ></button>
+
+        <button
+          type="button"
+          class="gallery-dot"
+          aria-label="Image 4"
+        ></button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PRODUCT INFORMATION
+    ================================================= -->
+
+    <section class="product-info">
+
+      <div class="product-type">
+        PRINTABLE ACTIVITY PACK
+      </div>
+
+
+      <h1 class="product-title">
+        Shahzade’s Little Brain Adventure — Level 2
+      </h1>
+
+
+      <p class="product-subtitle">
+        A Fun Printable Brain Adventure for Curious Thinkers Ages 6–7 🧠✨
+      </p>
+
+
+      <div class="product-meta">
+
+        <span>Ages 6–7</span>
+
+        <span>English</span>
+
+        <span>Digital Printable</span>
+
+      </div>
+
+
+      <div class="product-price">
+        USD 1.99
+      </div>
+
+
+      <!-- ADD TO CART -->
+
+      <button
+        type="button"
+        class="cart-add-button"
+        id="addToCart"
+      >
+        Add to Cart
+      </button>
+
+
+      <!-- =================================================
+           PRODUCT DESCRIPTION
+      ================================================= -->
+
+      <div class="product-description">
+
+
+        <h2>
+          🌿 Shahzade’s Little Brain Adventure — Level 2
+        </h2>
+
+
+        <p class="intro-title">
+          A Fun Printable Brain Adventure for Curious Thinkers Ages 6–7 🧠✨
+        </p>
+
+
+        <p class="intro-text">
+          Ready for a bigger adventure?<br><br>
+          Shahzade’s Little Brain Adventure — Level 2 invites children ages 6–7 to explore a charming village world through fun challenges that encourage them to remember, notice, sequence, follow, reason, and solve. From remembering details in a village scene to finding patterns, following routes, solving puzzles, and completing a final mission, each activity turns learning into a playful adventure with Shahzade and his little cat.
+        </p>
+
+
+        <h2>
+          🧠 Skills Children Can Practice
+        </h2>
+
+
+        <ul class="practice-list">
+
+          <li>
+            👀 <strong>Remember</strong> — strengthen visual memory and recall details
+          </li>
+
+          <li>
+            🔎 <strong>Notice</strong> — find subtle differences and important clues
+          </li>
+
+          <li>
+            🔢 <strong>Sequence</strong> — put events and actions in the correct order
+          </li>
+
+          <li>
+            🗺️ <strong>Follow</strong> — practice spatial thinking and following directions
+          </li>
+
+          <li>
+            🧩 <strong>Reason</strong> — use clues and logic to solve problems
+          </li>
+
+          <li>
+            💡 <strong>Solve</strong> — complete fun puzzles and challenges
+          </li>
+
+          <li>
+            🌱 <strong>Grow</strong> — build confidence through playful problem-solving
+          </li>
+
+        </ul>
+
+
+        <h2>
+          📖 What’s Included
+        </h2>
+
+
+        <ul>
+
+          <li>
+            12 printable activity pages
+          </li>
+
+          <li>
+            Designed for ages 6–7
+          </li>
+
+          <li>
+            Village and nature-themed challenges
+          </li>
+
+          <li>
+            Shahzade and his little cat as activity companions
+          </li>
+
+          <li>
+            Memory, pattern, sequencing, logic, and spatial activities
+          </li>
+
+          <li>
+            A final Village Adventure Challenge
+          </li>
+
+          <li>
+            Simple, child-friendly instructions
+          </li>
+
+        </ul>
+
+
+        <h2>
+          🎯 What Children Will Explore
+        </h2>
+
+
+        <p>
+          Children will be invited to:
+        </p>
+
+
+        <ul>
+
+          <li>
+            Remember objects and details
+          </li>
+
+          <li>
+            Spot changes between pictures
+          </li>
+
+          <li>
+            Complete visual patterns
+          </li>
+
+          <li>
+            Follow and recreate routes
+          </li>
+
+          <li>
+            Identify matching combinations
+          </li>
+
+          <li>
+            Put events in the correct order
+          </li>
+
+          <li>
+            Navigate a village maze
+          </li>
+
+          <li>
+            Find objects that don’t belong
+          </li>
+
+          <li>
+            Solve simple harvest puzzles
+          </li>
+
+          <li>
+            Complete a final multi-step challenge
+          </li>
+
+        </ul>
+
+
+        <h2>
+          🖨️ Digital Printable
+        </h2>
+
+
+        <p>
+          This is a digital product. No physical product will be shipped.
+          Print the activities at home or at a local print shop.
+        </p>
+
+
+        <ul>
+
+          <li>
+            US Letter
+          </li>
+
+          <li>
+            A4
+          </li>
+
+        </ul>
+
+
+        <h2>
+          👨‍👩‍👧 Perfect For
+        </h2>
+
+
+        <ul>
+
+          <li>
+            Children ages 6–7
+          </li>
+
+          <li>
+            Early elementary learners
+          </li>
+
+          <li>
+            Homeschool activities
+          </li>
+
+          <li>
+            Screen-free learning and play
+          </li>
+
+          <li>
+            Brain activation activities for kids
+          </li>
+
+          <li>
+            Quiet time activities
+          </li>
+
+          <li>
+            Parent-child learning time
+          </li>
+
+          <li>
+            Travel activity folders
+          </li>
+
+          <li>
+            Classroom enrichment
+          </li>
+
+        </ul>
+
+
+        <h2>
+          🌟 Explore More. Think Deeper. Solve Together.
+        </h2>
+
+
+        <p>
+          Learning can feel like an adventure when children are given a chance to look closely, remember, make connections, and figure things out for themselves.
+          <br><br>
+          Play. Think. Solve. Grow. 🌱
+          <br><br>
+          Small Steps. Big Futures. 🤎
+        </p>
+
+
+        <div class="license-box">
+
+          <h2>
+            🔒 Personal &amp; Non-Commercial Use
+          </h2>
+
+
+          <p>
+            This printable is for personal and non-commercial use only.
+          </p>
+
+
+          <h2>
+            You may:
+          </h2>
+
+
+          <ul>
+
+            <li>
+              ✅ Print the activities for your own child or family.
+            </li>
+
+            <li>
+              ✅ Use them at home for personal learning and play.
+            </li>
+
+          </ul>
+
+
+          <h2>
+            You may not:
+          </h2>
+
+
+          <ul>
+
+            <li>
+              ❌ Resell or redistribute the files.
+            </li>
+
+            <li>
+              ❌ Share, upload, or distribute the digital files online.
+            </li>
+
+            <li>
+              ❌ Use the activities or illustrations for commercial purposes.
+            </li>
+
+            <li>
+              ❌ Modify, reproduce, or sell the content as your own.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <p style="margin-top:28px;">
+
+          © Syaima Levantine | Little Syami Publishing.
+          All rights reserved.
+
+        </p>
+
+
+        <div class="file-info">
+
+          <p>
+            <strong>You will get:</strong>
+            a PDF (28MB) file
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <a
+        href="/printables/"
+        class="back-shop"
+      >
+        ← Back to Printables
+      </a>
+
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="footer-name">
+    Little Syami
+  </div>
+
+  <div class="footer-sub">
+    PUBLISHING
+  </div>
+
+  <div class="footer-copy">
+    © 2026 Little Syami Publishing. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+const galleryTrack =
+  document.getElementById("galleryTrack");
+
+const gallerySlides =
+  document.querySelectorAll(".gallery-slide");
+
+const galleryDots =
+  document.querySelectorAll(".gallery-dot");
+
+const galleryPrev =
+  document.getElementById("galleryPrev");
+
+const galleryNext =
+  document.getElementById("galleryNext");
+
+let currentSlide = 0;
+
+
+function goToSlide(index) {
+
+  if (index < 0) {
+    index = gallerySlides.length - 1;
+  }
+
+  if (index >= gallerySlides.length) {
+    index = 0;
+  }
+
+  currentSlide = index;
+
+  galleryTrack.scrollTo({
+    left:
+      galleryTrack.clientWidth * currentSlide,
+
+    behavior: "smooth"
+  });
+
+  updateDots();
+}
+
+
+function updateDots() {
+
+  galleryDots.forEach(
+    (dot, index) => {
+
+      dot.classList.toggle(
+        "active",
+        index === currentSlide
+      );
+
+    }
+  );
+
+}
+
+
+galleryPrev.addEventListener(
+  "click",
+  () => {
+
+    goToSlide(
+      currentSlide - 1
+    );
+
+  }
+);
+
+
+galleryNext.addEventListener(
+  "click",
+  () => {
+
+    goToSlide(
+      currentSlide + 1
+    );
+
+  }
+);
+
+
+galleryDots.forEach(
+  (dot, index) => {
+
+    dot.addEventListener(
+      "click",
+      () => {
+
+        goToSlide(index);
+
+      }
+    );
+
+  }
+);
+
+
+/* Detect manual swipe */
+
+galleryTrack.addEventListener(
+  "scroll",
+  () => {
+
+    const width =
+      galleryTrack.clientWidth;
+
+    if (!width) return;
+
+    const index =
+      Math.round(
+        galleryTrack.scrollLeft / width
+      );
+
+    if (
+      index !== currentSlide &&
+      index >= 0 &&
+      index < gallerySlides.length
+    ) {
+
+      currentSlide = index;
+
+      updateDots();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+const CART_STORAGE_KEY =
+  "littleSyamiPrintableCart";
+
+const addToCartButton =
+  document.getElementById("addToCart");
+
+
+const LEVEL_2_PRODUCT = {
+
+  id: "PNadX",
+
+  name:
+    "Shahzade’s Little Brain Adventure — Level 2",
+
+  image:
+    "/assets/printables/Shahzade%20printable%202.webp",
+
+  price: 1.99
+
+};
+
+
+function getCart() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(
+        CART_STORAGE_KEY
+      ) || "[]"
+    );
+
+  } catch {
+
+    return [];
+
+  }
+
+}
+
+
+function saveCart(cart) {
+
+  localStorage.setItem(
+    CART_STORAGE_KEY,
+    JSON.stringify(cart)
+  );
+
+}
+
+
+addToCartButton.addEventListener(
+  "click",
+  () => {
+
+    const cart =
+      getCart();
+
+    const alreadyAdded =
+      cart.some(
+        item =>
+          item.id ===
+          LEVEL_2_PRODUCT.id
+      );
+
+
+    if (!alreadyAdded) {
+
+      cart.push(
+        LEVEL_2_PRODUCT
+      );
+
+      saveCart(cart);
+
+      addToCartButton.textContent =
+        "Added to Cart ✓";
+
+      addToCartButton.classList.add(
+        "added"
+      );
+
+    } else {
+
+      addToCartButton.textContent =
+        "Already in Cart ✓";
+
+    }
+
+  }
+);
+
+
+/* Remove decorative sparkle emojis from product description lists */
+
+document
+  .querySelectorAll(
+    ".product-description li"
+  )
+  .forEach(
+    function (item) {
+
+      item.innerHTML =
+        item.innerHTML.replace(
+          /✨\s*/g,
+          ""
+        );
+
+    }
+  );
+
+</script>
+
+
+</body>
+
+</html>
